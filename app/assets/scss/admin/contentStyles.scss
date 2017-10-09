@@ -18,6 +18,16 @@
     padding: 0 20px;
   }
 
+  .underline {
+    display: none;
+    border-top: 1px solid #bdc3c7;
+    width: 75%;
+
+    @include media-breakpoint-down (xs) {
+      display: block;
+    }
+  }
+
   .left-container {
     @extend .form-common-style;
     border-right: 1px solid #bdc3c7;
@@ -26,10 +36,23 @@
     .form {
       margin-top: 30px !important;
 
+      @include media-breakpoint-down (xs) {
+        max-width: 75%;
+        margin: auto;
+      }
+
+      @media (min-width: 470px) and (max-width: 575px) {
+        max-width: 55%;
+      }
+
       .submit {
         display: flex;
         justify-content: flex-end; 
       }
+    }
+
+    @include media-breakpoint-down (xs) {
+      border-right: none;
     }
   }
 
@@ -43,7 +66,7 @@
     .list {
       background-color: white;
       margin-top: 30px !important;
-      max-height: 75%;
+      max-height: 400px;
       overflow-y: auto;
 
       .list-item {

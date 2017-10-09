@@ -5554,7 +5554,7 @@ a.text-dark:focus, a.text-dark:hover {
 
 body {
   background-color: #ecf0f1;
-  overflow-y: hidden;
+  overflow-y: auto;
   overflow-x: hidden; }
 
 a, a:hover, a:focus {
@@ -5667,20 +5667,37 @@ p {
   .main-content .introduction {
     text-align: center;
     padding: 0 20px; }
+  .main-content .underline {
+    display: none;
+    border-top: 1px solid #bdc3c7;
+    width: 75%; }
+    @media (max-width: 575px) {
+      .main-content .underline {
+        display: block; } }
   .main-content .left-container {
     border-right: 1px solid #bdc3c7;
     overflow-y: auto; }
     .main-content .left-container .form {
       margin-top: 30px !important; }
+      @media (max-width: 575px) {
+        .main-content .left-container .form {
+          max-width: 75%;
+          margin: auto; } }
+      @media (min-width: 470px) and (max-width: 575px) {
+        .main-content .left-container .form {
+          max-width: 55%; } }
       .main-content .left-container .form .submit {
         display: flex;
         justify-content: flex-end; }
+    @media (max-width: 575px) {
+      .main-content .left-container {
+        border-right: none; } }
   .main-content .right-container .title {
     text-align: center; }
   .main-content .right-container .list {
     background-color: white;
     margin-top: 30px !important;
-    max-height: 75%;
+    max-height: 400px;
     overflow-y: auto; }
     .main-content .right-container .list .list-item {
       padding: 15px 0;

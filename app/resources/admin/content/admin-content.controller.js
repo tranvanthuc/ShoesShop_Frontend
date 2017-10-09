@@ -33,5 +33,41 @@ export default $scope => {
       title: 'rounded toe shoes',
       gender: 3
     },
+    {
+      title: 'chef shoes',
+      gender: 1
+    },
+    {
+      title: 'roman sandals',
+      gender: 2
+    },
+    {
+      title: 'rounded toe shoes',
+      gender: 3
+    },
+    {
+      title: 'chef shoes',
+      gender: 1
+    },
+    {
+      title: 'roman sandals',
+      gender: 2
+    },
+    {
+      title: 'rounded toe shoes',
+      gender: 3
+    },
+    {
+      title: 'chef shoes',
+      gender: 1
+    },
+    {
+      title: 'roman sandals',
+      gender: 2
+    },
+    {
+      title: 'rounded toe shoes',
+      gender: 3
+    },
   ]
 }
