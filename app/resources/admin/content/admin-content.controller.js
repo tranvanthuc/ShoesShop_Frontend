@@ -1,5 +1,7 @@
+import { reduceByChar } from '../../handlerServices/textConverter';
+
 /* @ngInject */
-export default $scope => {
+export default ($scope, $http) => {
   $scope.list = [
     {
       title: 'jelly shoes',
@@ -70,4 +72,8 @@ export default $scope => {
       gender: 3
     },
   ]
+
+  for(let i=0; i<$scope.list.length; i++) {
+    $scope.list[i].title = reduceByChar($scope.list[i].title)
+  }
 }
