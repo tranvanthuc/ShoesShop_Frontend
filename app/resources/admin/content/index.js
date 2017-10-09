@@ -1,9 +1,12 @@
 import angular from 'angular';
 
 import adminContent from './admin-content.directive';
-import adminContentCtrl from './admin-content.controller';
+import category from './category';
+import size from './size';
 
-export default angular.module('app.admin.content', [])
+export default angular.module('app.admin.content', [
+  category,
+  size
+])
   .directive('adminContent', adminContent)
-  .controller('adminContentCtrl', adminContentCtrl)
   .name

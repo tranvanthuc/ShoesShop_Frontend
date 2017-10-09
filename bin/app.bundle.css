@@ -5554,7 +5554,7 @@ a.text-dark:focus, a.text-dark:hover {
 
 body {
   background-color: #ecf0f1;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden; }
 
 a, a:hover, a:focus {
