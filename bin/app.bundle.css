@@ -5588,30 +5588,46 @@ p {
 
 .header {
   background-color: #34495e;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 20px 0;
   color: #ecf0f1; }
+  @media (max-width: 360px) {
+    .header {
+      padding-left: 10px;
+      padding-right: 10px; } }
   .header .menu-btn, .header .setting-btn {
     display: flex;
     align-items: center;
     justify-content: center; }
   .header .menu-btn:hover, .header .setting-btn:hover {
     cursor: pointer; }
-  .header .search-icon {
-    margin: 0;
-    padding-right: 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center; }
-  .header .search-box-container {
+  .header .search-box .search-box-container {
     margin-bottom: 0;
     display: flex;
     justify-content: space-between; }
+    .header .search-box .search-box-container .search-icon {
+      margin: 0;
+      padding-right: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center; }
+      @media (max-width: 360px) {
+        .header .search-box .search-box-container .search-icon {
+          margin-right: 10px; } }
+    @media (max-width: 360px) {
+      .header .search-box .search-box-container {
+        justify-content: flex-end; }
+        .header .search-box .search-box-container .search-form {
+          display: none; } }
+  @media (max-width: 360px) {
+    .header .search-box {
+      max-width: 75%; } }
 
 .sidebar {
   height: 100%;
   background-color: #34495e;
   padding: 0; }
+  .sidebar .active {
+    background-color: #2c3e50; }
   @media (max-width: 767px) {
     .sidebar {
       display: none; } }
@@ -5629,12 +5645,12 @@ p {
       border-radius: 50%;
       background-color: rebeccapurple; }
   .sidebar .sidebar-menu {
-    padding: 10px 10px 0 10px; }
+    padding: 10px 0; }
     .sidebar .sidebar-menu .menu-item {
       color: #ecf0f1;
       display: flex;
       align-items: center;
-      padding: 10px 0;
+      padding: 10px;
       margin: 0; }
     .sidebar .sidebar-menu .collapse-menu {
       flex-direction: column;
@@ -5642,18 +5658,16 @@ p {
     .sidebar .sidebar-menu .collapse-menu a {
       color: #ecf0f1; }
     .sidebar .sidebar-menu .collapse-item {
-      display: flex;
       align-items: center;
-      padding: 10px 10px 0 10px;
+      padding: 10px 20px;
       font-size: 14px; }
+      .sidebar .sidebar-menu .collapse-item:hover {
+        background-color: #34495e; }
     .sidebar .sidebar-menu .sub-item {
       display: flex;
       align-items: center; }
     .sidebar .sidebar-menu .menu-item:hover {
       background-color: #2c3e50;
-      margin: 0 -10px;
-      padding-left: 10px;
-      padding-right: 10px;
       cursor: pointer; }
 
 .main-content {
@@ -5667,21 +5681,42 @@ p {
   .main-content .introduction {
     text-align: center;
     padding: 0 20px; }
+  .main-content .underline {
+    display: none;
+    border-top: 1px solid #bdc3c7;
+    width: 75%; }
+    @media (max-width: 575px) {
+      .main-content .underline {
+        display: block; } }
   .main-content .left-container {
     border-right: 1px solid #bdc3c7;
     overflow-y: auto; }
     .main-content .left-container .form {
       margin-top: 30px !important; }
+      @media (max-width: 575px) {
+        .main-content .left-container .form {
+          max-width: 75%;
+          margin: auto; } }
+      @media (min-width: 470px) and (max-width: 575px) {
+        .main-content .left-container .form {
+          max-width: 55%; } }
       .main-content .left-container .form .submit {
         display: flex;
         justify-content: flex-end; }
+    @media (max-width: 575px) {
+      .main-content .left-container {
+        border-right: none; } }
   .main-content .right-container .title {
     text-align: center; }
   .main-content .right-container .list {
     background-color: white;
     margin-top: 30px !important;
-    max-height: 75%;
+    max-height: 400px;
     overflow-y: auto; }
+    @media (min-width: 412px) and (max-width: 575px) {
+      .main-content .right-container .list {
+        max-width: 65%;
+        margin: auto; } }
     .main-content .right-container .list .list-item {
       padding: 15px 0;
       margin-bottom: 1px !important; }

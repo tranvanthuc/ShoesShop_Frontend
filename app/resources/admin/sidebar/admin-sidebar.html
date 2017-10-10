@@ -18,7 +18,7 @@
         <i class="fa fa-angle-down icon col-1 p-0"></i>
       </div>
       <div id="collapseSubItem" class="collapse">
-        <div class="collapse-item row m-0" ng-repeat="item in managementMenu">
+        <div class="collapse-item row m-0" ng-repeat="item in managementMenu" ui-sref="{{ item.url }}" ui-sref-active="active">
           <i class="fa {{ item.icon }} col-1 p-0"></i>
           <a href="#" class="col-11 pr-0" ng-bind="item.title"></a>
         </div>
