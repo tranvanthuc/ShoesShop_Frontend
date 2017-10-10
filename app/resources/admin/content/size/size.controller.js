@@ -1,4 +1,6 @@
+import {size} from '../../fixture';
+
 /* @ngInject */
 export default ($scope) => {
-  $scope.list = [20,21,22,23,24,25,26,27,28,29,30];
+  $scope.list = size
 }
