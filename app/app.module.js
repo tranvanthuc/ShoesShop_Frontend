@@ -8,13 +8,16 @@ require('bootstrap');
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
 
-import admin from './resources/admin';
 import routes from './app.routes';
+import admin from './resources/admin';
+import homepage from './resources/homepage';
 
 import './assets/scss/admin/index.scss';
+import './assets/scss/homepage/index.scss';
 
 angular.module('app', [
-  uirouter,
-  admin
-])
+    uirouter,
+    admin,
+    homepage
+  ])
   .config(routes)
