@@ -1,0 +1,42 @@
+.content-container {
+  position: absolute;
+  top: 0;
+  overflow-y: auto;
+
+  .hot-products {
+    
+    .carousel-item {
+      height: 100vh;
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .new-products {
+    padding: 100px;
+
+    .text-center {
+      text-align: center;
+    }
+
+    .title {
+      margin-bottom: 50px;
+    }
+
+    .price {
+      font-size: 18px;
+    }
+
+    .product {
+
+      &:hover {
+        cursor: pointer;
+        filter: opacity(0.6);
+      }
+    }
+  }
+}

@@ -1,5 +1,9 @@
 .header-container {
   // background-color: antiquewhite;  
+  position: relative;
+  z-index: 99999;
+  color: white;
+  padding: 20px;
 
   .button-hover {
     cursor: pointer;
