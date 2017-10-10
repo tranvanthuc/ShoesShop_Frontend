@@ -1,0 +1,34 @@
+.header-container {
+  background-color: antiquewhite;  
+
+  .header-center {
+    // background-color: aliceblue;
+    display: flex;
+    align-items: center;
+
+    .menu {
+      width: 100%;
+      // background-color: antiquewhite;
+
+      p {
+        text-align: center;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .header-right {
+    // background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .header-right-item {
+      margin-left: 20px;
+      font-size: 22px;
+    }
+  }
+}

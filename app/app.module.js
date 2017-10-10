@@ -13,6 +13,7 @@ import admin from './resources/admin';
 import homepage from './resources/homepage';
 
 import './assets/scss/admin/index.scss';
+import './assets/scss/homepage/index.scss';
 
 angular.module('app', [
     uirouter,
