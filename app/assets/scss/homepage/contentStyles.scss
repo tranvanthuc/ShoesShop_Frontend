@@ -1,7 +1,6 @@
 .content-container {
-  position: absolute;
-  top: 0;
-  overflow-y: auto;
+  position: relative;
+  font-family: "GothamBook",Verdana,Helvetica,Arial,sans-serif;
 
   .hot-products {
     
@@ -25,6 +24,11 @@
 
     .title {
       margin-bottom: 50px;
+
+      h2 {
+        letter-spacing: 0.1em;
+        font-weight: 400;  
+      }
     }
 
     .price {
