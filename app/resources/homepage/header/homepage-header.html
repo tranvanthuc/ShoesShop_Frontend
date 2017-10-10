@@ -1,0 +1,30 @@
+<!DOCTYPE <html>
+<div class="header-container row m-0" ng-controller="homepageHeaderCtrl">
+  <div class="header-left col-3">
+    <img src="/app/assets/images/helm-logo.png">
+  </div>
+  <div class="header-center col-6">
+    <div class="menu row m-0">
+      <div class="sub-menu col-3" ng-repeat="item in menu">
+        <p ng-bind="item"></p>
+      </div>
+    </div>
+  </div>
+  <div class="header-right col-3">
+    <div class="search-container header-right-item">
+      <label>
+        <i class="fa fa-search"></i>          
+      </label>
+    </div>
+    <div class="authen-container header-right-item">
+      <label>
+        <i class="fa fa-user"></i>          
+      </label>
+    </div>
+    <div class="cart-container header-right-item">
+      <label>
+        <i class="fa fa-shopping-cart"></i>          
+      </label>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,12 @@
 .header {
   background-color: #34495e;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 20px 0;
   color: #ecf0f1;
+
+  @media (max-width: 360px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
   .menu-btn, .setting-btn {
     display: flex;
@@ -14,17 +18,36 @@
     cursor: pointer;
   }
 
-  .search-icon {
-    margin: 0;
-    padding-right: 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
+  .search-box {
 
-  .search-box-container {
-    margin-bottom: 0;
-    display: flex;
-    justify-content: space-between;
+    .search-box-container {
+      margin-bottom: 0;
+      display: flex;
+      justify-content: space-between;
+  
+      .search-icon {
+        margin: 0;
+        padding-right: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+  
+        @media (max-width: 360px) {
+          margin-right: 10px;
+        }
+      }
+  
+      @media (max-width: 360px) {
+        justify-content: flex-end;
+        
+        .search-form {
+          display: none;        
+        }
+      }
+    }
+
+    @media (max-width: 360px) {
+      max-width: 75%;
+    }
   }
 }

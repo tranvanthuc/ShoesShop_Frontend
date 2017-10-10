@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<div class="row m-0 justify-content-around h-100" ng-controller="shopCtrl">
+  <div class="left-container col-12 col-sm-6">
+    <p class="introduction">Shop's information management</p>
+    <div class="row m-0">
+      <div class="col-1 col-lg-2"></div>
+      <div class="form col-10 col-lg-8">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input class="form-control" name="name" id="name" placeholder="Enter name ...">
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input class="form-control" name="description" id="description" placeholder="Describe your shop ...">
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input class="form-control" name="address" id="address" placeholder="Enter address ...">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input class="form-control" name="phone" id="phone" placeholder="Enter phone number ...">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input class="form-control" name="email" id="email" placeholder="Enter email ...">
+        </div>
+        <div class="submit form-group">
+          <button type="submit" class="btn btn-sm btn-primary">Create</button>  
+        </div>                 
+      </div>
+      <div class="col-1 col-lg-2"></div>
+    </div>
+  </div>
+  <div class="underline"></div>
+  <div class="right-container col-12 col-sm-6">
+    <div class="row m-0">
+      <div class="col-1 col-lg-2"></div>
+      <div class="info col-10 col-lg-8 p-0">
+        <p class="title introduction" ng-bind="shop.name"></p>
+        <p ng-bind="shop.description"></p>
+        <p ng-bind="shop.address"></p>
+        <p ng-bind="shop.phone"></p>
+        <p ng-bind="shop.email"></p>
+      </div>
+      <div class="col-1 col-lg-2"></div>
+    </div>
+  </div>
+</div>
