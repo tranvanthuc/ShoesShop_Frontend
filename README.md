@@ -8,4 +8,4 @@
 - Clone this project: `https://github.com/tranvanthuc/ShoesShop_Frontend.git`
 - Run `npm install`
 - Run `npm start`
-- To go to admin page, please use this url: `http://localhost:3002/#!/admin`
+- To go to admin page, please use this url: `http://localhost:3000/#!/admin`
