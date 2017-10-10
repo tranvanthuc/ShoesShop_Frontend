@@ -11296,23 +11296,23 @@ a.text-dark:focus, a.text-dark:hover {
 p, label {
   margin: 0; }
 
-.header-container {
-  background-color: antiquewhite; }
-  .header-container .header-center {
-    display: flex;
-    align-items: center; }
-    .header-container .header-center .menu {
-      width: 100%; }
-      .header-container .header-center .menu p {
-        text-align: center; }
-        .header-container .header-center .menu p:hover {
-          cursor: pointer; }
-  .header-container .header-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; }
-    .header-container .header-right .header-right-item {
-      margin-left: 20px;
-      font-size: 22px; }
+.header-container .button-hover, .header-container .header-center .menu p:hover, .header-container .header-right .header-right-item:hover {
+  cursor: pointer; }
+
+.header-container .header-center {
+  display: flex;
+  align-items: center; }
+  .header-container .header-center .menu {
+    width: 100%; }
+    .header-container .header-center .menu p {
+      text-align: center; }
+
+.header-container .header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; }
+  .header-container .header-right .header-right-item {
+    margin-left: 20px;
+    font-size: 22px; }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL2FwcC5idW5kbGUuY3NzIiwic291cmNlUm9vdCI6IiJ9*/

@@ -1,5 +1,9 @@
 .header-container {
-  background-color: antiquewhite;  
+  // background-color: antiquewhite;  
+
+  .button-hover {
+    cursor: pointer;
+  }
 
   .header-center {
     // background-color: aliceblue;
@@ -14,7 +18,7 @@
         text-align: center;
 
         &:hover {
-          cursor: pointer;
+          @extend .button-hover;
         }
       }
     }
@@ -29,6 +33,10 @@
     .header-right-item {
       margin-left: 20px;
       font-size: 22px;
+
+      &:hover {
+        @extend .button-hover;
+      }
     }
   }
 }
