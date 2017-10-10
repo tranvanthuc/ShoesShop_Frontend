@@ -1,18 +1,22 @@
 .header-container {
-  // background-color: antiquewhite;  
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  width: 100%;
+  color: white;
+  padding: 20px;
 
   .button-hover {
     cursor: pointer;
   }
 
   .header-center {
-    // background-color: aliceblue;
     display: flex;
     align-items: center;
 
     .menu {
       width: 100%;
-      // background-color: antiquewhite;
 
       p {
         text-align: center;
@@ -25,7 +29,6 @@
   }
 
   .header-right {
-    // background-color: aqua;
     display: flex;
     align-items: center;
     justify-content: flex-end;
