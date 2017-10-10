@@ -16,4 +16,9 @@ export default $stateProvider => {
       parent: 'admin',
       template: require('../content/product/product.html')
     })
+    .state('admin.shop', {
+      url: '/shop',
+      parent: 'admin',
+      template: require('../content/shop/shop.html')
+    })
 }

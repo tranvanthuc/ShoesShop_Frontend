@@ -19,7 +19,7 @@ export const managementMenu = [
   {
     title: 'Shop',
     icon: 'fa-university',
-    url: PARENT_URL + 'category'
+    url: PARENT_URL + 'shop'
   },
   {
     title: 'Invoices',
@@ -182,9 +182,18 @@ export const products = [
   },
 ]
 
+export const shop = {
+  name: 'Zappos',
+  description: "In 2007, Ryan Babenzien and Jon Buscemi had discussed an early idea for GREATS but didn't do anything with it. Then, in late 2012 they got together and said, 'What if?' What if we built a vertical men's and women's footwear brand that made high quality product and sold it direct to the consumer at a value price. And with the idea of building a better sneaker for less, GREATS was beta launched in August 2013 and quickly became an instant 'Classic' selling out of most styles within 90 days and as GQ says 'Shaking up the sneaker to store inventory flow' and as FORBES says 'Greats is building the next great footwear company.'",
+  address: '123 ABC Street, New York',
+  phone: '01223200426',
+  email: 'info@greatsbrand.com'
+}
+
 export default {
   managementMenu,
   categories,
   size,
-  products
+  products,
+  shop
 }
