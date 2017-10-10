@@ -35,8 +35,20 @@ export const newProducts = [ // 4 products
   },
 ]
 
+export const catalog = [
+  {
+    title: 'Men',
+    image: 'H0052-04_1_250x_crop_top.jpg'
+  },
+  {
+    title: 'Women',
+    image: 'FALL15_WEB_PRODUCT_SHOT_PABLOBLACKWOMEN_250x_crop_top.jpg'
+  }
+]
+
 export default {
   headerMenu,
   hotProducts,
-  newProducts
+  newProducts,
+  catalog
 }
