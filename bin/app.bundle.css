@@ -11286,6 +11286,13 @@ a.text-dark:focus, a.text-dark:hover {
 .homepage-wrapper p, .homepage-wrapper label, .homepage-wrapper h1, .homepage-wrapper h2, .homepage-wrapper h3, .homepage-wrapper h4, .homepage-wrapper h5, .homepage-wrapper h6 {
   margin: 0; }
 
+.homepage-wrapper .background {
+  background-color: white;
+  color: black !important;
+  border-bottom: 1px solid #ecf0f1; }
+  .homepage-wrapper .background img {
+    filter: invert(0) !important; }
+
 .homepage-wrapper .header-container {
   position: fixed;
   top: 0;
@@ -11295,7 +11302,10 @@ a.text-dark:focus, a.text-dark:hover {
   color: white;
   padding: 20px; }
   .homepage-wrapper .header-container .button-hover, .homepage-wrapper .header-container .header-center .menu p:hover, .homepage-wrapper .header-container .header-right .header-right-item:hover {
-    cursor: pointer; }
+    cursor: pointer !important;
+    filter: opacity(0.5); }
+  .homepage-wrapper .header-container .header-left img {
+    filter: invert(1); }
   .homepage-wrapper .header-container .header-center {
     display: flex;
     align-items: center; }
@@ -11332,6 +11342,8 @@ a.text-dark:focus, a.text-dark:hover {
       filter: opacity(0.6); }
   .homepage-wrapper .content-container .hot-products .carousel-item {
     height: 100vh; }
+    .homepage-wrapper .content-container .hot-products .carousel-item:hover {
+      cursor: pointer; }
   .homepage-wrapper .content-container .hot-products img {
     width: 100%;
     height: 100%;
@@ -11374,6 +11386,10 @@ a.text-dark:focus, a.text-dark:hover {
     display: flex;
     justify-content: center; }
 
+.homepage-wrapper .footer-container .hover, .homepage-wrapper .footer-container .networking label:hover, .homepage-wrapper .footer-container .info .menu-item:hover {
+  cursor: pointer;
+  filter: opacity(0.5); }
+
 .homepage-wrapper .footer-container .networking {
   background-color: #ecf0f1;
   padding: 50px;
@@ -11389,9 +11405,6 @@ a.text-dark:focus, a.text-dark:hover {
     margin-bottom: 50px !important; }
   .homepage-wrapper .footer-container .info .menu-item {
     text-align: center; }
-    .homepage-wrapper .footer-container .info .menu-item:hover {
-      cursor: pointer;
-      filter: opacity(0.5); }
   .homepage-wrapper .footer-container .info .copyright {
     text-align: center; }
 
