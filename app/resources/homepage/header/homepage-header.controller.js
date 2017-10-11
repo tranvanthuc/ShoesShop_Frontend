@@ -1,7 +1,7 @@
 import { headerMenu } from '../fixture';
 
 /* @ngInject */
-export default ($window, $scope) => {
+export default ($window, $rootScope, $scope) => {
   $scope.menu = headerMenu;
 
   $window.onscroll = () => {
@@ -12,5 +12,4 @@ export default ($window, $scope) => {
     }
     $scope.$apply();          
   }
-
 }

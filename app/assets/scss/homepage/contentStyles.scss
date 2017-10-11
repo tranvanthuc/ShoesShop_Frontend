@@ -117,4 +117,31 @@
       justify-content: center;
     }
   }
+
+  .pagination {
+    margin: 100px;
+    margin-bottom: 0;
+    justify-content: center;
+
+    li {
+      margin: 0 10px;
+      padding: 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    a {
+      color: black;        
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .active {
+      filter: opacity(0.5);
+    }
+  }
 }

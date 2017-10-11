@@ -1,4 +1,4 @@
 /* @ngInject */
 export default function routes($urlRouterProvider) {
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/home');
 }

@@ -11301,7 +11301,7 @@ a.text-dark:focus, a.text-dark:hover {
   width: 100%;
   color: white;
   padding: 20px; }
-  .homepage-wrapper .header-container .button-hover, .homepage-wrapper .header-container .header-center .menu p:hover, .homepage-wrapper .header-container .header-right .header-right-item:hover {
+  .homepage-wrapper .header-container .button-hover, .homepage-wrapper .header-container .header-left:hover, .homepage-wrapper .header-container .header-center .menu p:hover, .homepage-wrapper .header-container .header-right .header-right-item:hover {
     cursor: pointer !important;
     filter: opacity(0.5); }
   .homepage-wrapper .header-container .header-left img {
@@ -11385,6 +11385,21 @@ a.text-dark:focus, a.text-dark:hover {
   .homepage-wrapper .content-container .catalog .image {
     display: flex;
     justify-content: center; }
+  .homepage-wrapper .content-container .pagination {
+    margin: 100px;
+    margin-bottom: 0;
+    justify-content: center; }
+    .homepage-wrapper .content-container .pagination li {
+      margin: 0 10px;
+      padding: 10px; }
+      .homepage-wrapper .content-container .pagination li:hover {
+        cursor: pointer; }
+    .homepage-wrapper .content-container .pagination a {
+      color: black; }
+      .homepage-wrapper .content-container .pagination a:hover {
+        text-decoration: none; }
+    .homepage-wrapper .content-container .pagination .active {
+      filter: opacity(0.5); }
 
 .homepage-wrapper .footer-container .hover, .homepage-wrapper .footer-container .networking label:hover, .homepage-wrapper .footer-container .info .menu-item:hover {
   cursor: pointer;

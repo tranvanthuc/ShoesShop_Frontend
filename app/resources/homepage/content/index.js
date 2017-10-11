@@ -1,10 +1,20 @@
 import angular from 'angular';
+import uirouter from 'angular-ui-router';
 
-import homepageContentCtrl from './homepage-content.controller';
 import homepageContent from './homepage-content.directive';
+import routes from './homepage-content.routes';
+
+import home from './home';
+import men from './men';
+import women from './women';
 
 /* @ngInject */
-export default angular.module('app.homepage.content', [])
+export default angular.module('app.homepage.content', [
+  uirouter,
+  home,
+  men,
+  women
+])
   .directive('homepageContent', homepageContent)
-  .controller('homepageContentCtrl', homepageContentCtrl)
+  .config(routes)
   .name

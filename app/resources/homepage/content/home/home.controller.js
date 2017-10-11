@@ -1,4 +1,4 @@
-import { hotProducts, newProducts, catalog } from '../fixture';
+import { hotProducts, newProducts, catalog } from '../../fixture';
 
 /* @ngInject */
 export default $scope => {
