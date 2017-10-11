@@ -43,6 +43,10 @@
     
     .carousel-item {
       height: 100vh;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
     
     img {

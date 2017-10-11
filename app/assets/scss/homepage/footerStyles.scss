@@ -1,4 +1,9 @@
 .footer-container {
+
+  .hover {
+    cursor: pointer;
+    filter: opacity(0.5);
+  }
   
   .networking {
     background-color: #ecf0f1;
@@ -9,6 +14,10 @@
     label {
       margin: 0 20px;
       font-size: 2em;
+
+      &:hover {
+        @extend .hover;
+      }
     }
   }
 
@@ -23,8 +32,7 @@
       text-align: center;
 
       &:hover {
-        cursor: pointer;
-        filter: opacity(0.5);
+        @extend .hover;
       }
     }
 

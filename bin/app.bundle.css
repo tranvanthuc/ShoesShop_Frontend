@@ -11302,7 +11302,8 @@ a.text-dark:focus, a.text-dark:hover {
   color: white;
   padding: 20px; }
   .homepage-wrapper .header-container .button-hover, .homepage-wrapper .header-container .header-center .menu p:hover, .homepage-wrapper .header-container .header-right .header-right-item:hover {
-    cursor: pointer; }
+    cursor: pointer !important;
+    filter: opacity(0.5); }
   .homepage-wrapper .header-container .header-left img {
     filter: invert(1); }
   .homepage-wrapper .header-container .header-center {
@@ -11341,6 +11342,8 @@ a.text-dark:focus, a.text-dark:hover {
       filter: opacity(0.6); }
   .homepage-wrapper .content-container .hot-products .carousel-item {
     height: 100vh; }
+    .homepage-wrapper .content-container .hot-products .carousel-item:hover {
+      cursor: pointer; }
   .homepage-wrapper .content-container .hot-products img {
     width: 100%;
     height: 100%;
@@ -11383,6 +11386,10 @@ a.text-dark:focus, a.text-dark:hover {
     display: flex;
     justify-content: center; }
 
+.homepage-wrapper .footer-container .hover, .homepage-wrapper .footer-container .networking label:hover, .homepage-wrapper .footer-container .info .menu-item:hover {
+  cursor: pointer;
+  filter: opacity(0.5); }
+
 .homepage-wrapper .footer-container .networking {
   background-color: #ecf0f1;
   padding: 50px;
@@ -11398,9 +11405,6 @@ a.text-dark:focus, a.text-dark:hover {
     margin-bottom: 50px !important; }
   .homepage-wrapper .footer-container .info .menu-item {
     text-align: center; }
-    .homepage-wrapper .footer-container .info .menu-item:hover {
-      cursor: pointer;
-      filter: opacity(0.5); }
   .homepage-wrapper .footer-container .info .copyright {
     text-align: center; }
 
