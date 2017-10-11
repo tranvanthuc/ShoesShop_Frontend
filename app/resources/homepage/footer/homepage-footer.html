@@ -1,0 +1,24 @@
+<!DOCTYPE <html>
+<div class="footer-container" ng-controller="homepageFooterCtrl">
+  <div class="networking">
+    <label>
+      <i class="fa fa-facebook-square"></i>
+    </label>
+    <label>
+      <i class="fa fa-twitter"></i>      
+    </label>
+    <label>
+      <i class="fa fa-instagram"></i>      
+    </label>
+  </div>
+  <div class="info">
+    <div class="menu row m-0">
+      <div class="menu-item col-4" ng-repeat="item in menu">
+        <h5 ng-bind="item"></h5>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2017 HELM Boots</p>
+    </div>
+  </div>
+</div>
