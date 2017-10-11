@@ -27,6 +27,10 @@
     img {
       filter: invert(1);
     }
+
+    &:hover {
+      @extend .button-hover;
+    }
   }
 
   .header-center {

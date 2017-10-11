@@ -4,7 +4,7 @@
     <h2>MEN</h2>
   </div>
   <div class="products items row m-0">
-    <div class="product item col-3" ng-repeat="item in list">
+    <div class="product item col-4" dir-paginate="item in list | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productsPagination">
       <div class="image">
         <img ng-src="/app/assets/images/{{ item.image }}">
       </div>
@@ -17,5 +17,11 @@
         </div>
       </div>
     </div>
+  </div>
+  <div
+    dir-pagination-controls
+    boudary-link="true"
+    pagination-id="productsPagination"
+    template-url="/app/resources/homepage/directive/dir-pagination.html">
   </div>
 </div>
