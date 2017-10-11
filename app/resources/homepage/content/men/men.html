@@ -1,0 +1,21 @@
+<!DOCTYPE html5>
+<div class="new-products bg-transparent-section" ng-controller="menCtrl">
+  <div class="title text-center">
+    <h2>MEN</h2>
+  </div>
+  <div class="products items row m-0">
+    <div class="product item col-3" ng-repeat="item in list">
+      <div class="image">
+        <img ng-src="/app/assets/images/{{ item.image }}">
+      </div>
+      <div class="info">
+        <div class="name text-center">
+          <h4 ng-bind="item.name"></h4>
+        </div>
+        <div class="price text-center">
+          <p ng-bind="item.price"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

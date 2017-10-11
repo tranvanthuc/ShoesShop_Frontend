@@ -1,4 +1,23 @@
-export const headerMenu = [ 'MEN', 'WOMEN', 'CATEGORIES', 'STORY' ];
+const PARENT_URL = 'homepage.';
+
+export const headerMenu = [
+  {
+    title: 'MEN',
+    url: PARENT_URL + 'men'
+  },
+  {
+    title: 'WOMEN',
+    url: PARENT_URL + 'women'
+  },
+  {
+    title: 'CATEGORIES',
+    url: PARENT_URL + 'men'
+  },
+  {
+    title: 'STORY',
+    url: PARENT_URL + 'story'
+  }
+];
 
 export const hotProducts = [
   {
@@ -38,11 +57,13 @@ export const newProducts = [ // 4 products
 export const catalog = [
   {
     title: 'Men',
-    image: 'H0052-04_1_250x_crop_top.jpg'
+    image: 'H0052-04_1_250x_crop_top.jpg',
+    url: PARENT_URL + 'men'
   },
   {
     title: 'Women',
-    image: 'FALL15_WEB_PRODUCT_SHOT_PABLOBLACKWOMEN_250x_crop_top.jpg'
+    image: 'FALL15_WEB_PRODUCT_SHOT_PABLOBLACKWOMEN_250x_crop_top.jpg',
+    url: PARENT_URL + 'women'
   }
 ]
 

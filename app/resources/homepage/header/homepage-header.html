@@ -5,8 +5,8 @@
   </div>
   <div class="header-center col-6">
     <div class="menu row m-0">
-      <div class="sub-menu col-3" ng-repeat="item in menu">
-        <p ng-bind="item"></p>
+      <div class="sub-menu col-3" ng-repeat="item in menu" ui-sref="{{ item.url }}">
+        <p ng-bind="item.title"></p>
       </div>
     </div>
   </div>
