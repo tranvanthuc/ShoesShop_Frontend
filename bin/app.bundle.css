@@ -11286,6 +11286,13 @@ a.text-dark:focus, a.text-dark:hover {
 .homepage-wrapper p, .homepage-wrapper label, .homepage-wrapper h1, .homepage-wrapper h2, .homepage-wrapper h3, .homepage-wrapper h4, .homepage-wrapper h5, .homepage-wrapper h6 {
   margin: 0; }
 
+.homepage-wrapper .background {
+  background-color: white;
+  color: black !important;
+  border-bottom: 1px solid #ecf0f1; }
+  .homepage-wrapper .background img {
+    filter: invert(0) !important; }
+
 .homepage-wrapper .header-container {
   position: fixed;
   top: 0;
@@ -11296,6 +11303,8 @@ a.text-dark:focus, a.text-dark:hover {
   padding: 20px; }
   .homepage-wrapper .header-container .button-hover, .homepage-wrapper .header-container .header-center .menu p:hover, .homepage-wrapper .header-container .header-right .header-right-item:hover {
     cursor: pointer; }
+  .homepage-wrapper .header-container .header-left img {
+    filter: invert(1); }
   .homepage-wrapper .header-container .header-center {
     display: flex;
     align-items: center; }

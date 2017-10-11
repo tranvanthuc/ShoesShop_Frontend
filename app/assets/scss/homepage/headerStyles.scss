@@ -1,3 +1,13 @@
+.background {
+  background-color: white;
+  color: black !important;
+  border-bottom: 1px solid #ecf0f1;
+  
+  img {
+    filter: invert(0) !important;
+  }
+}
+
 .header-container {
   position: fixed;
   top: 0;
@@ -9,6 +19,13 @@
 
   .button-hover {
     cursor: pointer;
+  }
+
+  .header-left {
+
+    img {
+      filter: invert(1);
+    }
   }
 
   .header-center {
