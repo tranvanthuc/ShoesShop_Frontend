@@ -46,9 +46,12 @@ export const catalog = [
   }
 ]
 
+export const footerMenu = ['COMPANY', 'HELP', 'CONTACT US'];
+
 export default {
   headerMenu,
   hotProducts,
   newProducts,
-  catalog
+  catalog,
+  footerMenu
 }

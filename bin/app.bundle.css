@@ -11374,4 +11374,25 @@ a.text-dark:focus, a.text-dark:hover {
     display: flex;
     justify-content: center; }
 
+.homepage-wrapper .footer-container .networking {
+  background-color: #ecf0f1;
+  padding: 50px;
+  display: flex;
+  justify-content: center; }
+  .homepage-wrapper .footer-container .networking label {
+    margin: 0 20px;
+    font-size: 2em; }
+
+.homepage-wrapper .footer-container .info {
+  padding: 50px 0 20px 0; }
+  .homepage-wrapper .footer-container .info .menu {
+    margin-bottom: 50px !important; }
+  .homepage-wrapper .footer-container .info .menu-item {
+    text-align: center; }
+    .homepage-wrapper .footer-container .info .menu-item:hover {
+      cursor: pointer;
+      filter: opacity(0.5); }
+  .homepage-wrapper .footer-container .info .copyright {
+    text-align: center; }
+
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL2FwcC5idW5kbGUuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
