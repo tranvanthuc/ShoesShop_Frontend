@@ -20,16 +20,4 @@ export default ($window, $rootScope, $scope) => {
       $scope.scrolling = true;      
     }
   });
-
-  $rootScope.$on('$stateChangeSuccess', (e, toState, toParams, fromState, fromParams) => {
-    $window.onscroll = () => {
-      if($window.scrollY > 0){
-        $scope.scrolling = true;      
-      } else {
-        $scope.scrolling = false;  
-        console.log($window.scrollY);
-      }
-      $scope.$apply();          
-    }
-  })
 }
