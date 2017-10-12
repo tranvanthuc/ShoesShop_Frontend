@@ -26,15 +26,6 @@ angular.module('app', [
   .config(routes)
   .run(['$rootScope', ($rootScope) => {
     $rootScope.$on('$stateChangeSuccess', (e, toState, toParams, fromState, fromParams) => {
-      // let stateName = toState.name;
-      // switch (stateName) {
-      //   case 'admin':
-      //     $rootScope.pageTitle = 'Admin Page';
-      //     break;
-      //   default:
-      //     $rootScope.pageTitle = 'Homepage';
-      //     break;
-      // }
-      // console.log(stateName);
+      $rootScope.currentState = toState.name;
     })
   }])
