@@ -1,0 +1,11 @@
+.sidebar-container {
+  position: fixed;
+  z-index: 999999999;
+  top: 0;
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+
+  .sidebar-menu-item {
+    padding: 10px 20px;
+  }
+}

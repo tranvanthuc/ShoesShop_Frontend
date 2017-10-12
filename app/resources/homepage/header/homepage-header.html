@@ -3,14 +3,19 @@
   <div class="header-left col-3" ui-sref="homepage.home">
     <img src="/app/assets/images/helm-logo.png">
   </div>
-  <div class="header-center col-6">
+  <div class="header-center col-sm-6">
     <div class="menu row m-0">
       <div class="sub-menu col-4" ng-repeat="item in menu" ui-sref="{{ item.url }}" ui-sref-active="active">
         <p ng-bind="item.title"></p>
       </div>
     </div>
   </div>
-  <div class="header-right col-3">
+  <div class="header-right col-9 col-sm-3">
+    <div class="menu-bar header-right-item">
+      <label>
+        <i class="fa fa-bars"></i>          
+      </label>
+    </div>
     <div class="search-container header-right-item">
       <label>
         <i class="fa fa-search"></i>          

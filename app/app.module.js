@@ -25,20 +25,7 @@ angular.module('app', [
   ])
   .config(routes)
   .run(['$rootScope', ($rootScope) => {
-    // $rootScope.current_state = 'home';
-    // $rootScope.isHome = false;
     $rootScope.$on('$stateChangeSuccess', (e, toState, toParams, fromState, fromParams) => {
-      // $rootScope.current_state = toState.name;
-      let stateName = toState.name.split('.')[1];
-      $rootScope.stateName = stateName;
-      // switch (stateName) {
-      //   case 'home':
-      //     $rootScope.isHome = true;
-      //     break;
-      //   default:
-      //     $rootScope.isHome = true;
-      //     break;
-      // }
-      // console.log(stateName);
+      $rootScope.currentState = toState.name;
     })
   }])

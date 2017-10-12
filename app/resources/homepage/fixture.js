@@ -58,12 +58,6 @@ export const catalog = [
     url: PARENT_URL + 'men',
     products: [
       {
-        name: 'Muller Teak Blucher',
-        price: '$385.00',
-        description: DESCRIPTION,
-        image: 'H0053-01_1_345x550.jpg'
-      },
-      {
         name: 'Muller Brown Blucher',
         price: '$385.00',
         description: DESCRIPTION,
