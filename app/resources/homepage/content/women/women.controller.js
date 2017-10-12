@@ -6,4 +6,6 @@ export default $scope => {
   
   $scope.currentPage = 1;
   $scope.pageSize = 6;
+
+  $('#women-products').css('padding-top', (100 + $('#homepage-header').outerHeight()) + 'px');
 }
