@@ -11297,9 +11297,11 @@ a.text-dark:focus, a.text-dark:hover {
   .homepage-wrapper .background {
     background-color: white;
     color: black !important;
-    border-bottom: 1px solid #ecf0f1; }
+    border-bottom-color: #ecf0f1 !important;
+    transition: all 0.5s linear; }
     .homepage-wrapper .background img {
-      filter: invert(0) !important; }
+      filter: invert(0) !important;
+      transition: all 0.5s; }
   .homepage-wrapper .header-container {
     position: fixed;
     top: 0;
@@ -11307,7 +11309,9 @@ a.text-dark:focus, a.text-dark:hover {
     z-index: 999;
     width: 100%;
     color: white;
-    padding: 20px; }
+    padding: 20px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s linear; }
     .homepage-wrapper .header-container .active {
       filter: opacity(0.5); }
     .homepage-wrapper .header-container .button-hover, .homepage-wrapper .header-container .header-left:hover, .homepage-wrapper .header-container .header-center .menu p:hover, .homepage-wrapper .header-container .header-right .header-right-item:hover {

@@ -8,13 +8,13 @@
         <li data-target="#carouselHotProducts" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active">
+        <div class="carousel-item active" ui-sref="homepage.detail">
           <img class="img-fluid" src="/app/assets/images/laneslide.jpg">
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" ui-sref="homepage.detail">
           <img class="img-fluid" src="/app/assets/images/laneslide1.jpeg">
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" ui-sref="homepage.detail">
           <img class="img-fluid" src="/app/assets/images/laneslide2.jpg">
         </div>
       </div>
@@ -25,7 +25,7 @@
       <h2>NEW ARRIVALS</h2>
     </div>
     <div class="products items row m-0">
-      <div class="product item col-3" ng-repeat="item in newProducts">
+      <div class="product item col-3" ng-repeat="item in newProducts" ui-sref="homepage.detail">
         <div class="image">
           <img ng-src="/app/assets/images/{{ item.image }}">
         </div>
