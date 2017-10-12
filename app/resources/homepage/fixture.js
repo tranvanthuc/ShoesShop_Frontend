@@ -11,10 +11,6 @@ export const headerMenu = [
     url: PARENT_URL + 'women'
   },
   {
-    title: 'CATEGORIES',
-    url: PARENT_URL + 'men'
-  },
-  {
     title: 'STORY',
     url: PARENT_URL + 'story'
   }

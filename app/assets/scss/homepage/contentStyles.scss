@@ -144,4 +144,33 @@
       filter: opacity(0.5);
     }
   }
+
+  .product-detail-container {
+    padding-bottom: 100px;
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .price, .option {
+      margin: 20px 0;
+    }
+
+    .cart {
+      display: flex;
+      align-items: flex-end;
+      text-align: center;
+    }
+
+    .cart-btn {
+      background-color: #34495e;
+      color: white;
+
+      &:hover {
+        cursor: pointer;
+        filter: opacity(0.8);
+      }
+    }
+  }
 }

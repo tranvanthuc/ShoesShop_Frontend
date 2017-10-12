@@ -24,13 +24,21 @@ angular.module('app', [
     homepage
   ])
   .config(routes)
-  // .run([($rootScope) => {
-  //   $rootScope.current_state = 'home';
-
-  //   $rootScope.$on('$stateChangeSuccess', (e, toState, toParams, fromState, fromParams) => {
-  //     $rootScope.current_state = toState.name;
-
-  //   })
-  //   console.log($rootScope.current_state);
-    
-  // }])
+  .run(['$rootScope', ($rootScope) => {
+    // $rootScope.current_state = 'home';
+    // $rootScope.isHome = false;
+    $rootScope.$on('$stateChangeSuccess', (e, toState, toParams, fromState, fromParams) => {
+      // $rootScope.current_state = toState.name;
+      let stateName = toState.name.split('.')[1];
+      $rootScope.stateName = stateName;
+      // switch (stateName) {
+      //   case 'home':
+      //     $rootScope.isHome = true;
+      //     break;
+      //   default:
+      //     $rootScope.isHome = true;
+      //     break;
+      // }
+      // console.log(stateName);
+    })
+  }])
