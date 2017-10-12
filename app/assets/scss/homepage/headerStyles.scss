@@ -1,10 +1,12 @@
 .background {
   background-color: white;
   color: black !important;
-  border-bottom: 1px solid #ecf0f1;
+  border-bottom-color: #ecf0f1 !important;
+  transition: all 0.5s linear;
   
   img {
     filter: invert(0) !important;
+    transition: all 0.5s;
   }
 }
 
@@ -16,6 +18,8 @@
   width: 100%;
   color: white;
   padding: 20px;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s linear;
 
   .active {
     filter: opacity(0.5);
