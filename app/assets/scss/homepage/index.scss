@@ -1,6 +1,8 @@
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 
 .homepage-wrapper {
+  overflow-x: hidden;
+  
   @import './styles.scss';
   @import './headerStyles.scss';
   @import './contentStyles.scss';
