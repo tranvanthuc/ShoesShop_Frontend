@@ -11344,6 +11344,21 @@ a.text-dark:focus, a.text-dark:hover {
       .homepage-wrapper .header-container .header-right .header-right-item {
         margin-left: 20px;
         font-size: 22px; }
+      .homepage-wrapper .header-container .header-right .search-form-inline:hover {
+        filter: none; }
+      .homepage-wrapper .header-container .header-right .search-form-inline label {
+        position: relative; }
+      .homepage-wrapper .header-container .header-right .search-form-inline input {
+        position: absolute;
+        top: 16%;
+        right: 0;
+        transform: translateX(-70%);
+        border-color: white;
+        transition: all 3s linear; }
+      .homepage-wrapper .header-container .header-right .search-form-inline .search-form-bg {
+        background: #ecf0f1;
+        border-color: #ecf0f1;
+        transition: none; }
   .homepage-wrapper .sidebar-container {
     position: fixed;
     z-index: 999999999;

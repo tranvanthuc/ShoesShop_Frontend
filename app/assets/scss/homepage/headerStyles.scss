@@ -87,5 +87,31 @@
         @extend .button-hover;
       }
     }
+
+    .search-form-inline {
+
+      &:hover {
+        filter: none;
+      }
+      
+      label {
+        position: relative;
+      }
+
+      input {
+        position: absolute;
+        top: 16%;
+        right: 0;
+        transform: translateX(-70%);
+        border-color: white;
+        transition: all 3s linear;
+      }
+
+      .search-form-bg {
+        background: #ecf0f1;
+        border-color: #ecf0f1;
+        transition: none;
+      }
+    }
   }
 }
