@@ -1,7 +1,7 @@
 import { headerMenu } from '../fixture';
 
 /* @ngInject */
-export default ($window, $rootScope, $scope) => {
+export default ($window, $rootScope, $scope, $http) => {
   $scope.menu = headerMenu;
 
   /* Handle scrolling */
@@ -31,4 +31,17 @@ export default ($window, $rootScope, $scope) => {
     $scope.showSearchForm = newVal;
   });
   
+  $scope.submit = () => {
+    let object = {
+      first_name: 'dung',
+      last_name: 'le',
+      email: 'dungle1811@gmail.com',
+      password: 'abc',
+      role_id: 3
+    }
+
+    $http.post('https://calm-dawn-66282.herokuapp.com/register', object).then((response) => {
+      console.log(response);
+    })
+  }
 }
