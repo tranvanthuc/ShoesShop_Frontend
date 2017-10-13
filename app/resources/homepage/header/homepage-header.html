@@ -12,14 +12,17 @@
   </div>
   <div class="header-right col-9 col-sm-3">
     <div class="menu-bar header-right-item">
-      <label>
+      <label for="search">
         <i class="fa fa-bars"></i>          
       </label>
     </div>
     <div class="search-container header-right-item">
-      <label>
-        <i class="fa fa-search"></i>          
-      </label>
+      <div class="form-group m-0" ng-class="showSearchForm ? 'search-form-inline' : null">
+        <label ng-click="_onSearchClick()">
+          <i class="fa fa-search"></i>          
+        </label>
+        <input type="text" class="search-form form-control" id="search" ng-if="showSearchForm" ng-class="scrolling ? 'search-form-bg' : null">
+      </div>
     </div>
     <div class="authen-container header-right-item">
       <label>

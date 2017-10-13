@@ -32,10 +32,10 @@ angular.module('app', [
 
       switch ($rootScope.currentState.split('.')[0]) {
         case 'admin':
-          $rootScope.pageTitle = 'Admin Page';
+          $rootScope.pageTitle = 'The Helm - Admin Page';
           break;
         default:
-          $rootScope.pageTitle = 'Homepage';  
+          $rootScope.pageTitle = 'The Helm';  
           break;
       }
     });
