@@ -31,17 +31,35 @@ export default ($window, $rootScope, $scope, $http) => {
     $scope.showSearchForm = newVal;
   });
   
+  // $scope.submit = () => {
+  //   let object = {
+  //     first_name: 'Thuc',
+  //     last_name: 'Tran Van',
+  //     email: 'thuc.tv@neo-lab.vn',
+  //     password: '123',
+  //     role_id: 1
+  //   }
+  //   $http.post('http://localhost:8000/register', object,{
+  //     headers : {
+  //         'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+  //     }
+  //   }).then((response) => {
+  //     console.log(response.data);
+  //   })
+  // }
   $scope.submit = () => {
     let object = {
-      first_name: 'dung',
-      last_name: 'le',
-      email: 'dungle1811@gmail.com',
-      password: 'abc',
-      role_id: 3
+      id: 18,
+      email: 'thuc.tv@neo-lab.vn',
+      currentPassword: '123',
+      // newPassword: '1234',
     }
-
-    $http.post('https://calm-dawn-66282.herokuapp.com/register', object).then((response) => {
-      console.log(response);
+    $http.post('http://localhost:8000/user/update-password', object,{
+      headers : {
+          'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+      }
+    }).then((response) => {
+      console.log(response.data);
     })
   }
 }
