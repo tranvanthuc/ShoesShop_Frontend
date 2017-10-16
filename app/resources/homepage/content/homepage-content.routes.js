@@ -6,8 +6,13 @@ export default $stateProvider => {
       parent: 'homepage',
       template: require('./home/home.html'),
     })
+    .state('homepage.products', {
+      url: 'catalog/{catalogName}/{categoryName}/products',
+      parent: 'homepage',
+      template: require('./men/men.html'),
+    })
     .state('homepage.men', {
-      url: 'catalog/men',
+      url: 'catalog/men/{categoryName}/products',
       parent: 'homepage',
       template: require('./men/men.html'),
     })
@@ -17,7 +22,7 @@ export default $stateProvider => {
       template: require('./women/women.html'),
     })
     .state('homepage.detail', {
-      url: 'products/product-name',
+      url: 'products/{name}',
       parent: 'homepage',
       template: require('./detail/detail.html'),
     })

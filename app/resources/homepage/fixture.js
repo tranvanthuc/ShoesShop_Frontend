@@ -4,15 +4,18 @@ const DESCRIPTION = 'Full-grain Horween Chromexcel® leather. Fully lined with n
 export const headerMenu = [
   {
     title: 'MEN',
-    url: PARENT_URL + 'men'
+    url: PARENT_URL + 'men',
+    categories: ['Rosen', 'Bab V2', 'Royale', 'Wooster', 'G-Knit']
   },
   {
     title: 'WOMEN',
-    url: PARENT_URL + 'women'
+    url: PARENT_URL + 'women',
+    categories: ['Rosen', 'Bab V2', 'Royale', 'Wooster', 'G-Knit', 'Hirsh', 'Slide']
   },
   {
     title: 'STORY',
-    url: PARENT_URL + 'story'
+    url: PARENT_URL + 'story',
+    categories: ['Rosen', 'Bab V2', 'Pronto', 'Wilson', 'Hirsh', 'Slide']
   }
 ];
 
@@ -180,7 +183,9 @@ export const catalog = [
       },
     ]
   }
-]
+];
+
+export const size = [20,21,22,23,24,25,26,27,28,29,30];
 
 export const footerMenu = ['COMPANY', 'HELP', 'CONTACT US'];
 
@@ -188,6 +193,7 @@ export default {
   headerMenu,
   hotProducts,
   newProducts,
+  size,
   catalog,
   footerMenu
 }

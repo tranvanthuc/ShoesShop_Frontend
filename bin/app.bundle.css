@@ -11314,7 +11314,7 @@ a.text-dark:focus, a.text-dark:hover {
     transition: all 0.3s linear; }
     .homepage-wrapper .header-container .active {
       filter: opacity(0.5); }
-    .homepage-wrapper .header-container .button-hover, .homepage-wrapper .header-container .header-left:hover, .homepage-wrapper .header-container .header-center .menu p:hover, .homepage-wrapper .header-container .header-right .header-right-item:hover {
+    .homepage-wrapper .header-container .button-hover, .homepage-wrapper .header-container .header-left:hover, .homepage-wrapper .header-container .header-center .menu p:hover, .homepage-wrapper .header-container .header-right .header-right-item:hover, .homepage-wrapper .header-container .categories-container .category:hover {
       cursor: pointer !important;
       filter: opacity(0.5); }
     .homepage-wrapper .header-container .header-left img {
@@ -11359,6 +11359,13 @@ a.text-dark:focus, a.text-dark:hover {
         background: #ecf0f1;
         border-color: #ecf0f1;
         transition: none; }
+    .homepage-wrapper .header-container .categories-container {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: black;
+      padding: 0 20px;
+      margin: auto; }
+      .homepage-wrapper .header-container .categories-container .category {
+        margin: 20px 0; }
   .homepage-wrapper .sidebar-container {
     position: fixed;
     z-index: 999999999;

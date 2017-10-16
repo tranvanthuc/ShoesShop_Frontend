@@ -4,7 +4,7 @@
     <h2>WOMEN</h2>
   </div>
   <div class="products items row m-0">
-      <div class="product item col-4" dir-paginate="item in list | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productsPagination" ui-sref="homepage.detail">
+      <div class="product item col-4" dir-paginate="item in list | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productsPagination" ui-sref="homepage.detail({name: item.name})">
       <div class="image">
         <img ng-src="/app/assets/images/{{ item.image }}">
       </div>

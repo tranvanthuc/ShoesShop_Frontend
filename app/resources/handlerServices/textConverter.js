@@ -21,3 +21,7 @@ export const reduceByChar = (text, length = DEFAULT_CHAR_MAX_LENGTH) => {
   }
   return output + (text.length > length - 1 ? '...' : '');
 }
+
+export const convertToUrlParam = (text = 'The Helm Store') => {
+  return text.split(' ').join('-');
+}

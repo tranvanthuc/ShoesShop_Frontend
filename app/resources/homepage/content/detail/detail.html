@@ -16,11 +16,7 @@
           <label for="sizeSelect" class="mb-1">Size</label>          
           <div class="size form-group m-0">
             <select class="form-control" id="sizeSelect">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              <option ng-repeat="item in size" ng-bind="item"></option>
             </select>
           </div>
         </div>
