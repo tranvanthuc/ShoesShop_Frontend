@@ -56,12 +56,12 @@
       </div>
     </div>
   </div>
-  <div class="catalog bg-transparent-section" ng-controller="homepageHeaderCtrl">
+  <div class="catalog bg-transparent-section">
     <div class="title text-center">
       <h2>THE HELM CATALOG</h2>
     </div>
     <div class="items row m-0">
-      <div class="item col-6" ng-repeat="catalogItem in menu" ng-click="_onSubMenuClick(catalogItem.title)">
+      <div class="item col-6" ng-repeat="catalogItem in menu" ui-sref="homepage.catalog({catalogName: catalogItem.title})">
         <div class="image">
           <img ng-src="{{ catalogItem.image }}">
         </div>

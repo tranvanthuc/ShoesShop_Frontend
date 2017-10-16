@@ -1,17 +1,8 @@
 import { headerMenu } from '../fixture';
-import { convertToUrlParam } from '../../handlerServices/textConverter';
+import { genderConverter } from '../../handlerServices';
 
 /* @ngInject */
 export default ($window, $rootScope, $scope, $http) => {
-  $scope._convertGenderToCatalogName = (gender) => {
-    switch (gender) {
-      case 'male':
-        return 'men';
-      default:
-        return 'women';
-    }
-  }
-
   $scope.catalogImages = ['https://cdn.shopify.com/s/files/1/0238/2821/products/Mens-Pronto-FW17-Suede-Burgundy-Product-001_600b49f1-bcb1-4367-9564-a497fb5da8cf_280x188.jpg?v=1507846145','https://cdn.shopify.com/s/files/1/0238/2821/products/RoyaleW-Blush-Perforated-Product-001_280x188.jpg?v=1489683360']
 
   /* Get all categories by catalog (men, women) */
@@ -29,13 +20,15 @@ export default ($window, $rootScope, $scope, $http) => {
     /* Convert JSON to Array (used in ng-repeat)*/
     Object.keys(data).map((item, index) => {
       arr.push({
-        title: $scope._convertGenderToCatalogName(catalogNames[index]),
+        title: genderConverter(catalogNames[index]),
         image: $scope.catalogImages[index],
         categories: data[item]
       })  
     });
 
     $scope.menu = arr;
+
+    $rootScope.headerHeight = $('#homepage-header').outerHeight();
   });
 
   

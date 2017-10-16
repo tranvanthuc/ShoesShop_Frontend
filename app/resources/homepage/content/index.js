@@ -5,6 +5,7 @@ import homepageContent from './homepage-content.directive';
 import routes from './homepage-content.routes';
 
 import home from './home';
+import catalog from './catalog';
 import category from './category';
 import detail from './detail';
 import cart from './cart';
@@ -13,6 +14,7 @@ import cart from './cart';
 export default angular.module('app.homepage.content', [
   uirouter,
   home,
+  catalog,
   category,
   detail,
   cart

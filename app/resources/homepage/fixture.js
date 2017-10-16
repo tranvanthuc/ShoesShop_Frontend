@@ -67,6 +67,45 @@ export const newProducts = [ // 4 products
   },
 ]
 
+export const productsByCategory = [ // max 6 products
+  {
+    name: 'Zind',
+    price: '$399.00',
+    description: DESCRIPTION,
+    image: 'https://cdn.shopify.com/s/files/1/0238/2821/products/Mens-Pronto-FW17-Suede-Nero-Product-001_280x188.jpg?v=1507834497'
+  },
+  {
+    name: 'Hooper Brown',
+    price: '$295.00',
+    description: DESCRIPTION,
+    image: 'https://cdn.shopify.com/s/files/1/0238/2821/products/Mens-Pronto-FW17-Suede-Burgundy-Product-001_600b49f1-bcb1-4367-9564-a497fb5da8cf_280x188.jpg?v=1507846145'
+  },
+  {
+    name: 'Hooper Black',
+    price: '$295.00',
+    description: DESCRIPTION,
+    image: 'https://cdn.shopify.com/s/files/1/0238/2821/products/Mens-Pronto-FW17-Leather-Cadet-Product-001_280x188.jpg?v=1507846061'
+  },
+  {
+    name: 'Muller Harrier Limited Edition',
+    price: '$385.00',
+    description: DESCRIPTION,
+    image: 'https://cdn.shopify.com/s/files/1/0238/2821/products/Pronto-Nero-Product-01_283bed75-3ae8-4ea8-a939-05d97f6b13e4_280x188.jpg?v=1504108648'
+  },
+  {
+    name: 'Hooper Black',
+    price: '$295.00',
+    description: DESCRIPTION,
+    image: 'https://cdn.shopify.com/s/files/1/0238/2821/products/Pronto-Graphite-Product-01_8c23b315-495f-44a9-9759-1f33608a5923_280x188.jpg?v=1504108629'
+  },
+  {
+    name: 'Muller Harrier Limited Edition',
+    price: '$385.00',
+    description: DESCRIPTION,
+    image: 'https://cdn.shopify.com/s/files/1/0238/2821/products/Mens-Pronto-Knit-Burgundy-Product-001_280x188.jpg?v=1506980210'
+  },
+]
+
 export const catalog = {
   'men': {
     title: 'Men',
@@ -206,6 +245,7 @@ export default {
   headerMenu,
   hotProducts,
   newProducts,
+  productsByCategory,
   size,
   catalog,
   footerMenu
