@@ -11444,6 +11444,8 @@ a.text-dark:focus, a.text-dark:hover {
       .homepage-wrapper .content-container .catalog-products {
         padding-left: 25px;
         padding-right: 25px; } }
+    .homepage-wrapper .content-container .catalog-products .category-name {
+      margin-bottom: 25px; }
     .homepage-wrapper .content-container .our-story {
       position: relative; }
       .homepage-wrapper .content-container .our-story img {

@@ -9,17 +9,7 @@ export default $stateProvider => {
     .state('homepage.products', {
       url: 'catalog/{catalogName}/{categoryName}/products',
       parent: 'homepage',
-      template: require('./men/men.html'),
-    })
-    .state('homepage.men', {
-      url: 'catalog/men/{categoryName}/products',
-      parent: 'homepage',
-      template: require('./men/men.html'),
-    })
-    .state('homepage.women', {
-      url: 'catalog/women',
-      parent: 'homepage',
-      template: require('./women/women.html'),
+      template: require('./catalog/catalog.html'),
     })
     .state('homepage.detail', {
       url: 'products/{name}',

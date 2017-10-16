@@ -54,8 +54,8 @@ export const newProducts = [ // 4 products
   },
 ]
 
-export const catalog = [
-  {
+export const catalog = {
+  'men': {
     title: 'Men',
     image: 'H0052-04_1_250x_crop_top.jpg',
     url: PARENT_URL + 'men',
@@ -164,7 +164,7 @@ export const catalog = [
       }
     ]
   },
-  {
+  'women': {
     title: 'Women',
     image: 'FALL15_WEB_PRODUCT_SHOT_PABLOBLACKWOMEN_250x_crop_top.jpg',
     url: PARENT_URL + 'women',
@@ -183,7 +183,7 @@ export const catalog = [
       },
     ]
   }
-];
+};
 
 export const size = [20,21,22,23,24,25,26,27,28,29,30];
 

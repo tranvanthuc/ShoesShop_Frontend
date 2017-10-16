@@ -15,7 +15,7 @@ export default ($window, $rootScope, $scope) => {
         } else {
           $scope.catalogActive = false;
         }
-        $scope.catalogName = subMenu;
+        $scope.catalogName = subMenu.toLowerCase();
         $scope.categories = item.categories;
       }
     })

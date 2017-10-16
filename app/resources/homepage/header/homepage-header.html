@@ -35,7 +35,7 @@
       </label>
     </div>
   </div>
-  <div class="categories-container row" ng-if="catalogClicked">
-    <p class="category col-3" ng-repeat="category in categories" ng-bind="category" ui-sref="homepage.products({catalogName: catalogName, categoryName: category})" ui-sref-active="active"></p>
+  <div class="categories-container row" id="categories" ng-if="catalogClicked">
+    <p class="category col-3" ng-repeat="category in categories" ng-bind="category" ui-sref="homepage.products({catalogName: catalogName, categoryName: category.toLowerCase()})" ui-sref-active="active"></p>
   </div>
 </div>

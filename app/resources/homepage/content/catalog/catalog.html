@@ -1,10 +1,11 @@
 <!DOCTYPE html5>
-<div class="new-products catalog-products bg-transparent-section" id="women-products" ng-controller="womenCtrl">
+<div class="new-products catalog-products bg-transparent-section" id="new-products" ng-controller="catalogCtrl">
   <div class="title text-center">
-    <h2>WOMEN</h2>
+    <h2 class="category-name" ng-bind="categoryName"></h2>
+    <h5 ng-bind="catalogName"></h5>
   </div>
   <div class="products items row m-0">
-      <div class="product item col-4" dir-paginate="item in list | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productsPagination" ui-sref="homepage.detail({name: item.name})">
+    <div class="product item col-6 col-sm-4" dir-paginate="item in list | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productsPagination" ui-sref="homepage.detail({name: item.name})">
       <div class="image">
         <img ng-src="/app/assets/images/{{ item.image }}">
       </div>
