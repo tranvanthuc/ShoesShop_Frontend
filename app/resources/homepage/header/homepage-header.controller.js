@@ -21,6 +21,8 @@ export default ($window, $rootScope, $scope) => {
     })
   }
 
+  
+
   /* Handle scrolling */
   $scope.$watch(() => {
     let stateName = $rootScope.currentState.split('.')[1];

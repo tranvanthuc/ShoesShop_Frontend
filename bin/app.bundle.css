@@ -11367,12 +11367,19 @@ a.text-dark:focus, a.text-dark:hover {
       .homepage-wrapper .header-container .categories-container .category {
         margin: 20px 0; }
   .homepage-wrapper .sidebar-container {
+    display: flex;
     position: fixed;
     z-index: 999999999;
     top: 0;
     background-color: rgba(0, 0, 0, 0.8);
     color: white; }
-    .homepage-wrapper .sidebar-container .sidebar-menu-item {
+    .homepage-wrapper .sidebar-container .menu-item {
+      padding: 10px 20px; }
+    .homepage-wrapper .sidebar-container .categories-container {
+      position: absolute;
+      left: 102.25px;
+      background-color: rgba(0, 0, 0, 0.9); }
+    .homepage-wrapper .sidebar-container .category {
       padding: 10px 20px; }
   .homepage-wrapper .content-container {
     position: relative;
