@@ -1,6 +1,11 @@
 <!DOCTYPE html5>
-<div class="sidebar-container" ng-controller="homepageSidebarCtrl">
-  <div class="sidebar-menu-item" ng-repeat="item in menu" ui-sref="{{ item.url }}" ui-sref-active="active">
+<div class="sidebar-container" ng-controller="homepageHeaderCtrl">
+  <div class="menu-container">
+    <div class="menu-item" ng-repeat="item in menu" ng-click="_onSubMenuClick(item.title)">
       <p ng-bind="item.title"></p>
+    </div>
+  </div>
+  <div class="categories-container" id="categories" ng-if="catalogClicked">
+    <p class="category" ng-repeat="category in categories" ng-bind="category" ui-sref="homepage.products({catalogName: catalogName, categoryName: category.toLowerCase()})" ui-sref-active="active"></p>
   </div>
 </div>

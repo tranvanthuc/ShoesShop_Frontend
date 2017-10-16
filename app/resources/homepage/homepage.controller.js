@@ -12,6 +12,9 @@ export default ($scope) => {
     $('.sidebar-container').animate({left: '-300px'}, 400);
   })
 
+  /* Sidebar menu */
+  $('.sidebar-container .categories-container').animate({left: '102.25px'}, 400);
+
   // $('.sidebar-menu-item').on('click', () => {
   //   console.log('object');
   //   $scope._hideSidebar();
