@@ -12,7 +12,7 @@ export default ($scope, $stateParams, $http) => {
 
   $http({
     method: 'GET',
-    url: 'https://calm-dawn-66282.herokuapp.com/cates',
+    url: 'https://calm-dawn-66282.herokuapp.com/cates/catalog',
     headers: {
       'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
     }
