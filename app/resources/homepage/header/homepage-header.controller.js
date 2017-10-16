@@ -31,6 +31,7 @@ export default ($window, $rootScope, $scope, $http) => {
     $scope.showSearchForm = newVal;
   });
   
+  // register
   // $scope.submit = () => {
   //   let object = {
   //     first_name: 'Thuc',
@@ -47,14 +48,31 @@ export default ($window, $rootScope, $scope, $http) => {
   //     console.log(response.data);
   //   })
   // }
+
+  // change password
+  // $scope.submit = () => {
+  //   let object = {
+  //     id: 18,
+  //     email: 'thuc.tv@neo-lab.vn',
+  //     currentPassword: '123',
+  //     // newPassword: '1234',
+  //   }
+  //   $http.post('http://localhost:8000/user/update-password', object,{
+  //     headers : {
+  //         'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+  //     }
+  //   }).then((response) => {
+  //     console.log(response.data);
+  //   })
+  // }
+
+  // login 
   $scope.submit = () => {
     let object = {
-      id: 18,
       email: 'thuc.tv@neo-lab.vn',
-      currentPassword: '123',
-      // newPassword: '1234',
+      password: '1234',
     }
-    $http.post('http://localhost:8000/user/update-password', object,{
+    $http.post('http://localhost:8000/login', object,{
       headers : {
           'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
       }
@@ -62,4 +80,22 @@ export default ($window, $rootScope, $scope, $http) => {
       console.log(response.data);
     })
   }
+
+  // get by id
+  // $scope.submit = () => {
+  //   let object = {
+  //     id: 2,
+  //   };
+  //   $http({
+  //     method : "post",
+  //     url : "http://localhost:8000/users/user",
+  //     data: object,
+  //     headers: {
+  //       'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+  //     }
+  //   })
+  //   .then((response) => {
+  //     console.log(response.data);
+  //   });
+  // }
 }
