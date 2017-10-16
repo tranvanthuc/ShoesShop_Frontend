@@ -21,12 +21,21 @@ export const headerMenu = [
 
 export const hotProducts = [
   {
+    name: 'Zind',
+    price: '$399.00',
+    description: DESCRIPTION,
     image: 'laneslide.jpg',
   },
   {
+    name: 'Zind',
+    price: '$399.00',
+    description: DESCRIPTION,
     image: 'laneslide1.jpg',
   },
   {
+    name: 'Zind',
+    price: '$399.00',
+    description: DESCRIPTION,
     image: 'laneslide2.jpg',
   }
 ]
@@ -35,21 +44,25 @@ export const newProducts = [ // 4 products
   {
     name: 'Zind',
     price: '$399.00',
+    description: DESCRIPTION,
     image: 'ZIND_PRODUCTSHOT.jpg'
   },
   {
     name: 'Hooper Brown',
     price: '$295.00',
+    description: DESCRIPTION,
     image: 'HOOPER_PRODUCTSHOT_BROWN.jpg'
   },
   {
     name: 'Hooper Black',
     price: '$295.00',
+    description: DESCRIPTION,
     image: 'HOOPER_PRODUCTSHOT_BLACK.jpg'
   },
   {
     name: 'Muller Harrier Limited Edition',
     price: '$385.00',
+    description: DESCRIPTION,
     image: 'MULLERTEAK_HARRIER_PRODUCTSHOT.jpg'
   },
 ]

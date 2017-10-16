@@ -35,3 +35,10 @@ export const capitalize = (text) => {
   }
   return output.join(' ');
 }
+
+export default {
+  reduceByWords,
+  reduceByChar,
+  convertToUrlParam,
+  capitalize
+}

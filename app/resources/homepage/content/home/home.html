@@ -25,7 +25,7 @@
       <h2>NEW ARRIVALS</h2>
     </div>
     <div class="products items row m-0">
-      <div class="product item col-3" ng-repeat="item in newProducts" ui-sref="homepage.detail({name: item.name})">
+      <div class="product item col-3" ng-repeat="item in newProducts" ui-sref="homepage.detail({productName: item.name})">
         <div class="image">
           <img ng-src="/app/assets/images/{{ item.image }}">
         </div>
