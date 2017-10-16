@@ -56,17 +56,17 @@
       </div>
     </div>
   </div>
-  <div class="catalog bg-transparent-section">
+  <div class="catalog bg-transparent-section" ng-controller="homepageHeaderCtrl">
     <div class="title text-center">
       <h2>THE HELM CATALOG</h2>
     </div>
     <div class="items row m-0">
-      <div class="item col-6" ng-repeat="item in catalog" ui-sref="{{ item.url }}">
+      <div class="item col-6" ng-repeat="catalogItem in menu" ng-click="_onSubMenuClick(catalogItem.title)">
         <div class="image">
-          <img ng-src="/app/assets/images/{{ item.image }}">
+          <img ng-src="{{ catalogItem.image }}">
         </div>
         <div class="name text-center">
-          <h4 ng-bind="item.title"></h4>
+          <h4 ng-bind="catalogItem.title.toUpperCase()"></h4>
         </div>
       </div>
     </div>

@@ -6,7 +6,10 @@
   <div class="header-center col-sm-6">
     <div class="menu row m-0">
       <div class="sub-menu col-4" ng-repeat="catalogItem in menu" ng-click="_onSubMenuClick(catalogItem.title)" ng-class="catalogActive ? 'active' : null">
-        <p ng-bind="catalogItem.title"></p>
+        <p ng-bind="catalogItem.title.toUpperCase()"></p>
+      </div>
+      <div class="sub-menu col-4">
+        <p>STORY</p>
       </div>
     </div>
   </div>
@@ -36,6 +39,6 @@
     </div>
   </div>
   <div class="categories-container row" id="categories" ng-if="catalogClicked">
-    <p class="category col-3" ng-repeat="category in categories" ng-bind="category" ui-sref="homepage.products({catalogName: catalogName, categoryName: category.toLowerCase()})" ui-sref-active="active"></p>
+    <p class="category col-4" ng-repeat="category in categories" ui-sref="homepage.products({catalogName: catalogName, categoryName: category.name.toLowerCase()})" ui-sref-active="active" ng-bind="category.name"></p>
   </div>
 </div>
