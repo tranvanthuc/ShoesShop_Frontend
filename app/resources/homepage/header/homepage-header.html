@@ -5,8 +5,8 @@
   </div>
   <div class="header-center col-sm-6">
     <div class="menu row m-0">
-      <div class="sub-menu col-4" ng-repeat="item in menu" ui-sref="{{ item.url }}" ui-sref-active="active">
-        <p ng-bind="item.title"></p>
+      <div class="sub-menu col-4" ng-repeat="catalogItem in menu" ng-click="_onSubMenuClick(catalogItem.title)" ng-class="catalogActive ? 'active' : null">
+        <p ng-bind="catalogItem.title"></p>
       </div>
     </div>
   </div>
@@ -34,5 +34,8 @@
         <i class="fa fa-shopping-cart"></i>          
       </label>
     </div>
+  </div>
+  <div class="categories-container row" id="categories" ng-if="catalogClicked">
+    <p class="category col-3" ng-repeat="category in categories" ng-bind="category" ui-sref="homepage.products({catalogName: catalogName, categoryName: category.toLowerCase()})" ui-sref-active="active"></p>
   </div>
 </div>

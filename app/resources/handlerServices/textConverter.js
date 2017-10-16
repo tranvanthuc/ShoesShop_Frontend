@@ -21,3 +21,17 @@ export const reduceByChar = (text, length = DEFAULT_CHAR_MAX_LENGTH) => {
   }
   return output + (text.length > length - 1 ? '...' : '');
 }
+
+export const convertToUrlParam = (text = 'The Helm Store') => {
+  return text.split(' ').join('-');
+}
+
+export const capitalize = (text) => {
+  let words = text.split(' ');
+  let output = [];
+  for(let i=0; i<words.length; i++) {
+    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+    output.push(words[i]);
+  }
+  return output.join(' ');
+}

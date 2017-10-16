@@ -38,6 +38,8 @@ angular.module('app', [
           $rootScope.pageTitle = 'The Helm';  
           break;
       }
+
+      $('#categories').css('display', 'none');
     });
 
     $rootScope.$on('$stateChangeFail', (e, toState, toParams, fromtState, fromParams) => {});
