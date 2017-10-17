@@ -7,6 +7,7 @@ import homepageHeader from './header';
 import homepageContent from './content';
 import homepageFooter from './footer';
 import homepageSidebar from './sidebar';
+import api from './services';
 
 /* @ngInject */
 export default angular.module('app.homepage', [
@@ -14,7 +15,8 @@ export default angular.module('app.homepage', [
     homepageHeader,
     homepageContent,
     homepageFooter,
-    homepageSidebar
+    homepageSidebar,
+    api
   ])
   .controller('homepageCtrl', homepageCtrl)
   .config(routes)

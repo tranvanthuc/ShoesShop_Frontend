@@ -17,7 +17,7 @@ export default $stateProvider => {
       template: require('./catalog/catalog.html'),
     })
     .state('homepage.category', {
-      url: '{catalogName}/{categoryName}/products',
+      url: '{catalogName}/{categoryName}/{categoryId}/products',
       parent: 'homepage',
       template: require('./category/category.html'),
     })

@@ -79,6 +79,4 @@ export default ($window, $rootScope, $scope, $http) => {
   // $scope.$watch('onSearchLick', (newVal, oldVal) => {
   //   $scope.showSearchForm = newVal;
   // });
-  
-  
 }

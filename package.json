@@ -20,6 +20,7 @@
     "bootstrap": "^4.0.0-beta",
     "install": "^0.10.1",
     "jquery": "^3.2.1",
+    "ngstorage": "^0.3.11",
     "npm": "^5.4.2",
     "popper.js": "^1.12.5",
     "tether": "^1.4.0"

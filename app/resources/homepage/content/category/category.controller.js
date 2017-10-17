@@ -1,3 +1,5 @@
+import angular from 'angular';
+
 import { catalog } from '../../fixture';
 import { capitalize, convertToUrlParam } from '../../../handlerServices/textConverter';
 
@@ -13,8 +15,11 @@ export default ($rootScope, $scope, $stateParams, $http) => {
 
   /* Get products by category and catalog from API */
   $http({
-    method: 'GET',
-    url: 'https://calm-dawn-66282.herokuapp.com/product-details',
+    method: 'POST',
+    url: 'https://calm-dawn-66282.herokuapp.com/product-details/category',
+    data: {
+      category_id: $stateParams.categoryId
+    },
     headers: {
       'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
     }
