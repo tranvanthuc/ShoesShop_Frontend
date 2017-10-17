@@ -11426,6 +11426,10 @@ a.text-dark:focus, a.text-dark:hover {
         filter: opacity(0.3); }
       .homepage-wrapper .content-container .product-style:hover .info {
         display: block; }
+    .homepage-wrapper .content-container .hot-products video::-webkit-media-controls-timeline {
+      display: none; }
+    .homepage-wrapper .content-container .hot-products video::-webkit-media-controls {
+      display: none; }
     .homepage-wrapper .content-container .hot-products .carousel-item {
       height: 100vh; }
       .homepage-wrapper .content-container .hot-products .carousel-item:hover {

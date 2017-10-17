@@ -83,6 +83,14 @@
   }
 
   .hot-products {
+
+    video::-webkit-media-controls-timeline {
+      display: none;
+    }
+
+    video::-webkit-media-controls {
+      display: none;
+    }
     
     .carousel-item {
       height: 100vh;

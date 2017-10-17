@@ -1,9 +1,21 @@
-import { size } from '../../fixture';
-import { convertToUrlParam } from '../../../handlerServices/textConverter';
+import { capitalize } from '../../../handlerServices/textConverter';
 
 /* @ngInject */
-export default ($scope, $stateParams) => {
-  $scope.size = size;
+export default ($rootScope, $scope, $stateParams, $api) => {
+  $rootScope.$watch('headerHeight', (newVal) => {
+    $('#product-detail').css('padding-top', (70 + newVal) + 'px'); 
+  });
 
-  $('#product-detail').css('padding-top', (100 + $('#homepage-header').outerHeight()) + 'px');
+  $scope.catalogName = capitalize($stateParams.catalogName) + "'s";
+
+  /* Get product info */
+  $api('product/all-info', {
+    method: 'POST',
+    data: {
+      id: $stateParams.productId
+    }
+  }).then(response => {
+    $scope.product = response.data.results;
+    $scope.product.price = '$' + $scope.product.price;
+  });
 }

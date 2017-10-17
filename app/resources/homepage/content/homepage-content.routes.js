@@ -22,7 +22,7 @@ export default $stateProvider => {
       template: require('./category/category.html'),
     })
     .state('homepage.detail', {
-      url: 'products/{productName}',
+      url: '{catalogName}/products/{productName}/{productId}',
       parent: 'homepage',
       template: require('./detail/detail.html'),
     })
