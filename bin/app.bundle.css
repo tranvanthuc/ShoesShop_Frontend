@@ -11389,16 +11389,16 @@ a.text-dark:focus, a.text-dark:hover {
     .homepage-wrapper .content-container .text-center {
       text-align: center; }
     .homepage-wrapper .content-container .bg-transparent-section {
-      padding: 70px 100px; }
+      padding: 0 100px 70px 100px; }
       @media (max-width: 800px) {
         .homepage-wrapper .content-container .bg-transparent-section {
           padding-right: 50px;
           padding-left: 50px; } }
       @media (max-width: 640px) {
         .homepage-wrapper .content-container .bg-transparent-section {
-          padding: 50px 20px; } }
+          padding: 0 20px 50px 20px; } }
       .homepage-wrapper .content-container .bg-transparent-section .title {
-        margin-bottom: 50px; }
+        margin: 50px 0; }
         .homepage-wrapper .content-container .bg-transparent-section .title h2 {
           letter-spacing: 0.1em;
           font-weight: 400; }
@@ -11407,6 +11407,25 @@ a.text-dark:focus, a.text-dark:hover {
       .homepage-wrapper .content-container .bg-transparent-section .item:hover {
         cursor: pointer;
         filter: opacity(0.6); }
+    .homepage-wrapper .content-container .product-style {
+      position: relative; }
+      .homepage-wrapper .content-container .product-style img {
+        width: 100%;
+        object-fit: contain; }
+      .homepage-wrapper .content-container .product-style p {
+        font-size: 14px;
+        color: black; }
+      .homepage-wrapper .content-container .product-style .info {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: black; }
+      .homepage-wrapper .content-container .product-style:hover img {
+        filter: opacity(0.3); }
+      .homepage-wrapper .content-container .product-style:hover .info {
+        display: block; }
     .homepage-wrapper .content-container .hot-products .carousel-item {
       height: 100vh; }
       .homepage-wrapper .content-container .hot-products .carousel-item:hover {
@@ -11426,7 +11445,7 @@ a.text-dark:focus, a.text-dark:hover {
       font-size: 18px; }
     .homepage-wrapper .content-container .new-products img {
       width: 100%;
-      object-fit: cover; }
+      object-fit: contain; }
     @media (max-width: 1038px) {
       .homepage-wrapper .content-container .new-products .info h4, .homepage-wrapper .content-container .new-products .info p {
         font-size: 20px; } }

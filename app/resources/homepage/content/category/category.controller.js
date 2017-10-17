@@ -2,19 +2,31 @@ import { catalog } from '../../fixture';
 import { capitalize, convertToUrlParam } from '../../../handlerServices/textConverter';
 
 /* @ngInject */
-export default ($scope, $stateParams) => {
-  $scope.catalogName = capitalize($stateParams.catalogName) + "'s";
-  $scope.categoryName = 'The ' + capitalize($stateParams.categoryName);
-  $scope.list = catalog[$stateParams.catalogName.toLowerCase()].products;
-  $scope.list.forEach(item => {
-    item.productName = convertToUrlParam(item.name.toLowerCase());
+export default ($rootScope, $scope, $stateParams, $http) => {
+  $rootScope.$watch('headerHeight', (newVal) => {
+    $('#new-products').css('padding-top', newVal + 'px'); 
   });
 
-  
+  /* Get catalog and category name */
+  $scope.catalogName = capitalize($stateParams.catalogName) + "'s";
+  $scope.categoryName = 'The ' + capitalize($stateParams.categoryName);
+
+  /* Get products by category and catalog from API */
+  $http({
+    method: 'GET',
+    url: 'https://calm-dawn-66282.herokuapp.com/product-details',
+    headers: {
+      'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+    }
+  }).then(response => {
+    $scope.products = response.data.results;
+    $scope.products.forEach(item => {
+      item.productName = convertToUrlParam(item.name);
+      item.price = '$' + item.price;
+    });
+  })
 
   /* Pagination */
   $scope.currentPage = 1;
-  $scope.pageSize = 6;
-
-  $('#new-products').css('padding-top', (100 + $('#homepage-header').outerHeight()) + 'px');
+  $scope.pageSize = 8;
 }
