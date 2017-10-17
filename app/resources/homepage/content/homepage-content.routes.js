@@ -6,6 +6,11 @@ export default $stateProvider => {
       parent: 'homepage',
       template: require('./home/home.html'),
     })
+    .state('homepage.cart', {
+      url: 'cart',
+      parent: 'homepage',
+      template: require('./cart/cart.html'),
+    })
     .state('homepage.catalog', {
       url: '{catalogName}',
       parent: 'homepage',

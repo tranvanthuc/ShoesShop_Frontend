@@ -11627,6 +11627,14 @@ a.text-dark:focus, a.text-dark:hover {
         filter: opacity(0.3); }
       .homepage-wrapper .content-container .catalog-container .product:hover .info {
         display: block; }
+    .homepage-wrapper .content-container .cart-container .vertical-center {
+      display: flex;
+      align-items: center; }
+    .homepage-wrapper .content-container .cart-container .cart-row {
+      padding: 20px 0;
+      border-bottom: 1px solid #ecf0f1; }
+    .homepage-wrapper .content-container .cart-container .info {
+      line-height: 2.5; }
   .homepage-wrapper .footer-container .hover, .homepage-wrapper .footer-container .networking label:hover, .homepage-wrapper .footer-container .info .menu-item:hover {
     cursor: pointer;
     filter: opacity(0.5); }

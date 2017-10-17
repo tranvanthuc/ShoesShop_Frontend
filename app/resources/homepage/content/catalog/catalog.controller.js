@@ -19,7 +19,6 @@ export default ($rootScope, $scope, $stateParams, $http) => {
     })
     .then((response) => {
       $scope.categories = response.data.results;
-      console.log(response.data.results);
     })
 
   switch ($stateParams.catalogName) {
