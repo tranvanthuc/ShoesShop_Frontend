@@ -1,15 +1,37 @@
-import { catalog } from '../../fixture';
-import { capitalize } from '../../../handlerServices/textConverter';
+import { productsByCategory } from '../../fixture';
+import { genderConverter } from '../../../handlerServices';
 
 /* @ngInject */
-export default ($scope, $stateParams) => {
-  $scope.catalogName = capitalize($stateParams.catalogName) + "'s";
-  $scope.categoryName = 'The ' + capitalize($stateParams.categoryName);
-  $scope.list = catalog[$stateParams.catalogName.toLowerCase()].products;
+export default ($rootScope, $scope, $stateParams, $http) => {
+  $rootScope.$watch('headerHeight', (newVal, oldVal) => {
+    $('#catalog-container').css('padding-top', newVal + 'px'); 
+  });
 
-  /* Pagination */
-  $scope.currentPage = 1;
-  $scope.pageSize = 6;
+  $scope.productsByCategory = productsByCategory;
 
-  $('#new-products').css('padding-top', (100 + $('#homepage-header').outerHeight()) + 'px');
+  $http.post(
+    'https://calm-dawn-66282.herokuapp.com/cates/gender',
+    {gender: genderConverter.toGender($stateParams.catalogName)},
+    {
+      headers: {
+        'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+      }
+    })
+    .then((response) => {
+      $scope.categories = response.data.results;
+      console.log(response.data.results);
+    })
+
+  switch ($stateParams.catalogName) {
+    case 'men':
+      return $scope.catalog = {
+        title: "Men's",
+        image: 'https://d2zy73x1fg2nl6.cloudfront.net/images/collection/Men_collection_desktop_171003.jpg'
+      }   
+    default:
+      return $scope.catalog = {
+        title: "Women's",
+        image: 'https://d2zy73x1fg2nl6.cloudfront.net/images/collection/Womens_collection_desktop_171003.jpg'
+      }
+  }
 }

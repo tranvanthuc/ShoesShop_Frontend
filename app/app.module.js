@@ -40,6 +40,7 @@ angular.module('app', [
       }
 
       $('#categories').css('display', 'none');
+      $('.homepage-wrapper').animate({scrollTop: 0}, 'fast');
     });
 
     $rootScope.$on('$stateChangeFail', (e, toState, toParams, fromtState, fromParams) => {});

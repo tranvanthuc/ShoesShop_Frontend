@@ -2,6 +2,7 @@ import angular from 'angular';
 
 import catalogCtrl from './catalog.controller';
 
-export default angular.module('app.hompage.content.catalog', [])
+/* @ngInject */
+export default angular.module('app.catalogpage.content.catalog', [])
   .controller('catalogCtrl', catalogCtrl)
   .name
