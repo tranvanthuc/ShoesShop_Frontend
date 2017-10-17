@@ -8,42 +8,25 @@
       <img ng-src="{{ catalog.image }}">
     </div>
   </div>
-  <div class="new-products bg-transparent-section">
-    <div class="title text-center">
-      <h2>THE PRONTO</h2>
-    </div>
-    <div class="products items row m-0">
-      <div class="product item col-3" ng-repeat="item in productsByCategory" ui-sref="homepage.detail({productName: item.name})">
-        <img ng-src="{{ item.image }}">
-        <div class="info">
-          <div class="name text-center">
-            <p ng-bind="item.name"></p>
-          </div>
-          <div class="price text-center">
-            <p ng-bind="item.price"></p>
+  <div ng-repeat="category in categories">
+    <div class="new-products bg-transparent-section">
+      <div class="title text-center">
+        <h2 ng-bind="category.name"></h2>
+      </div>
+      <div class="products items row m-0">
+        <div class="product item col-3" ng-repeat="item in productsByCategory" ui-sref="homepage.detail({productName: item.name})">
+          <img ng-src="{{ item.image }}">
+          <div class="info">
+            <div class="name text-center">
+              <p ng-bind="item.name"></p>
+            </div>
+            <div class="price text-center">
+              <p ng-bind="item.price"></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="underline" ng-if="$index !== categories.length - 1"></div> 
   </div>
-  <div class="underline"></div>  
-  <div class="new-products bg-transparent-section">
-    <div class="title text-center">
-      <h2>THE PRONTO</h2>
-    </div>
-    <div class="products items row m-0">
-      <div class="product item col-3" ng-repeat="item in productsByCategory" ui-sref="homepage.detail({productName: item.name})">
-        <img ng-src="{{ item.image }}">
-        <div class="info">
-          <div class="name text-center">
-            <p ng-bind="item.name"></p>
-          </div>
-          <div class="price text-center">
-            <p ng-bind="item.price"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="underline"></div>  
 </div>

@@ -23,7 +23,7 @@ export default ($scope, $http) => {
     /* Convert JSON to Array (used in ng-repeat)*/
     Object.keys(data).map((item, index) => {
       arr.push({
-        title: genderConverter(catalogNames[index]),
+        title: genderConverter.toCatalog(catalogNames[index]),
         image: $scope.catalogImages[index],
         categories: data[item]
       })  

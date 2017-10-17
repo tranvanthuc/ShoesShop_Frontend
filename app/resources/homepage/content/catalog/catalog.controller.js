@@ -1,13 +1,26 @@
 import { productsByCategory } from '../../fixture';
-// import { genderConverter } from '../../../handlerServices';
+import { genderConverter } from '../../../handlerServices';
 
 /* @ngInject */
 export default ($rootScope, $scope, $stateParams, $http) => {
-  $scope.productsByCategory = productsByCategory;
-
   $rootScope.$watch('headerHeight', (newVal, oldVal) => {
     $('#catalog-container').css('padding-top', newVal + 'px'); 
   });
+
+  $scope.productsByCategory = productsByCategory;
+
+  $http.post(
+    'https://calm-dawn-66282.herokuapp.com/cates/gender',
+    {gender: genderConverter.toGender($stateParams.catalogName)},
+    {
+      headers: {
+        'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+      }
+    })
+    .then((response) => {
+      $scope.categories = response.data.results;
+      console.log(response.data.results);
+    })
 
   switch ($stateParams.catalogName) {
     case 'men':
