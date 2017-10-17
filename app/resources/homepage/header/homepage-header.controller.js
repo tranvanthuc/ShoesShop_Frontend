@@ -1,5 +1,5 @@
 import { headerMenu } from '../fixture';
-import { genderConverter } from '../../handlerServices';
+import { genderConverter, textConverter } from '../../handlerServices';
 
 /* @ngInject */
 export default ($window, $rootScope, $scope, $http) => {
@@ -48,9 +48,10 @@ export default ($window, $rootScope, $scope, $http) => {
         $scope.categories = item.categories;
       }
     })
+
+    $scope.categories.map(category => category.categoryName = textConverter.convertToUrlParam(category.name));  
   }
 
-  
 
   /* Handle scrolling */
   $scope.$watch(() => {

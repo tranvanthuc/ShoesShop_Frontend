@@ -23,7 +23,7 @@ export const reduceByChar = (text, length = DEFAULT_CHAR_MAX_LENGTH) => {
 }
 
 export const convertToUrlParam = (text = 'The Helm Store') => {
-  return text.split(' ').join('-');
+  return text.toLocaleLowerCase().split(' ').join('-');
 }
 
 export const capitalize = (text) => {
