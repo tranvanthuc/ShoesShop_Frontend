@@ -11671,6 +11671,21 @@ a.text-dark:focus, a.text-dark:hover {
       border-bottom: 1px solid #ecf0f1; }
     .homepage-wrapper .content-container .cart-container .info {
       line-height: 2.5; }
+    .homepage-wrapper .content-container .cart-container .payment-container {
+      margin-top: 40px;
+      display: flex;
+      justify-content: flex-end; }
+    .homepage-wrapper .content-container .cart-container .payment-btn {
+      background-color: #34495e;
+      color: white;
+      width: 20%;
+      text-align: center; }
+      .homepage-wrapper .content-container .cart-container .payment-btn:hover {
+        cursor: pointer;
+        filter: opacity(0.8); }
+      @media (max-width: 406px) {
+        .homepage-wrapper .content-container .cart-container .payment-btn {
+          font-size: 12px; } }
   .homepage-wrapper .footer-container .hover, .homepage-wrapper .footer-container .networking label:hover, .homepage-wrapper .footer-container .info .menu-item:hover {
     cursor: pointer;
     filter: opacity(0.5); }
