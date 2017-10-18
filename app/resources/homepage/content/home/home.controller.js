@@ -1,14 +1,15 @@
 import angular from 'angular';
-
 import { hotProducts, newProducts, catalog } from '../../fixture';
 import { genderConverter } from '../../../handlerServices';
 
 /* @ngInject */
 export default ($rootScope, $scope, $api, $window) => {
+  const IMAGE_PATH = '/app/assets/images/';
+
   $scope.hotProducts = hotProducts;
   $scope.newProducts = newProducts;
 
-  $scope.catalogImages = ['https://cdn.shopify.com/s/files/1/0238/2821/products/Mens-Pronto-FW17-Suede-Burgundy-Product-001_600b49f1-bcb1-4367-9564-a497fb5da8cf_280x188.jpg?v=1507846145','https://cdn.shopify.com/s/files/1/0238/2821/products/RoyaleW-Blush-Perforated-Product-001_280x188.jpg?v=1489683360'];
+  $scope.catalogImages = ['catalog-men.jpg','catalog-women.jpg'];
   
   /* Get all categories by catalog (men, women) */
   $rootScope.loading = true;
@@ -23,18 +24,21 @@ export default ($rootScope, $scope, $api, $window) => {
     Object.keys(data).map((item, index) => {
       arr.push({
         title: genderConverter.toCatalog(catalogNames[index]),
-        image: $scope.catalogImages[index],
+        image: IMAGE_PATH + $scope.catalogImages[index],
         categories: data[item]
       })  
     });
 
     $scope.menu = arr;
+
+    console.log($scope.menu);
   }).catch((err) => {
     console.log(err);
   }).finally(() => {
     $rootScope.loading = false;
   });
 
+  /* Handle scroll action */
   const onScrollAction = () => {
     if($window.scrollY > 0){
       $rootScope.$apply(() => $rootScope.lightHeader = true);     
