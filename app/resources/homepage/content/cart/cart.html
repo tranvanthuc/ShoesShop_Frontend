@@ -1,0 +1,39 @@
+<!DOCTYPE html5>
+<div class="cart-container bg-transparent-section" id="cart-container" ng-controller="cartCtrl">
+  <div class="title text-center">
+    <h1>Your cart</h1>
+  </div>
+  <div class="order-sheet">
+    <div class="fields cart-row row m-0">
+      <p class="product-field-title col-6">Product</p>
+      <p class="price-field-title col-2">Price</p>
+      <p class="quantity-field-title col-2">Quantity</p>
+      <p class="total-field-title col-2">Total</p>
+    </div>
+    <div class="order-products">
+      <div class="product-container cart-row row m-0" ng-repeat="order in orders">
+        <div class="info-container col-6">
+          <div class="row m-0">
+            <div class="image vertical-center col-2 pl-0">
+              <img class="w-100" ng-src="/app/assets/images/{{ order.image }}">
+            </div>
+            <div class="info col-10">
+              <h5 ng-bind="order.name"></h5>
+              <p>Size: {{ order.size }}</p>
+              <button class="btn btn-sm btn-outline-danger">Remove</button>
+            </div>
+          </div>
+        </div>
+        <div class="price vertical-center col-2">
+          <span>${{ order.price }}</span>
+        </div>
+        <div class="quantity vertical-center col-2">
+          <input type="number" class="form-control" ng-model="order.quantity">
+        </div>
+        <div class="total vertical-center col-2">
+          <span>${{ order.total }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<!DOCTYPE html5>
+<div class="product-detail-container" id="product-detail" ng-controller="detailCtrl">
+  <div class="row m-0">
+    <div class="image-container col-12 col-md-6">
+      <img ng-src="/app/assets/images/{{ product.image }}">
+    </div>
+    <div class="info-container col-12 col-md-6">
+      <div class="catalog">
+        <p>Legacy Collection - <span ng-bind="catalogName"></span></p>
+      </div>
+      <div class="name">
+        <h1 ng-bind="product.name"></h1>
+      </div>
+      <div class="price">
+        <h5>${{ product.price }}</h5>
+      </div>
+      <div class="option row">
+        <div class="col-4 pl-0">
+          <label for="size" class="mb-1">Size</label>          
+          <div class="size form-group m-0">
+            <select class="form-control" id="size" ng-model="sizeSelected" ng-change="_changedValue(sizeSelected)" data-ng-options="item as item for item in product.sizes">
+              <option value="">Select your size</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-4 pl-0">
+          <label for="quantity" class="mb-1">Quantity</label>          
+          <div class="size form-group m-0">
+            <input type="number" min="1" class="form-control" name="quantity" id="quantity" ng-model="quantity">
+          </div>
+        </div>
+        <div class="cart col-4 p-0">
+          <div class="cart-btn form-control" ng-click="_addToCart(product)">
+            <span>ADD TO CART</span>
+          </div>
+          <!-- Modal -->
+          <div class="modal fade" id="cartVerificationModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <p ng-bind="modalContent"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-success btn-sm" ng-click="_goToCart()" ng-if="productSize !== undefined">View your cart</button>
+                  <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">OK</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description">
+        <span ng-bind="product.description"></span>
+      </div>
+    </div>
+  </div>
+</div>

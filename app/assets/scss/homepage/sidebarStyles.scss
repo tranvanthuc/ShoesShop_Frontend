@@ -1,0 +1,22 @@
+.sidebar-container {
+  display: flex;
+  position: fixed;
+  z-index: 999999999;
+  top: 0;
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+
+  .menu-item {
+    padding: 10px 20px;
+  }
+
+  .categories-container {
+    position: absolute;
+    left: 102.25px;
+    background-color: rgba(0,0,0,0.9);
+  }
+
+  .category {
+    padding: 10px 20px;
+  }
+}

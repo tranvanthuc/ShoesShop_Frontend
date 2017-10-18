@@ -1,0 +1,78 @@
+<!DOCTYPE html5>
+<div ng-controller="homeCtrl">
+  <div class="hot-products">
+    <video controls loop autoplay="autoplay" width="100%"  muted poster="https://d2zy73x1fg2nl6.cloudfront.net/images/hp/Prontovintage---desktopx1920.jpg">
+      <source src="https://d2zy73x1fg2nl6.cloudfront.net/images/hp/ProntoVintage_edit_jk%20HP-compressed.mp4" type="video/mp4">
+      <source src="https://d2zy73x1fg2nl6.cloudfront.net/images/hp/ProntoVintage_edit_jk_HP.webm" type="video/webm">
+    </video>
+    <!-- <div id="carouselHotProducts" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselHotProducts" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselHotProducts" data-slide-to="1"></li>
+        <li data-target="#carouselHotProducts" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active" ui-sref="homepage.detail">
+          <img class="img-fluid" src="/app/assets/images/laneslide.jpg">
+        </div>
+        <div class="carousel-item" ui-sref="homepage.detail">
+          <img class="img-fluid" src="/app/assets/images/laneslide1.jpeg">
+        </div>
+        <div class="carousel-item" ui-sref="homepage.detail">
+          <img class="img-fluid" src="/app/assets/images/laneslide2.jpg">
+        </div>
+      </div>
+    </div> -->
+  </div>
+  <div class="new-products bg-transparent-section">
+    <div class="title text-center">
+      <h2>NEW ARRIVALS</h2>
+    </div>
+    <div class="products items row m-0">
+      <div class="product product-style item col-6 col-md-3" ng-repeat="item in newProducts" ui-sref="homepage.detail({catalogName: item.catalogName, productName: item.urlName, productId: item.id})">
+        <div class="image">
+          <img ng-src="/app/assets/images/{{ item.image }}">
+        </div>
+        <div class="info">
+          <div class="name text-center">
+            <p ng-bind="item.name"></p>
+          </div>
+          <div class="price text-center">
+            <p>${{ item.price }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="our-story">
+    <div class="image">
+      <img src="/app/assets/images/2048X720_STOREFRONT_MIX_BW_2000x2000.jpg">
+    </div>
+    <div class="info-container">
+      <div class="info">
+        <h2 class="title">THE HELM STORY</h2>
+        <h5 class="short-description">
+          Since 2009 we've crafted boots with pride, care, and purpose to deliver the ultimate boot to keep you going forward steady, secure, and stable.        
+        </h5>
+        <div class="see-more-btn">
+          <h6>SEE MORE</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="catalog bg-transparent-section">
+    <div class="title text-center">
+      <h2>THE HELM CATALOG</h2>
+    </div>
+    <div class="items row m-0">
+      <div class="item col-6" ng-repeat="catalogItem in menu" ui-sref="homepage.catalog({catalogName: catalogItem.title})">
+        <div class="image">
+          <img ng-src="{{ catalogItem.image }}">
+        </div>
+        <div class="name text-center">
+          <h4 ng-bind="catalogItem.title.toUpperCase()"></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

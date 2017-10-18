@@ -1,0 +1,13 @@
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+
+.homepage-wrapper {
+  overflow-x: hidden;
+  position: relative;
+  
+  @import './styles.scss';
+  @import './headerStyles.scss';
+  @import './sidebarStyles.scss';
+  @import './contentStyles.scss';
+  @import './footerStyles.scss';
+  @import './contactStyles.scss';
+}

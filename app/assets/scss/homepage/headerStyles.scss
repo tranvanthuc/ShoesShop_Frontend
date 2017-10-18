@@ -1,0 +1,144 @@
+.background {
+  background-color: white;
+  color: black !important;
+  border-bottom-color: #ecf0f1 !important;
+  transition: all 0.5s linear;
+  
+  img {
+    filter: invert(0) !important;
+    transition: all 0.5s;
+  }
+}
+
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  color: white;
+  padding: 20px;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s linear;
+
+  @media (max-width: 500px) {
+    padding: 10px;
+  }
+
+  .active {
+    filter: opacity(0.5);
+  }
+
+  .button-hover {
+    cursor: pointer !important;
+    filter: opacity(0.5);    
+  }
+
+  .header-left {
+
+    img {
+      filter: invert(1);
+
+      @media (max-width: 545px) {
+        width: 100%;
+      }
+    }
+
+    &:hover {
+      @extend .button-hover;
+    }
+  }
+
+  .header-center {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 650px) {
+      font-size: 14px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
+
+    .menu {
+      width: 100%;
+
+      p {
+        text-align: center;
+
+        &:hover {
+          @extend .button-hover;
+        }
+      }
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .menu-bar {
+      display: none;
+
+      @include media-breakpoint-down(xs) {
+        display: block;
+      }
+    }
+
+    .header-right-item {
+      margin-left: 20px;
+      font-size: 22px;
+
+      &:hover {
+        @extend .button-hover;
+      }
+
+      @media (max-width: 414px) {
+        font-size: 18px;
+      }
+    }
+
+    .search-form-inline {
+
+      &:hover {
+        filter: none;
+      }
+      
+      label {
+        position: relative;
+      }
+
+      input {
+        position: absolute;
+        top: 16%;
+        right: 0;
+        transform: translateX(-70%);
+        border-color: white;
+        transition: all 3s linear;
+      }
+
+      .search-form-bg {
+        background: #ecf0f1;
+        border-color: #ecf0f1;
+        transition: none;
+      }
+    }
+  }
+
+  .categories-container {
+    background-color: rgba(255,255,255,0.8);
+    color: black;
+    padding: 0 20px;
+    margin: auto;
+
+    .category {
+      margin: 20px 0;
+
+      &:hover {
+        @extend .button-hover;
+      }
+    }
+  }
+}

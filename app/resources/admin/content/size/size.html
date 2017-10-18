@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<div class="row m-0 justify-content-around h-100" ng-controller="sizeCtrl">
+  <div class="left-container col-12 col-sm-6">
+    <p class="introduction">Create size of shoe</p>
+    <div class="row m-0">
+      <div class="col-1 col-lg-2"></div>
+      <div class="form col-10 col-lg-8">
+        <div class="form-group">
+          <label for="name">Category size</label>
+          <input class="form-control" name="name" id="name" type="number" placeholder="Enter a size ...">
+        </div>
+        <div class="submit form-group">
+          <button type="submit" class="btn btn-sm btn-primary">Create</button>  
+        </div>                 
+      </div>
+      <div class="col-1 col-lg-2"></div>
+    </div>
+  </div>
+  <div class="underline"></div>
+  <div class="right-container col-12 col-sm-6">
+    <p class="title introduction">Sizes</p>
+    <div class="row m-0">
+      <div class="col-1 col-lg-2"></div>
+      <div class="list col-10 col-lg-8 p-0" id="list">
+        <div class="list-item row m-0" ng-repeat="item in list">
+          <div class="title col-9 col-sm-8 col-xl-9" id="title">
+            <p ng-bind="item"></p>
+          </div>
+          <div class="modify col-3 col-sm-4 col-xl-3">
+            <div class="row">
+              <span class="edit-icon col-6">
+                <i class="fa fa-pencil"></i>
+              </span>
+              <span class="delete-icon col-6">
+                <i class="fa fa-times"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-1 col-lg-2"></div>
+    </div>
+  </div>
+</div>
