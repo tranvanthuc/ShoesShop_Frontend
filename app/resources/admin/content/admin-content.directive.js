@@ -2,7 +2,5 @@ export default () => ({
   restrict: 'EA',
   scope: {},
   template: require('./admin-content.html'),
-  link: ($scope, element, attrs) => {
-    // console.log(element);
-  }
+  link: ($scope, element, attrs) => {}
 })

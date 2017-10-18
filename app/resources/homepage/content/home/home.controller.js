@@ -1,21 +1,32 @@
-import { hotProducts, newProducts, catalog } from '../../fixture';
-import { genderConverter } from '../../../handlerServices';
+import angular from 'angular';
+import { genderConverter, textConverter } from '../../../handlerServices';
 
 /* @ngInject */
-export default ($scope, $http) => {
-  $scope.hotProducts = hotProducts;
-  $scope.newProducts = newProducts;
+export default ($rootScope, $scope, $api, $window) => {
+  const IMAGE_PATH = '/app/assets/images/';
 
-  $scope.catalogImages = ['https://cdn.shopify.com/s/files/1/0238/2821/products/Mens-Pronto-FW17-Suede-Burgundy-Product-001_600b49f1-bcb1-4367-9564-a497fb5da8cf_280x188.jpg?v=1507846145','https://cdn.shopify.com/s/files/1/0238/2821/products/RoyaleW-Blush-Perforated-Product-001_280x188.jpg?v=1489683360'];
+  /* Get new products */
+  $rootScope.loading = true;
+  $api('product-details/limit', {
+    method: 'GET',
+  }).then(response => {
+    $scope.newProducts = response.data.results;
+    $scope.newProducts.forEach(product => {
+      product.catalogName = genderConverter.toCatalog(product.gender);
+      product.urlName = textConverter.convertToUrlParam(product.name);
+    });
+  }).catch((err) => {
+    console.log(err);
+  }).finally(() => {
+    $rootScope.loading = false;
+  });
   
   /* Get all categories by catalog (men, women) */
-  $http({
+  $scope.catalogImages = ['catalog-men.jpg','catalog-women.jpg'];
+  $rootScope.loading = true;
+  $api('cates/catalog', {
     method: 'GET',
-    url: 'https://calm-dawn-66282.herokuapp.com/cates/catalog',
-    headers: {
-      'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-    }
-  }).then((response) => {
+  }).then(response => {
     let data = response.data.results;
     let arr = [];    
     const catalogNames = Object.getOwnPropertyNames(data);
@@ -24,13 +35,35 @@ export default ($scope, $http) => {
     Object.keys(data).map((item, index) => {
       arr.push({
         title: genderConverter.toCatalog(catalogNames[index]),
-        image: $scope.catalogImages[index],
-        categories: data[item]
+        image: IMAGE_PATH + $scope.catalogImages[index],
       })  
     });
 
     $scope.menu = arr;
+  }).catch((err) => {
+    console.log(err);
+  }).finally(() => {
+    $rootScope.loading = false;
   });
 
-  // $scope.catalog = catalog;
+  /* Handle scroll action */
+  const onScrollAction = () => {
+    if($window.scrollY > 0){
+      $rootScope.$apply(() => $rootScope.lightHeader = true);     
+    } else {
+      $rootScope.$apply(() => $rootScope.lightHeader = false);
+    }
+  }
+
+  const init = () => {
+    angular.element($window).on('scroll', onScrollAction);
+  }
+
+  const destroy = () => {
+    angular.element($window).off('scroll', onScrollAction);
+  }
+
+  init();
+
+  $scope.$on('$destroy', destroy);
 }

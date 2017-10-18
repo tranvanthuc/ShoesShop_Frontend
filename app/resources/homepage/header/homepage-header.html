@@ -1,5 +1,5 @@
 <!DOCTYPE <html>
-<div class="header-container row m-0" id="homepage-header" ng-controller="homepageHeaderCtrl" ng-class="scrolling ? 'background' : ''">
+<div class="header-container row m-0" id="homepage-header" ng-controller="homepageHeaderCtrl" ng-class="lightHeader ? 'background' : ''">
   <div class="header-left col-3" ui-sref="homepage.home">
     <img src="/app/assets/images/helm-logo.png">
   </div>
@@ -32,13 +32,15 @@
         <i class="fa fa-user"></i>          
       </label>
     </div>
-    <div class="cart-container header-right-item">
+    <div class="cart-container header-right-item" ui-sref="homepage.cart">
       <label>
         <i class="fa fa-shopping-cart"></i>          
       </label>
     </div>
   </div>
-  <div class="categories-container row" id="categories" ng-if="catalogClicked">
-    <p class="category col-4" ng-repeat="category in categories" ui-sref="homepage.category({catalogName: catalogName, categoryName: category.categoryName})" ui-sref-active="active" ng-bind="category.name"></p>
+  <div class="categories-container" id="categories" ng-if="catalogClicked">
+    <div class="row">
+      <p class="category col-4" ng-repeat="category in categories" ui-sref="homepage.category({catalogName: catalogName, categoryName: category.urlName, categoryId: category.id})" ui-sref-active="active" ng-bind="category.name"></p>
+    </div>
   </div>
 </div>

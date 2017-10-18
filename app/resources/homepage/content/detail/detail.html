@@ -2,24 +2,24 @@
 <div class="product-detail-container" id="product-detail" ng-controller="detailCtrl">
   <div class="row m-0">
     <div class="image-container col-12 col-md-6">
-      <img src="https://cdn.shopify.com/s/files/1/0238/2821/products/Rosen-Nero-Perforated-Product-001_280x188.jpg?v=1493308029">
+      <img ng-src="/app/assets/images/{{ product.image }}">
     </div>
     <div class="info-container col-12 col-md-6">
       <div class="catalog">
-        <p>Legacy Collection - <span>Men's</span></p>
+        <p>Legacy Collection - <span ng-bind="catalogName"></span></p>
       </div>
       <div class="name">
-        <h1>Muller Brown Blucher</h1>
+        <h1 ng-bind="product.name"></h1>
       </div>
       <div class="price">
-        <h5>$385.00</h5>
+        <h5>${{ product.price }}</h5>
       </div>
       <div class="option row">
         <div class="col-6 pl-0">
           <label for="sizeSelect" class="mb-1">Size</label>          
           <div class="size form-group m-0">
             <select class="form-control" id="sizeSelect">
-              <option ng-repeat="item in size" ng-bind="item"></option>
+              <option ng-repeat="item in product.sizes" ng-bind="item"></option>
             </select>
           </div>
         </div>
@@ -30,9 +30,7 @@
         </div>
       </div>
       <div class="description">
-        <span>
-          The Riley takes a Chelsea and combines it with a desert boot, blending classic designs for a modernized style. Using a soft and pliable Peanut Suede, the upper will age uniquely with each wearer, making every boot its own individual pair. The more narrow toe gives it a sleek and distinguished profile, while the Fineline sole lends a dress element to this casual style and makes it more versatile and contemporary than other Chelsea boots.
-        </span>
+        <span ng-bind="product.description"></span>
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 /* @ngInject */
-export default ($scope) => {
+export default ($rootScope, $scope) => {
   $('.sidebar-container').css('left', '-300px');
 
   $('.menu-bar').on('click', () => {

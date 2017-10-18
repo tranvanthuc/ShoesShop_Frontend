@@ -1,7 +1,11 @@
 <!DOCTYPE html5>
 <div ng-controller="homeCtrl">
   <div class="hot-products">
-    <div id="carouselHotProducts" class="carousel slide" data-ride="carousel">
+    <video controls loop autoplay="autoplay" width="100%"  muted poster="https://d2zy73x1fg2nl6.cloudfront.net/images/hp/Prontovintage---desktopx1920.jpg">
+      <source src="https://d2zy73x1fg2nl6.cloudfront.net/images/hp/ProntoVintage_edit_jk%20HP-compressed.mp4" type="video/mp4">
+      <source src="https://d2zy73x1fg2nl6.cloudfront.net/images/hp/ProntoVintage_edit_jk_HP.webm" type="video/webm">
+    </video>
+    <!-- <div id="carouselHotProducts" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselHotProducts" data-slide-to="0" class="active"></li>
         <li data-target="#carouselHotProducts" data-slide-to="1"></li>
@@ -18,23 +22,23 @@
           <img class="img-fluid" src="/app/assets/images/laneslide2.jpg">
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
   <div class="new-products bg-transparent-section">
     <div class="title text-center">
       <h2>NEW ARRIVALS</h2>
     </div>
     <div class="products items row m-0">
-      <div class="product item col-3" ng-repeat="item in newProducts" ui-sref="homepage.detail({productName: item.name})">
+      <div class="product product-style item col-6 col-md-3" ng-repeat="item in newProducts" ui-sref="homepage.detail({catalogName: item.catalogName, productName: item.urlName, productId: item.id})">
         <div class="image">
           <img ng-src="/app/assets/images/{{ item.image }}">
         </div>
         <div class="info">
           <div class="name text-center">
-            <h4 ng-bind="item.name"></h4>
+            <p ng-bind="item.name"></p>
           </div>
           <div class="price text-center">
-            <p ng-bind="item.price"></p>
+            <p>${{ item.price }}</p>
           </div>
         </div>
       </div>

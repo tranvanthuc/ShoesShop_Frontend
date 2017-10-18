@@ -1,23 +1,25 @@
 const PARENT_URL = 'homepage.';
 const DESCRIPTION = 'Full-grain Horween Chromexcel® leather. Fully lined with natural calfskin. Blake Rapid Stitch welt construction. Oil-treated leather outsole. Tonal double stitch on cap toe and heel cup. Reinforced leather pull tab. HELM signature white composite rubber midsole adds style and extra cushion. HELM-embossed oil- and wax-treated leather outsole for water resistance and increased durability. Black rubber key heel strike. Antique brass eyelets. Brown waxed cotton laces';
 
-export const headerMenu = [
-  {
-    title: 'MEN',
-    url: PARENT_URL + 'men',
-    categories: ['Rosen', 'Bab V2', 'Royale', 'Wooster', 'G-Knit']
-  },
-  {
-    title: 'WOMEN',
-    url: PARENT_URL + 'women',
-    categories: ['Rosen', 'Bab V2', 'Royale', 'Wooster', 'G-Knit', 'Hirsh', 'Slide']
-  },
-  {
-    title: 'STORY',
-    url: PARENT_URL + 'story',
-    categories: ['Rosen', 'Bab V2', 'Pronto', 'Wilson', 'Hirsh', 'Slide']
-  }
-];
+// export const headerMenu = [
+//   {
+//     title: 'MEN',
+//     url: PARENT_URL + 'men',
+//     categories: ['Rosen', 'Bab V2', 'Royale', 'Wooster', 'G-Knit']
+//   },
+//   {
+//     title: 'WOMEN',
+//     url: PARENT_URL + 'women',
+//     categories: ['Rosen', 'Bab V2', 'Royale', 'Wooster', 'G-Knit', 'Hirsh', 'Slide']
+//   },
+//   {
+//     title: 'STORY',
+//     url: PARENT_URL + 'story',
+//     categories: ['Rosen', 'Bab V2', 'Pronto', 'Wilson', 'Hirsh', 'Slide']
+//   }
+// ];
+
+export const headerMenu = ['MEN', 'WOMEN', 'STORY'];
 
 export const hotProducts = [
   {

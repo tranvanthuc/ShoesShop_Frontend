@@ -1,5 +1,6 @@
 /* @ngInject */
-export default ($scope) => {
-
-  // $('#new-products').css('padding-top', (100 + $('#homepage-header').outerHeight()) + 'px');
+export default ($rootScope, $scope) => {
+  $rootScope.$watch('headerHeight', (newVal, oldVal) => {
+    $('#cart-container').css('padding-top', newVal + 'px'); 
+  });
 }

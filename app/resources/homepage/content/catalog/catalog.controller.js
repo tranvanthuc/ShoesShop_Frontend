@@ -1,37 +1,52 @@
-import { productsByCategory } from '../../fixture';
-import { genderConverter } from '../../../handlerServices';
+import { genderConverter, textConverter } from '../../../handlerServices';
 
 /* @ngInject */
-export default ($rootScope, $scope, $stateParams, $http) => {
+export default ($rootScope, $scope, $stateParams, $api) => {
+  const IMAGE_PATH = '/app/assets/images/';
+
   $rootScope.$watch('headerHeight', (newVal, oldVal) => {
     $('#catalog-container').css('padding-top', newVal + 'px'); 
   });
 
-  $scope.productsByCategory = productsByCategory;
+  if($stateParams.catalogName !== 'home') {
+    $('.cover-bg').css('display', 'none');
+    $('.sidebar-container').animate({left: '-300px'}, 400);
+  }
 
-  $http.post(
-    'https://calm-dawn-66282.herokuapp.com/cates/gender',
-    {gender: genderConverter.toGender($stateParams.catalogName)},
-    {
-      headers: {
-        'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-      }
-    })
-    .then((response) => {
+  /* Get categories by catalog */
+  $rootScope.loading = true;
+  $api('cates/gender', {
+    method: 'POST',
+    data: {
+      gender: genderConverter.toGender($stateParams.catalogName)
+    }
+  }).then(response => {
       $scope.categories = response.data.results;
-      console.log(response.data.results);
-    })
+      $scope.categories.forEach(category => {
+        category.urlName = textConverter.convertToUrlParam(category.name);
 
+        category.products.forEach(product => {
+          product.urlName = textConverter.convertToUrlParam(product.name);
+        });
+      });
+    }).catch(err => {
+      console.log(err);
+    }).finally(() => {
+      $rootScope.loading = false;
+    });
+  
   switch ($stateParams.catalogName) {
     case 'men':
       return $scope.catalog = {
+        name: 'men',
         title: "Men's",
-        image: 'https://d2zy73x1fg2nl6.cloudfront.net/images/collection/Men_collection_desktop_171003.jpg'
+        image: IMAGE_PATH + 'Men_collection_desktop_171003.jpg'
       }   
     default:
       return $scope.catalog = {
+        name: 'women',
         title: "Women's",
-        image: 'https://d2zy73x1fg2nl6.cloudfront.net/images/collection/Womens_collection_desktop_171003.jpg'
+        image: IMAGE_PATH + 'Womens_collection_desktop_171003.jpg'
       }
-  }
+  };
 }

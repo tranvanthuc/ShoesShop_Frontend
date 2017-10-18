@@ -1,6 +1,9 @@
 <!DOCTYPE <html>
 <div class="homepage-wrapper container-fluid p-0" ng-controller="homepageCtrl">
   <div class="cover-bg"></div>
+  <div class="loading-container" ng-if="loading">
+    <img src="/app/assets/images/Double Ring.gif">
+  </div>
   <homepage-header></homepage-header>
   <homepage-sidebar></homepage-sidebar>  
   <homepage-content></homepage-content>

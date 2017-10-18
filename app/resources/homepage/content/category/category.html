@@ -5,9 +5,9 @@
     <h5 ng-bind="catalogName"></h5>
   </div>
   <div class="products items row m-0">
-    <div class="product product-style item col-6 col-sm-3" dir-paginate="item in products | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productsPagination" ui-sref="homepage.detail({productName: item.productName})">
+    <div class="product product-style item col-6 col-sm-4 col-md-3" dir-paginate="item in products | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productsPagination" ui-sref="homepage.detail({catalogName: catalogNameParam, productName: item.productName, productId: item.id})">
       <div class="image">
-        <img ng-src="https://cdn.shopify.com/s/files/1/0238/2821/products/Mens-Rosen-Nylon-Cadet-Product-001_1_280x188.jpg?v=1503433173">
+        <img ng-src="/app/assets/images/{{ item.image }}">
       </div>
       <div class="info">
         <div class="name text-center">
