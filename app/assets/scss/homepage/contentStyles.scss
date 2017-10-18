@@ -324,7 +324,6 @@
     }
 
     img {
-      width: 100%;
       object-fit: contain;
     }
 
@@ -355,6 +354,8 @@
 
     .description {
       line-height: 2;
+      color: grey;
+      font-size: 14px;
     }
 
     .price, .option {
