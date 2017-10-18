@@ -6,12 +6,23 @@ import { genderConverter } from '../../../handlerServices';
 export default ($rootScope, $scope, $api, $window) => {
   const IMAGE_PATH = '/app/assets/images/';
 
-  $scope.hotProducts = hotProducts;
-  $scope.newProducts = newProducts;
+  // $scope.hotProducts = hotProducts;
 
-  $scope.catalogImages = ['catalog-men.jpg','catalog-women.jpg'];
+  /* Get new products */
+  $rootScope.loading = true;
+  $api('product-details/limit', {
+    method: 'GET',
+  }).then(response => {
+    $scope.newProducts = response.data.results;
+    console.log($scope.newProducts);
+  }).catch((err) => {
+    console.log(err);
+  }).finally(() => {
+    $rootScope.loading = false;
+  });
   
   /* Get all categories by catalog (men, women) */
+  $scope.catalogImages = ['catalog-men.jpg','catalog-women.jpg'];
   $rootScope.loading = true;
   $api('cates/catalog', {
     method: 'GET',
@@ -25,13 +36,10 @@ export default ($rootScope, $scope, $api, $window) => {
       arr.push({
         title: genderConverter.toCatalog(catalogNames[index]),
         image: IMAGE_PATH + $scope.catalogImages[index],
-        categories: data[item]
       })  
     });
 
     $scope.menu = arr;
-
-    console.log($scope.menu);
   }).catch((err) => {
     console.log(err);
   }).finally(() => {
