@@ -14,7 +14,7 @@
         <h2 ng-bind="category.name"></h2>
       </div>
       <div class="products items row m-0">
-        <div class="product product-style item col-3" ng-repeat="item in category.products | limitTo: 8" ui-sref="homepage.detail({catalogName: catalog.name, productName: item.urlName, productId: item.id})">
+        <div class="product product-style item col-6 col-sm-4 col-md-3" ng-repeat="item in category.products | limitTo: 8" ui-sref="homepage.detail({catalogName: catalog.name, productName: item.urlName, productId: item.id})">
           <img ng-src="/app/assets/images/{{ item.image }}">
           <div class="info">
             <div class="name text-center">

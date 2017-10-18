@@ -40,7 +40,7 @@
   </div>
   <div class="categories-container" id="categories" ng-if="catalogClicked">
     <div class="row">
-      <p class="category col-4" ng-repeat="category in categories" ui-sref="homepage.category({catalogName: catalogName, categoryName: category.categoryName, categoryId: category.id})" ui-sref-active="active" ng-bind="category.name"></p>
+      <p class="category col-4" ng-repeat="category in categories" ui-sref="homepage.category({catalogName: catalogName, categoryName: category.urlName, categoryId: category.id})" ui-sref-active="active" ng-bind="category.name"></p>
     </div>
   </div>
 </div>

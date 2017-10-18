@@ -8,6 +8,11 @@ export default ($rootScope, $scope, $stateParams, $api) => {
     $('#catalog-container').css('padding-top', newVal + 'px'); 
   });
 
+  if($stateParams.catalogName !== 'home') {
+    $('.cover-bg').css('display', 'none');
+    $('.sidebar-container').animate({left: '-300px'}, 400);
+  }
+
   /* Get categories by catalog */
   $rootScope.loading = true;
   $api('cates/gender', {

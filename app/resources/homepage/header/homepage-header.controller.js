@@ -2,10 +2,9 @@ import { headerMenu } from '../fixture';
 import { genderConverter, textConverter } from '../../handlerServices';
 
 /* @ngInject */
-export default ($window, $rootScope, $scope, $api) => {
-  $scope.catalogImages = ['https://cdn.shopify.com/s/files/1/0238/2821/products/Mens-Pronto-FW17-Suede-Burgundy-Product-001_600b49f1-bcb1-4367-9564-a497fb5da8cf_280x188.jpg?v=1507846145','https://cdn.shopify.com/s/files/1/0238/2821/products/RoyaleW-Blush-Perforated-Product-001_280x188.jpg?v=1489683360']
-
+export default ($rootScope, $scope, $api) => {
   /* Get all categories by catalog (men, women) */
+  $rootScope.loading = true;
   $api('cates/catalog', {
     method: 'GET',
   }).then(response => {
@@ -17,15 +16,18 @@ export default ($window, $rootScope, $scope, $api) => {
     Object.keys(data).map((item, index) => {
       arr.push({
         title: genderConverter.toCatalog(catalogNames[index]),
-        image: $scope.catalogImages[index],
         categories: data[item]
       })  
-    });
+    })
 
     $scope.menu = arr;
 
     $rootScope.headerHeight = $('#homepage-header').outerHeight();
-  });
+  }).catch(err => {
+    err
+  }).finally(() => {
+    $rootScope.loading = false;
+  });;
 
   
   $scope.catalogClicked = false;
@@ -45,7 +47,7 @@ export default ($window, $rootScope, $scope, $api) => {
       }
     })
 
-    $scope.categories.map(category => category.categoryName = textConverter.convertToUrlParam(category.name));  
+    $scope.categories.map(category => category.urlName = textConverter.convertToUrlParam(category.name));  
   }
 
 

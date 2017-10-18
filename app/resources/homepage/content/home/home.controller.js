@@ -17,10 +17,9 @@ export default ($rootScope, $scope, $api, $window) => {
     });
   }).catch((err) => {
     console.log(err);
-  })
-  // .finally(() => {
-  //   $rootScope.loading = false;
-  // });
+  }).finally(() => {
+    $rootScope.loading = false;
+  });
   
   /* Get all categories by catalog (men, women) */
   $scope.catalogImages = ['catalog-men.jpg','catalog-women.jpg'];
