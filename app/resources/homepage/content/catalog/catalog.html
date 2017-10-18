@@ -10,11 +10,11 @@
   </div>
   <div ng-repeat="category in categories">
     <div class="new-products bg-transparent-section">
-      <div class="title text-center">
+      <div class="title text-center" ui-sref="homepage.category({catalogName: catalog.name, categoryName: category.urlName, categoryId: category.id})">
         <h2 ng-bind="category.name"></h2>
       </div>
       <div class="products items row m-0">
-        <div class="product item col-3" ng-repeat="item in category.products" ui-sref="homepage.detail({catalogName: catalog.name, productName: item.name, productId: item.id})">
+        <div class="product product-style item col-3" ng-repeat="item in category.products | limitTo: 8" ui-sref="homepage.detail({catalogName: catalog.name, productName: item.urlName, productId: item.id})">
           <img ng-src="/app/assets/images/{{ item.image }}">
           <div class="info">
             <div class="name text-center">

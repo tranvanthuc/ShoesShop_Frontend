@@ -29,13 +29,13 @@
       <h2>NEW ARRIVALS</h2>
     </div>
     <div class="products items row m-0">
-      <div class="product item col-3" ng-repeat="item in newProducts" ui-sref="homepage.detail({productName: item.name, productId: item.id})">
+      <div class="product product-style item col-3" ng-repeat="item in newProducts" ui-sref="homepage.detail({catalogName: item.catalogName, productName: item.urlName, productId: item.id})">
         <div class="image">
           <img ng-src="/app/assets/images/{{ item.image }}">
         </div>
         <div class="info">
           <div class="name text-center">
-            <h4 ng-bind="item.name"></h4>
+            <p ng-bind="item.name"></p>
           </div>
           <div class="price text-center">
             <p>${{ item.price }}</p>

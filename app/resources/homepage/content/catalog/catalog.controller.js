@@ -1,5 +1,4 @@
-import { productsByCategory } from '../../fixture';
-import { genderConverter } from '../../../handlerServices';
+import { genderConverter, textConverter } from '../../../handlerServices';
 
 /* @ngInject */
 export default ($rootScope, $scope, $stateParams, $api) => {
@@ -9,8 +8,7 @@ export default ($rootScope, $scope, $stateParams, $api) => {
     $('#catalog-container').css('padding-top', newVal + 'px'); 
   });
 
-  $scope.productsByCategory = productsByCategory;
-
+  /* Get categories by catalog */
   $rootScope.loading = true;
   $api('cates/gender', {
     method: 'POST',
@@ -19,6 +17,13 @@ export default ($rootScope, $scope, $stateParams, $api) => {
     }
   }).then(response => {
       $scope.categories = response.data.results;
+      $scope.categories.forEach(category => {
+        category.urlName = textConverter.convertToUrlParam(category.name);
+
+        category.products.forEach(product => {
+          product.urlName = textConverter.convertToUrlParam(product.name);
+        });
+      });
     }).catch(err => {
       console.log(err);
     }).finally(() => {

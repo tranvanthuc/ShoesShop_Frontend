@@ -1,12 +1,9 @@
 import angular from 'angular';
-import { hotProducts, newProducts, catalog } from '../../fixture';
-import { genderConverter } from '../../../handlerServices';
+import { genderConverter, textConverter } from '../../../handlerServices';
 
 /* @ngInject */
 export default ($rootScope, $scope, $api, $window) => {
   const IMAGE_PATH = '/app/assets/images/';
-
-  // $scope.hotProducts = hotProducts;
 
   /* Get new products */
   $rootScope.loading = true;
@@ -14,12 +11,16 @@ export default ($rootScope, $scope, $api, $window) => {
     method: 'GET',
   }).then(response => {
     $scope.newProducts = response.data.results;
-    console.log($scope.newProducts);
+    $scope.newProducts.forEach(product => {
+      product.catalogName = genderConverter.toCatalog(product.gender);
+      product.urlName = textConverter.convertToUrlParam(product.name);
+    });
   }).catch((err) => {
     console.log(err);
-  }).finally(() => {
-    $rootScope.loading = false;
-  });
+  })
+  // .finally(() => {
+  //   $rootScope.loading = false;
+  // });
   
   /* Get all categories by catalog (men, women) */
   $scope.catalogImages = ['catalog-men.jpg','catalog-women.jpg'];

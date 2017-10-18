@@ -17,7 +17,6 @@ export default ($rootScope, $scope, $stateParams, $api) => {
     }
   }).then(response => {
     $scope.product = response.data.results;
-    $scope.product.price = '$' + $scope.product.price;
   }).catch(err => {
     console.log(err);
   }).finally(() => {
