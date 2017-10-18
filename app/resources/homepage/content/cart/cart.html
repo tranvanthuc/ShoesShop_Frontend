@@ -11,73 +11,27 @@
       <p class="total-field-title col-2">Total</p>
     </div>
     <div class="order-products">
-      <div class="product-container cart-row row m-0">
+      <div class="product-container cart-row row m-0" ng-repeat="order in orders">
         <div class="info-container col-6">
           <div class="row m-0">
             <div class="image vertical-center col-2 pl-0">
-              <img class="w-100" src="https://cdn.shopify.com/s/files/1/0238/2821/products/Mens-Rosen-Nylon-Cadet-Product-001_1_280x188.jpg?v=1503433173">
+              <img class="w-100" ng-src="/app/assets/images/{{ order.image }}">
             </div>
             <div class="info col-10">
-              <h5>Pablo Brown</h5>
-              <p>Size: 7</p>
+              <h5 ng-bind="order.name"></h5>
+              <p>Size: {{ order.size }}</p>
               <button class="btn btn-sm btn-outline-danger">Remove</button>
             </div>
           </div>
         </div>
         <div class="price vertical-center col-2">
-          <span>$399.00</span>
+          <span>${{ order.price }}</span>
         </div>
         <div class="quantity vertical-center col-2">
-          <input type="number" class="form-control" value="2">
+          <input type="number" class="form-control" ng-model="order.quantity">
         </div>
         <div class="total vertical-center col-2">
-          <span>$798.00</span>
-        </div>
-      </div>
-      <div class="product-container cart-row row m-0">
-        <div class="info-container col-6">
-          <div class="row m-0">
-            <div class="image vertical-center col-2 pl-0">
-              <img class="w-100" src="https://cdn.shopify.com/s/files/1/0238/2821/products/Mens-Rosen-Nylon-Cadet-Product-001_1_280x188.jpg?v=1503433173">
-            </div>
-            <div class="info col-10">
-              <h5>Pablo Brown</h5>
-              <p>Size: 7</p>
-              <button class="btn btn-sm btn-outline-danger">Remove</button>
-            </div>
-          </div>
-        </div>
-        <div class="price vertical-center col-2">
-          <span>$399.00</span>
-        </div>
-        <div class="quantity vertical-center col-2">
-          <input type="number" class="form-control" value="2">
-        </div>
-        <div class="total vertical-center col-2">
-          <span>$798.00</span>
-        </div>
-      </div>
-      <div class="product-container cart-row row m-0">
-        <div class="info-container col-6">
-          <div class="row m-0">
-            <div class="image vertical-center col-2 pl-0">
-              <img class="w-100" src="https://cdn.shopify.com/s/files/1/0238/2821/products/Mens-Rosen-Nylon-Cadet-Product-001_1_280x188.jpg?v=1503433173">
-            </div>
-            <div class="info col-10">
-              <h5>Pablo Brown</h5>
-              <p>Size: 7</p>
-              <button class="btn btn-sm btn-outline-danger">Remove</button>
-            </div>
-          </div>
-        </div>
-        <div class="price vertical-center col-2">
-          <span>$399.00</span>
-        </div>
-        <div class="quantity vertical-center col-2">
-          <input type="number" class="form-control" value="2">
-        </div>
-        <div class="total vertical-center col-2">
-          <span>$798.00</span>
+          <span>${{ order.total }}</span>
         </div>
       </div>
     </div>

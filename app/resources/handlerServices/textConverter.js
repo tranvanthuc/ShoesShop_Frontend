@@ -27,7 +27,7 @@ export const convertToUrlParam = (text = 'The Helm Store') => {
 }
 
 export const capitalize = (text) => {
-  let words = text.split(' ');
+  let words = text.split(' ') && text.split('-');
   let output = [];
   for(let i=0; i<words.length; i++) {
     words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);

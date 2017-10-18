@@ -1,6 +1,8 @@
 /* @ngInject */
-export default ($rootScope, $scope) => {
-  $rootScope.$watch('headerHeight', (newVal, oldVal) => {
-    $('#cart-container').css('padding-top', newVal + 'px'); 
+export default ($rootScope, $scope, $localStorage) => {
+  $rootScope.$watch('headerHeight', headerHeight => {
+    $('#cart-container').css('padding-top', headerHeight + 'px'); 
   });
+
+  $scope.orders = $localStorage.orders;
 }

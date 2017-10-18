@@ -6,10 +6,20 @@ export default $stateProvider => {
       parent: 'homepage',
       template: require('./home/home.html'),
     })
+    .state('homepage.login', {
+      url: 'login',
+      parent: 'homepage',
+      template: require('./login/login.html'),
+    })
     .state('homepage.cart', {
       url: 'cart',
       parent: 'homepage',
       template: require('./cart/cart.html'),
+    })
+    .state('homepage.contact', {
+      url: 'contact',
+      parent: 'homepage',
+      template: require('./contact/contact.html'),
     })
     .state('homepage.catalog', {
       url: '{catalogName}',
@@ -26,4 +36,5 @@ export default $stateProvider => {
       parent: 'homepage',
       template: require('./detail/detail.html'),
     })
+    
 }
