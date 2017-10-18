@@ -25,6 +25,7 @@ module.exports = {
     },
     plugins: [
       new ExtractTextPlugin('./app.bundle.css'),
+      new ExtractTextPlugin('./app.bundle.js'),
     ],
     devtool: "#inline-source-map"
 }
