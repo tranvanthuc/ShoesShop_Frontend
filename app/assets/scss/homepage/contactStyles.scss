@@ -1,0 +1,13 @@
+.contact-container {
+  position: static;
+  .title {
+    margin-top: 15% !important;
+  }
+  .info {
+    line-height: 34px;
+    padding-bottom: 26px !important;
+  }
+  @media (max-width: 650px) {
+    font-size: 14px;
+  }
+}

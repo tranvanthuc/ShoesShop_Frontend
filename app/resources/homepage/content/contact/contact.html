@@ -1,4 +1,39 @@
 <!DOCTYPE html5>
-<div class="contact-container" id="contact-container" ng-controller="contactCtrl">
-  <h2>Contact us</h2>
+<div class="contact-container p-4" id="contact-container" ng-controller="contactCtrl">
+
+  <div class="row m-0">
+    <div class="col-2 col-md-2 col-sm-2"></div>
+    <div class="contact-form col-8 col-md-8 col-sm-8">
+      <div class="info-container">
+        <center class="title p-4">
+          <h2>Contact us</h2>
+        </center>
+        <div class="info col p-0">
+          <p>CONTACT - contact@helmboots.com</p>
+          <p>LOCATION - 1200 E 11th St. Suite 101 Austin, Tx. 78701</p>
+          <p>PHONE - 512-609-8150 </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-12 col-md-6">
+          <label>Name</label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-12 col-md-6">
+          <label>Email</label>
+          <input type="email" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea class="form-control" rows="7"></textarea>
+      </div>
+      <center><button type="submit" class="btn btn-primary">SEND</button></center>
+    </div>
+    <div class="col-2 col-md-2 col-sm-2"></div>
+  </div>
 </div>

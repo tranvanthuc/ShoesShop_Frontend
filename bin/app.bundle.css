@@ -11717,5 +11717,15 @@ a.text-dark:focus, a.text-dark:hover {
       @media (max-width: 800px) {
         .homepage-wrapper .footer-container .info .copyright {
           font-size: 12px; } }
+  .homepage-wrapper .contact-container {
+    position: static; }
+    .homepage-wrapper .contact-container .title {
+      margin-top: 15% !important; }
+    .homepage-wrapper .contact-container .info {
+      line-height: 34px;
+      padding-bottom: 26px !important; }
+    @media (max-width: 650px) {
+      .homepage-wrapper .contact-container {
+        font-size: 14px; } }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL2FwcC5idW5kbGUuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
