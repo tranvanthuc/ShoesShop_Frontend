@@ -9,6 +9,7 @@ export default ($rootScope, $scope, $stateParams, $api) => {
 
   $scope.productsByCategory = productsByCategory;
 
+  $rootScope.loading = true;
   $api('cates/gender', {
     method: 'POST',
     data: {
@@ -25,6 +26,8 @@ export default ($rootScope, $scope, $stateParams, $api) => {
       // });
     }).catch(err => {
       console.log(err);
+    }).finally(() => {
+      $rootScope.loading = false;
     });
 
   // $scope.getProductsByCategory = (categoryId) => {

@@ -25,9 +25,12 @@ angular.module('app', [
   ])
   .config(routes)
   .run(['$rootScope', ($rootScope) => {
-    $rootScope.$on('$stateChangeStart', (e, toState, toParams, fromtState, fromParams) => {});
+    $rootScope.$on('$stateChangeStart', (e, toState, toParams, fromtState, fromParams) => {
+      $rootScope.loading = true;
+    });
 
     $rootScope.$on('$stateChangeSuccess', (e, toState, toParams, fromState, fromParams) => {
+      $rootScope.loading = false;
       $rootScope.currentState = toState.name;
 
       switch ($rootScope.currentState.split('.')[0]) {

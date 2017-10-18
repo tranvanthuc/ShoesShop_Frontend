@@ -9,6 +9,7 @@ export default ($rootScope, $scope, $stateParams, $api) => {
   $scope.catalogName = capitalize($stateParams.catalogName) + "'s";
 
   /* Get product info */
+  $rootScope.loading = true;
   $api('product/all-info', {
     method: 'POST',
     data: {
@@ -17,5 +18,9 @@ export default ($rootScope, $scope, $stateParams, $api) => {
   }).then(response => {
     $scope.product = response.data.results;
     $scope.product.price = '$' + $scope.product.price;
+  }).catch(err => {
+    console.log(err);
+  }).finally(() => {
+    $rootScope.loading = false;
   });
 }
