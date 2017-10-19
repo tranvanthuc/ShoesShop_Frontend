@@ -53,9 +53,9 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
   
       $scope.orders.push(item);
       $localStorage.orders = $scope.orders;
-    }
 
-    
+      // $rootScope.$broadcast('ordersQuantityChanged', $localStorage.orders.length);
+    }
 
     $('#cartVerificationModal').modal();
   };

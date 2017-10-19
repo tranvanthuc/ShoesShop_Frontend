@@ -11362,6 +11362,17 @@ a.text-dark:focus, a.text-dark:hover {
         @media (max-width: 414px) {
           .homepage-wrapper .header-container .header-right .header-right-item {
             font-size: 18px; } }
+      .homepage-wrapper .header-container .header-right .cart-container label {
+        position: relative; }
+      .homepage-wrapper .header-container .header-right .cart-container span {
+        font-size: 10px;
+        background: #2980b9;
+        color: white;
+        padding: 3px;
+        border-radius: 50%;
+        position: absolute;
+        top: 10%;
+        right: 2%; }
       .homepage-wrapper .header-container .header-right .search-form-inline:hover {
         filter: none; }
       .homepage-wrapper .header-container .header-right .search-form-inline label {
