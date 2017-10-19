@@ -2,7 +2,7 @@ import { headerMenu } from '../fixture';
 import { genderConverter, textConverter } from '../../handlerServices';
 
 /* @ngInject */
-export default ($rootScope, $scope, $api) => {
+export default ($rootScope, $scope, $api, $localStorage) => {
   /* Get all categories by catalog (men, women) */
   $rootScope.loading = true;
   $api('cates/catalog', {
@@ -66,7 +66,15 @@ export default ($rootScope, $scope, $api) => {
   $rootScope.$watch('lightHeader', lightHeader => {
     $scope.lightHeader = lightHeader;
   })
-
+  
+    // $rootScope.ordersQuantity = 12;
+    // console.log('header: ',$localStorage.ordersQuantity);  
+  
+  // $scope.$on('realOrders', (event, args) => {
+  //   console.log('hello');
+  //   $scope.ordersQuantity = args;
+  //   console.log('args: ', args);
+  // })
 
   /* Toggle search form */
   // $scope.onSearchLick = false;
