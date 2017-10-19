@@ -11837,6 +11837,8 @@ a.text-dark:focus, a.text-dark:hover {
     margin-top: 50px; }
     .homepage-wrapper .authen-styles .text-center {
       margin-bottom: 40px; }
+    .homepage-wrapper .authen-styles .btn-hover:hover {
+      cursor: pointer; }
     .homepage-wrapper .authen-styles .btn {
       background-color: #426189;
       color: #fff;
