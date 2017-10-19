@@ -16,9 +16,9 @@ export default ($rootScope, $scope, $localStorage) => {
       if(index > -1) {
         $scope.orders.splice(index, 1);
       }
-
-      $rootScope.$broadcast('ordersQuantityChanged', $scope.orders.length);
   
+      $rootScope.$broadcast('ordersQuantityChanged', $scope.orders.length);    
+
       $('#deleteOrderModal').modal('hide');
     }
   }
