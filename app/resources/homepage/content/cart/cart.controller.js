@@ -20,16 +20,17 @@ export default ($rootScope, $scope, $localStorage) => {
   //   $scope.ordersQuantity = args;
   // })
 
-  $scope._onClickRemove = () => {
+  /* Remove order */
+  $scope._onClickRemove = (order) => {
     $('#deleteOrderModal').modal();
-  }
 
-  $scope._removeOrder = order => {
-    const index = $scope.orders.indexOf(order);
-    if(index != -1) {
-      $scope.orders.splice(index, 1);
+    $scope._removeOrder = () => {
+      const index = $scope.orders.indexOf(order);
+      if(index > -1) {
+        $scope.orders.splice(index, 1);
+      }
+  
+      $('#deleteOrderModal').modal('hide');
     }
-
-    $('#deleteOrderModal').modal('hide');
   }
 }

@@ -20,7 +20,7 @@
             <div class="info col-10">
               <h5 ng-bind="order.name"></h5>
               <p>Size: {{ order.size }}</p>
-              <button class="btn btn-sm btn-outline-danger" ng-click="_onClickRemove()">Remove</button>
+              <button class="btn btn-sm btn-outline-danger" ng-click="_onClickRemove(order)">Remove</button>
               <!-- Modal -->
               <div class="modal fade" id="deleteOrderModal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
@@ -29,7 +29,7 @@
                       <p>Do you want to remove this?</p>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-outline-danger btn-sm" ng-click="_removeOrder(order)">OK</button>
+                      <button type="button" class="btn btn-outline-danger btn-sm" ng-click="_removeOrder()">OK</button>
                       <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Cancel</button>
                     </div>
                   </div>
