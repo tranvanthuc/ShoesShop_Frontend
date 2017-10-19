@@ -67,14 +67,12 @@ export default ($rootScope, $scope, $api, $localStorage) => {
     $scope.lightHeader = lightHeader;
   })
   
-    // $rootScope.ordersQuantity = 12;
-    // console.log('header: ',$localStorage.ordersQuantity);  
-  
-  // $scope.$on('realOrders', (event, args) => {
-  //   console.log('hello');
-  //   $scope.ordersQuantity = args;
-  //   console.log('args: ', args);
-  // })
+  $scope.$on('ordersQuantityChanged', (event, args) => {
+    $localStorage.ordersQuantity = args;
+    $scope.ordersQuantity = $localStorage.ordersQuantity;
+  })
+
+  $scope.ordersQuantity = $localStorage.ordersQuantity;
 
   /* Toggle search form */
   // $scope.onSearchLick = false;

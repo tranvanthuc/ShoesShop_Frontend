@@ -11365,14 +11365,24 @@ a.text-dark:focus, a.text-dark:hover {
       .homepage-wrapper .header-container .header-right .cart-container label {
         position: relative; }
       .homepage-wrapper .header-container .header-right .cart-container span {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 10px;
         background: #2980b9;
         color: white;
-        padding: 3px;
         border-radius: 50%;
         position: absolute;
         top: 10%;
-        right: 2%; }
+        right: 0; }
+        @media (max-width: 500px) {
+          .homepage-wrapper .header-container .header-right .cart-container span {
+            top: 3%; } }
+        @media (max-width: 400px) {
+          .homepage-wrapper .header-container .header-right .cart-container span {
+            top: -6%; } }
       .homepage-wrapper .header-container .header-right .search-form-inline:hover {
         filter: none; }
       .homepage-wrapper .header-container .header-right .search-form-inline label {
