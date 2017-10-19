@@ -22,7 +22,7 @@ export default ($rootScope, $scope, $api, $localStorage) => {
 
     $scope.menu = arr;
 
-    $rootScope.headerHeight = $('#homepage-header').outerHeight();
+    $rootScope.headerHeight = $('#homepage-header').height();
   }).catch(err => {
     err
   }).finally(() => {

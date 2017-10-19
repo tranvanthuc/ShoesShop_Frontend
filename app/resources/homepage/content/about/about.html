@@ -1,0 +1,52 @@
+<!DOCTYPE html5>
+<div class="story-container" id="story-container" ng-controller="aboutCtrl">
+  <div class="info-container">
+    <div class="intro-section first-section">
+      <div class="section-bg">
+        <img class="w-100" src="/app/assets/images/our-story-main-bg.jpg">
+      </div>
+      <div class="section-info">
+        <div class="section-title">
+          <p>BORN IN BROOKLYN</p>
+        </div>
+        <div class="section-content">
+          <p ng-bind="about.description"></p>
+        </div>
+      </div>
+    </div>
+    <div class="intro-section second-section">
+      <div class="section-bg">
+        <img class="w-100" src="/app/assets/images/our-employees.jpg">
+      </div>
+      <div class="section-title">
+        <p>Our family</p>
+      </div>
+    </div>
+    <div class="intro-section third-section">
+      <div class="row m-0">
+        <div class="col-2"></div>
+        <div class="col-8">
+          <div class="section-title">
+            <p>The Team</p>
+            <p>WE'RE A TRIBE OF THINKERS, DOERS, MOVERS AND MAKERS. EACH IS THEIR OWN.</p>
+            <p>#BEONEOFTHEGREATS</p>
+          </div>
+          <div class="members">
+            <div class="row m-0">
+              <div class="member col-4" ng-repeat="item in team">
+                <div class="img-container">
+                  <img class="w-100" id="member-img" ng-src="{{ item.image }}">
+                  <div class="info-container">
+                      <p ng-bind="item.name"></p>
+                      <p ng-bind="item.position"></p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2"></div>
+      </div>
+    </div>
+  </div>
+</div>
