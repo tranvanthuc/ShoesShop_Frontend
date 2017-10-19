@@ -8,7 +8,7 @@
       <div class="sub-menu col-4" ng-repeat="catalogItem in menu" ng-click="_onSubMenuClick(catalogItem.title)" ng-class="catalogActive ? 'active' : null">
         <p ng-bind="catalogItem.title.toUpperCase()"></p>
       </div>
-      <div class="sub-menu col-4">
+      <div class="sub-menu col-4" ui-sref="homepage.about">
         <p>STORY</p>
       </div>
     </div>
@@ -36,7 +36,7 @@
       <label>
         <i class="fa fa-shopping-cart"></i>          
       </label>
-      <span>12</span>
+      <span ng-bind="ordersQuantity"></span>
     </div>
   </div>
   <div class="categories-container" id="categories" ng-if="catalogClicked">

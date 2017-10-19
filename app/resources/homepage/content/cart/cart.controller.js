@@ -6,20 +6,7 @@ export default ($rootScope, $scope, $localStorage) => {
 
   // $localStorage.$reset();
   $scope.orders = $localStorage.orders;
-  // $scope.ordersLength = $localStorage.orders.length;
-
-
-  // $scope.$on('ordersQuantityChanged', (event, args) => {
-  //   $scope.ordersQuantity = args;
-  //   console.log('cart: ', args);
-
-  //   $rootScope.$broadcast('realOrders', $localStorage.orders.length);
-  // })
-
-  // $scope.$on('ordersQuantityChanged', (event, args) => {
-  //   $scope.ordersQuantity = args;
-  // })
-
+  
   /* Remove order */
   $scope._onClickRemove = (order) => {
     $('#deleteOrderModal').modal();
@@ -29,6 +16,8 @@ export default ($rootScope, $scope, $localStorage) => {
       if(index > -1) {
         $scope.orders.splice(index, 1);
       }
+
+      $rootScope.$broadcast('ordersQuantityChanged', $scope.orders.length);
   
       $('#deleteOrderModal').modal('hide');
     }

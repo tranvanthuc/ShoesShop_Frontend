@@ -11365,14 +11365,24 @@ a.text-dark:focus, a.text-dark:hover {
       .homepage-wrapper .header-container .header-right .cart-container label {
         position: relative; }
       .homepage-wrapper .header-container .header-right .cart-container span {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 10px;
         background: #2980b9;
         color: white;
-        padding: 3px;
         border-radius: 50%;
         position: absolute;
         top: 10%;
-        right: 2%; }
+        right: 0; }
+        @media (max-width: 500px) {
+          .homepage-wrapper .header-container .header-right .cart-container span {
+            top: 3%; } }
+        @media (max-width: 400px) {
+          .homepage-wrapper .header-container .header-right .cart-container span {
+            top: -6%; } }
       .homepage-wrapper .header-container .header-right .search-form-inline:hover {
         filter: none; }
       .homepage-wrapper .header-container .header-right .search-form-inline label {
@@ -11546,7 +11556,7 @@ a.text-dark:focus, a.text-dark:hover {
             font-size: 20px; } }
         @media (max-width: 575px) {
           .homepage-wrapper .content-container .our-story .info-container .title {
-            font-size: 15px; } }
+            font-size: 14px; } }
         @media (max-width: 460px) {
           .homepage-wrapper .content-container .our-story .info-container .title {
             margin-bottom: 20px; } }
@@ -11697,6 +11707,63 @@ a.text-dark:focus, a.text-dark:hover {
       @media (max-width: 406px) {
         .homepage-wrapper .content-container .cart-container .payment-btn {
           font-size: 12px; } }
+    .homepage-wrapper .content-container .story-container {
+      padding-bottom: 100px; }
+      .homepage-wrapper .content-container .story-container .section-info {
+        padding: 50px 0; }
+      .homepage-wrapper .content-container .story-container .section-title {
+        padding-bottom: 20px;
+        text-align: center;
+        font-size: 25px;
+        color: #2c3e50; }
+      .homepage-wrapper .content-container .story-container .section-content {
+        padding: 0 200px;
+        font-size: 14px;
+        color: #7f8c8d; }
+        @media (max-width: 991px) {
+          .homepage-wrapper .content-container .story-container .section-content {
+            padding-left: 100px;
+            padding-right: 100px; } }
+        @media (max-width: 767px) {
+          .homepage-wrapper .content-container .story-container .section-content {
+            padding-left: 50px;
+            padding-right: 50px; } }
+      .homepage-wrapper .content-container .story-container .second-section {
+        position: relative; }
+        .homepage-wrapper .content-container .story-container .second-section .section-title {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          font-size: 30px;
+          color: white; }
+          .homepage-wrapper .content-container .story-container .second-section .section-title p {
+            text-align: end;
+            padding: 20px; }
+      .homepage-wrapper .content-container .story-container .third-section .section-title {
+        padding-top: 50px;
+        padding-left: 70px;
+        padding-right: 70px; }
+      .homepage-wrapper .content-container .story-container .third-section .member {
+        margin-bottom: 20px; }
+      .homepage-wrapper .content-container .story-container .third-section .info-container {
+        display: none;
+        position: absolute;
+        top: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        width: 100%;
+        height: 100%;
+        padding: 10px 20px;
+        text-align: center; }
+      .homepage-wrapper .content-container .story-container .third-section .img-container {
+        position: relative; }
+        .homepage-wrapper .content-container .story-container .third-section .img-container:hover .info-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
   .homepage-wrapper .footer-container .hover, .homepage-wrapper .footer-container .networking label:hover, .homepage-wrapper .footer-container .info .menu-item:hover {
     cursor: pointer;
     filter: opacity(0.5); }
