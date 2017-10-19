@@ -506,6 +506,16 @@
       padding: 0 200px;
       font-size: 14px;
       color: #7f8c8d;
+
+      @include media-breakpoint-down(md) {
+        padding-left: 100px;
+        padding-right: 100px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
     }
 
     .second-section {

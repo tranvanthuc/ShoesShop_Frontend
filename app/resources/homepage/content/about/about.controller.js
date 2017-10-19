@@ -84,10 +84,4 @@ export default ($rootScope, $scope, $stateParams, $api) => {
     mem.image = IMAGE_URL + 'team-' + firstname.charAt(0).toLowerCase() + firstname.slice(1) + '.jpg';
     mem.name = mem.name.toUpperCase();
   });
-
-  $scope.$watch('team', team => {
-    console.log($('#member-img').width() +', '+$('#member-img').height());
-    
-  })
-
 }

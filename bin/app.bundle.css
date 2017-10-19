@@ -11710,6 +11710,14 @@ a.text-dark:focus, a.text-dark:hover {
         padding: 0 200px;
         font-size: 14px;
         color: #7f8c8d; }
+        @media (max-width: 991px) {
+          .homepage-wrapper .content-container .story-container .section-content {
+            padding-left: 100px;
+            padding-right: 100px; } }
+        @media (max-width: 767px) {
+          .homepage-wrapper .content-container .story-container .section-content {
+            padding-left: 50px;
+            padding-right: 50px; } }
       .homepage-wrapper .content-container .story-container .second-section {
         position: relative; }
         .homepage-wrapper .content-container .story-container .second-section .section-title {
