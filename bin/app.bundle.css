@@ -11810,5 +11810,28 @@ a.text-dark:focus, a.text-dark:hover {
       @media (max-width: 800px) {
         .homepage-wrapper .footer-container .info .copyright {
           font-size: 12px; } }
+  .homepage-wrapper .contact-container {
+    position: static;
+    margin-bottom: 5% !important; }
+    .homepage-wrapper .contact-container .title {
+      margin-top: 2% !important; }
+    .homepage-wrapper .contact-container .info {
+      line-height: 34px;
+      padding-bottom: 26px !important; }
+    .homepage-wrapper .contact-container #txt-area {
+      resize: none !important; }
+    @media (max-width: 650px) {
+      .homepage-wrapper .contact-container {
+        font-size: 14px; }
+        .homepage-wrapper .contact-container .send-btn {
+          font-size: 12px;
+          text-align: center; } }
+    .homepage-wrapper .contact-container .send-btn {
+      background-color: #2c3e50;
+      color: white;
+      width: 25%; }
+    .homepage-wrapper .contact-container .send-btn:hover {
+      opacity: 0.5;
+      cursor: pointer; }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL2FwcC5idW5kbGUuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
