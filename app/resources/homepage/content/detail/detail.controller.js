@@ -25,6 +25,7 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
   });
 
   /* Order product */
+
   $scope.orders = $localStorage.orders;
 
   $scope._changedValue = (size) => {
@@ -36,7 +37,6 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
       $scope.modalContent = 'Please select a size';
     } else {
       $scope.modalContent = 'The shoe is added';
-
       const item = {
         id: product.id,
         name: product.name,
@@ -46,15 +46,21 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
         price: product.price,
         total: product.price * $scope.quantity
       }
+
+      if($localStorage.orders === undefined) {
+        $scope.orders = [];
+      }
   
       $scope.orders.push(item);
       $localStorage.orders = $scope.orders;
+
+      $rootScope.$broadcast('ordersQuantityChanged', $localStorage.orders.length);
     }
 
     $('#cartVerificationModal').modal();
   };
 
-  /* Go to cart page if order success */
+  /* Go to cart page if order success and user press on View cart button */
   $scope._goToCart = () => {
     $('#cartVerificationModal').modal('hide');
     $state.go('homepage.cart');

@@ -21,19 +21,19 @@ export default ($rootScope, $scope, $stateParams, $api) => {
       gender: genderConverter.toGender($stateParams.catalogName)
     }
   }).then(response => {
-      $scope.categories = response.data.results;
-      $scope.categories.forEach(category => {
-        category.urlName = textConverter.convertToUrlParam(category.name);
+    $scope.categories = response.data.results;
+    $scope.categories.forEach(category => {
+      category.urlName = textConverter.convertToUrlParam(category.name);
 
-        category.products.forEach(product => {
-          product.urlName = textConverter.convertToUrlParam(product.name);
-        });
+      category.products.forEach(product => {
+        product.urlName = textConverter.convertToUrlParam(product.name);
       });
-    }).catch(err => {
-      console.log(err);
-    }).finally(() => {
-      $rootScope.loading = false;
     });
+  }).catch(err => {
+    console.log(err);
+  }).finally(() => {
+    $rootScope.loading = false;
+  });
   
   switch ($stateParams.catalogName) {
     case 'men':

@@ -11,7 +11,7 @@
       <p class="total-field-title col-2">Total</p>
     </div>
     <div class="order-products">
-      <div class="product-container cart-row row m-0" ng-repeat="order in orders">
+      <div class="product-container cart-row row m-0" ng-repeat="order in orders | orderBy:'$index':true">
         <div class="info-container col-6">
           <div class="row m-0">
             <div class="image vertical-center col-2 pl-0">
@@ -20,7 +20,21 @@
             <div class="info col-10">
               <h5 ng-bind="order.name"></h5>
               <p>Size: {{ order.size }}</p>
-              <button class="btn btn-sm btn-outline-danger">Remove</button>
+              <button class="btn btn-sm btn-outline-danger" ng-click="_onClickRemove(order)">Remove</button>
+              <!-- Modal -->
+              <div class="modal fade" id="deleteOrderModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <p>Do you want to remove this?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-danger btn-sm" ng-click="_removeOrder()">OK</button>
+                      <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -34,6 +48,11 @@
           <span>${{ order.total }}</span>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="payment-container">
+    <div class="payment-btn form-control">
+      <span>PAYMENT</span>
     </div>
   </div>
 </div>

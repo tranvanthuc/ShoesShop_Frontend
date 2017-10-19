@@ -100,6 +100,36 @@
       }
     }
 
+    .cart-container {
+
+      label {
+        position: relative;
+      }
+
+      span {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        background: #2980b9;
+        color: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 10%;
+        right: 0;
+
+        @media (max-width: 500px) {
+          top: 3%;
+        }
+        
+        @media (max-width: 400px) {
+          top: -6%;
+        }
+      }
+    }
+
     .search-form-inline {
 
       &:hover {
