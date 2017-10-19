@@ -11717,30 +11717,48 @@ a.text-dark:focus, a.text-dark:hover {
       @media (max-width: 800px) {
         .homepage-wrapper .footer-container .info .copyright {
           font-size: 12px; } }
+  .homepage-wrapper .authen-styles {
+    margin-top: 50px; }
+    .homepage-wrapper .authen-styles .text-center {
+      margin-bottom: 40px; }
+    .homepage-wrapper .authen-styles .btn {
+      background-color: #426189;
+      color: #fff;
+      margin: 10px;
+      font-size: 14px;
+      cursor: pointer; }
+      .homepage-wrapper .authen-styles .btn:hover {
+        background-color: #8da0b8; }
+    .homepage-wrapper .authen-styles input {
+      line-height: 0.9; }
+    .homepage-wrapper .authen-styles a {
+      color: #232323;
+      text-decoration: none; }
+    .homepage-wrapper .authen-styles a:hover {
+      color: #ddd; }
+    @media only screen and (max-width: 790px) {
+      .homepage-wrapper .authen-styles .btn {
+        padding: 10px 18px; }
+      .homepage-wrapper .authen-styles .register h2 {
+        font-size: 25px; }
+      .homepage-wrapper .authen-styles .forgot h4 {
+        font-size: 18px; }
+      .homepage-wrapper .authen-styles .forgot p {
+        font-size: 12px; } }
   .homepage-wrapper .login-container .login {
-    margin: 20px 0;
+    margin-bottom: 20px; }
+    .homepage-wrapper .login-container .login h2 {
+      text-align: center; }
+  .homepage-wrapper .register-container .register {
+    margin-bottom: 20px; }
+    .homepage-wrapper .register-container .register h2 {
+      text-align: center; }
+  .homepage-wrapper .forgot-container .forgot {
+    margin-bottom: 20px;
     text-align: center; }
-  .homepage-wrapper .login-container .text-center {
-    margin-bottom: 40px; }
-  .homepage-wrapper .login-container .btn {
-    background-color: #426189;
-    color: #fff;
-    margin: 10px;
-    font-size: 14px;
-    cursor: pointer; }
-    .homepage-wrapper .login-container .btn:hover {
-      background-color: #8da0b8; }
-    .homepage-wrapper .login-container .btn:focus {
-      opacity: 0.6; }
-  .homepage-wrapper .login-container input {
-    line-height: 0.9; }
-  .homepage-wrapper .login-container a {
-    color: #232323;
-    text-decoration: none; }
-  .homepage-wrapper .login-container a:hover {
-    color: #ddd; }
-  @media only screen and (min-width: 750px) {
-    .homepage-wrapper .login-container .btn {
-      padding: 10px 18px; } }
+  .homepage-wrapper .forgot-container .buttonSubmit {
+    margin-bottom: 20px; }
+  .homepage-wrapper .forgot-container p {
+    font-size: 14px; }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL2FwcC5idW5kbGUuY3NzIiwic291cmNlUm9vdCI6IiJ9*/

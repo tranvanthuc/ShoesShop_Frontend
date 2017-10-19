@@ -1,12 +1,20 @@
 <!DOCTYPE html5>
-<div class="authen-styles login-container" id="login-container" ng-controller="loginCtrl">
+<div class="authen-styles register-container" id="register-container" ng-controller="registerCtrl">
 	<div class="row m-0">
 		<div class="col-2 col-sm-3 col-xl-4"></div>
 		<div class="col-8 col-sm-6 col-xl-4">
-			<div class="login">
-				<h2>Login</h2>
+			<div class="register">
+				<h2>Create Account</h2>
 			</div>
-			<div class="login-form">
+			<div class="register-form">
+				<div class="form-group">
+					<label for="email">First Name</label>
+					<input type="text" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="email">Last Name</label>
+					<input type="text" class="form-control">
+				</div>
 				<div class="form-group">
 					<label for="email">Email</label>
 					<input type="text" class="form-control">
@@ -17,9 +25,7 @@
 				</div>
 			</div>
 			<div class="text-center">
-				<p><a href="#">Forgot your password?</a></p>
-				<input type="submit" class="btn" value="SIGN IN">
-				<p><a href="#">Create account</a></p>
+				<input type="submit" class="btn" value="CREATE">
 			</div>
 		</div>
 		<div class="col-2 col-sm-3 col-xl-4"></div>

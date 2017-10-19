@@ -11,6 +11,19 @@ export default $stateProvider => {
       parent: 'homepage',
       template: require('./login/login.html'),
     })
+
+    .state('homepage.register', {
+      url: 'register',
+      parent: 'homepage',
+      template: require('./register/register.html'),
+    })
+
+    .state('homepage.forgot', {
+      url: 'forgot',
+      parent: 'homepage',
+      template: require('./forgot/forgot.html'),
+    })
+    
     .state('homepage.cart', {
       url: 'cart',
       parent: 'homepage',
@@ -36,5 +49,5 @@ export default $stateProvider => {
       parent: 'homepage',
       template: require('./detail/detail.html'),
     })
-    
+
 }

@@ -11,6 +11,8 @@ import detail from './detail';
 import cart from './cart';
 import contact from './contact';
 import login from './login';
+import register from './register';
+import forgot from './forgot';
 
 /* @ngInject */
 export default angular.module('app.homepage.content', [
@@ -21,7 +23,9 @@ export default angular.module('app.homepage.content', [
   detail,
   cart,
   contact,
-  login
+  login,
+  register,
+  forgot,
 ])
   .directive('homepageContent', homepageContent)
   .config(routes)
