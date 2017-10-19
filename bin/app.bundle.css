@@ -11756,6 +11756,8 @@ a.text-dark:focus, a.text-dark:hover {
   .homepage-wrapper .forgot-container .forgot {
     margin-bottom: 20px;
     text-align: center; }
+    .homepage-wrapper .forgot-container .forgot h4 {
+      margin-bottom: 10px; }
   .homepage-wrapper .forgot-container .buttonSubmit {
     margin-bottom: 20px; }
   .homepage-wrapper .forgot-container p {
