@@ -16,7 +16,6 @@ export default $stateProvider => {
       parent: 'homepage',
       template: require('./register/register.html'),
     })
-
     .state('homepage.forgot', {
       url: 'forgot',
       parent: 'homepage',
