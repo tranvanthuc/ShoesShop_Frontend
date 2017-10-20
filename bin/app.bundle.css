@@ -11833,6 +11833,8 @@ a.text-dark:focus, a.text-dark:hover {
     .homepage-wrapper .contact-container .send-btn:hover {
       opacity: 0.5;
       cursor: pointer; }
+    .homepage-wrapper .contact-container .modal-body p {
+      text-align: start; }
   .homepage-wrapper .authen-styles {
     margin-top: 50px; }
     .homepage-wrapper .authen-styles .text-center {
