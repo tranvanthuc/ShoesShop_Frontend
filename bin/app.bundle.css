@@ -11764,6 +11764,28 @@ a.text-dark:focus, a.text-dark:hover {
           flex-direction: column;
           justify-content: center;
           align-items: center; }
+    .homepage-wrapper .content-container .account-container .info-container {
+      margin: 50px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+    .homepage-wrapper .content-container .account-container .edit-profile-btn {
+      margin: 10px 0; }
+      .homepage-wrapper .content-container .account-container .edit-profile-btn:hover {
+        cursor: pointer;
+        color: #34495e; }
+    .homepage-wrapper .content-container .account-container .action-container {
+      margin: 50px 0;
+      display: flex;
+      justify-content: center; }
+    .homepage-wrapper .content-container .account-container .btn {
+      background: #2c3e50;
+      width: 20%;
+      color: white;
+      margin: 0 10px; }
+      .homepage-wrapper .content-container .account-container .btn:hover {
+        cursor: pointer;
+        filter: opacity(0.5); }
   .homepage-wrapper .footer-container .hover, .homepage-wrapper .footer-container .networking label:hover, .homepage-wrapper .footer-container .info .menu-item:hover {
     cursor: pointer;
     filter: opacity(0.5); }
@@ -11869,6 +11891,9 @@ a.text-dark:focus, a.text-dark:hover {
     margin-bottom: 20px; }
     .homepage-wrapper .login-container .login h2 {
       text-align: center; }
+  .homepage-wrapper .login-container .message {
+    color: #e74c3c;
+    margin-bottom: 10px; }
   .homepage-wrapper .register-container .register {
     margin-bottom: 20px; }
     .homepage-wrapper .register-container .register h2 {

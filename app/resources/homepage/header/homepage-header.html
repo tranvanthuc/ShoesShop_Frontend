@@ -27,9 +27,10 @@
         <input type="text" class="search-form form-control" id="search" ng-if="showSearchForm" ng-class="scrolling ? 'search-form-bg' : null">
       </div>
     </div>
-    <div class="authen-container header-right-item" ui-sref="homepage.login">
+    <div class="authen-container header-right-item" ng-click="_goToAccount()">
       <label>
-        <i class="fa fa-user"></i>          
+        <i class="fa fa-sign-in" ng-if="!loggedIn"></i>
+        <i class="fa fa-user" ng-if="loggedIn"></i>
       </label>
     </div>
     <div class="cart-container header-right-item" ui-sref="homepage.cart">
