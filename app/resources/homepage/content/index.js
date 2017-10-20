@@ -14,6 +14,7 @@ import login from './login';
 import register from './register';
 import forgot from './forgot';
 import about from './about';
+import account from './account';
 
 /* @ngInject */
 export default angular.module('app.homepage.content', [
@@ -27,7 +28,8 @@ export default angular.module('app.homepage.content', [
   login,
   register,
   forgot,
-  about
+  about,
+  account
 ])
   .directive('homepageContent', homepageContent)
   .config(routes)

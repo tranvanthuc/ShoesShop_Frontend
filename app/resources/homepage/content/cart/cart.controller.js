@@ -1,10 +1,9 @@
 /* @ngInject */
-export default ($rootScope, $scope, $localStorage) => {
+export default ($rootScope, $scope, $localStorage, $state) => {
   $rootScope.$watch('headerHeight', headerHeight => {
     $('#cart-container').css('padding-top', headerHeight + 'px'); 
   });
 
-  // $localStorage.$reset();
   $scope.orders = $localStorage.orders;
   
   /* Remove order */
@@ -21,5 +20,29 @@ export default ($rootScope, $scope, $localStorage) => {
 
       $('#deleteOrderModal').modal('hide');
     }
+  }
+
+  /* Payment */
+  $scope._payment = () => {
+    if($localStorage.loggedIn) {
+      if($scope.orders.length != 0) {
+        $scope.modalContent = 'Do you want to pay for these?';
+        $scope.verifyPayment = true;
+      } else {
+        $scope.modalContent = "You have no orders";
+        $scope.verifyPayment = false;
+      }
+      $('#paymentVerificationModal').modal();
+    } else {
+      $state.go('homepage.login');
+    }
+  }
+
+  $scope._pay = () => {
+    $scope.orders = [];
+    $localStorage.orders = [];
+    $scope.modalContent = 'Thank you for your paying';
+    $scope.verifyPayment = false;
+    $rootScope.$broadcast('ordersQuantityChanged', $scope.orders.length);
   }
 }

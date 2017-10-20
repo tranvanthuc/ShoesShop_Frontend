@@ -2,7 +2,16 @@ import { headerMenu } from '../fixture';
 import { genderConverter, textConverter } from '../../handlerServices';
 
 /* @ngInject */
-export default ($rootScope, $scope, $api, $localStorage) => {
+export default ($rootScope, $scope, $api, $localStorage, $state) => {
+  /* Authen */
+  $scope.$on('authenActivated', (event, args) => {
+    $scope.loggedIn = args;
+  })
+  
+  $scope._goToAccount = () => {
+    $scope.loggedIn ? $state.go('homepage.account') : $state.go('homepage.login');
+  }
+  
   /* Get all categories by catalog (men, women) */
   $rootScope.loading = true;
   $api('cates/catalog', {

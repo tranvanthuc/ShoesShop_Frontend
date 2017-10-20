@@ -576,4 +576,41 @@
       }
     }
   }
+
+  .account-container {
+    
+    .info-container {
+      margin: 50px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .edit-profile-btn {
+      margin: 10px 0;
+
+      &:hover {
+        cursor: pointer;
+        color: #34495e;
+      }
+    }
+
+    .action-container {
+      margin: 50px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn {
+      background: #2c3e50;
+      width: 20%;
+      color: white;
+      margin: 0 10px;
+
+      &:hover {
+        cursor: pointer;
+        filter: opacity(0.5);   
+      }
+    }
+  }
 }

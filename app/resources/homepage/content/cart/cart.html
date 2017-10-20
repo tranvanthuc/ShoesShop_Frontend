@@ -21,20 +21,6 @@
               <h5 ng-bind="order.name"></h5>
               <p>Size: {{ order.size }}</p>
               <button class="btn btn-sm btn-outline-danger" ng-click="_onClickRemove(order)">Remove</button>
-              <!-- Modal -->
-              <div class="modal fade" id="deleteOrderModal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-body">
-                      <p>Do you want to remove this?</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-outline-danger btn-sm" ng-click="_removeOrder()">OK</button>
-                      <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -51,8 +37,36 @@
     </div>
   </div>
   <div class="payment-container">
-    <div class="payment-btn form-control">
+    <div class="payment-btn form-control" ng-click="_payment()">
       <span>PAYMENT</span>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="deleteOrderModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Do you want to remove this?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger btn-sm" ng-click="_removeOrder()">OK</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="paymentVerificationModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p ng-bind="modalContent"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger btn-sm" ng-if="verifyPayment" ng-click="_pay()">Yes</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal" ng-bind="verifyPayment ? 'Cancel' : 'OK'"></button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

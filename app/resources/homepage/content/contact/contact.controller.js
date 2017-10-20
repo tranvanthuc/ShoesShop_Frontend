@@ -9,9 +9,9 @@ export default ($rootScope, $scope, $stateParams, $api) => {
     $api('feedback/insert', {
       method: 'POST',
       data: {
-        "name": contact.name,
-        "email": contact.email,
-        "content": contact.message
+        name: contact.name,
+        email: contact.email,
+        content: contact.message
       },
     }).then(response => {
       $('#contactVerifyModal').modal();
@@ -25,6 +25,5 @@ export default ($rootScope, $scope, $stateParams, $api) => {
     }).finally(() => {
       $rootScope.loading = false;
     });
-    console.log(contact);
   }
 }
