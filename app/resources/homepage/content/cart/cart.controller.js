@@ -24,6 +24,7 @@ export default ($rootScope, $scope, $localStorage, $state) => {
 
   /* Payment */
   $scope._payment = () => {
+    console.log('cart: ', $localStorage.loggedIn);
     if($localStorage.loggedIn) {
       if($scope.orders.length != 0) {
         $scope.modalContent = 'Do you want to pay for these?';

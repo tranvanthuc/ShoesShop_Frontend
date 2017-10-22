@@ -13,6 +13,7 @@ export default ($rootScope, $scope, $api, $state, $localStorage) => {
         password: user.password
       }
     }).then(response => {
+      console.log(response);
       if(response.data.results.length === 0) {
         $scope.loggedIn = false;
         $scope.message = 'Email or password is incorrect';

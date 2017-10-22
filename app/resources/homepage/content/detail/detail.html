@@ -15,7 +15,7 @@
         <h5>${{ product.price }}</h5>
       </div>
       <div class="option row">
-        <div class="col-4 pl-0">
+        <div class="col-6 pl-0">
           <label for="size" class="mb-1">Size</label>          
           <div class="size form-group m-0">
             <select class="form-control" id="size" ng-model="sizeSelected" ng-change="_changedValue(sizeSelected)" data-ng-options="item as item for item in product.sizes">
@@ -23,13 +23,13 @@
             </select>
           </div>
         </div>
-        <div class="col-4 pl-0">
+        <!-- <div class="col-4 pl-0">
           <label for="quantity" class="mb-1">Quantity</label>          
           <div class="size form-group m-0">
             <input type="number" min="1" class="form-control" name="quantity" id="quantity" ng-model="quantity">
           </div>
-        </div>
-        <div class="cart col-4 p-0">
+        </div> -->
+        <div class="cart col-6 p-0">
           <div class="cart-btn form-control" ng-click="_addToCart(product)">
             <span>ADD TO CART</span>
           </div>
