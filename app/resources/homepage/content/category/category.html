@@ -1,0 +1,28 @@
+<!DOCTYPE html5>
+<div class="new-products categories-products bg-transparent-section" id="new-products" ng-controller="categoryCtrl">
+  <div class="title text-center">
+    <h2 class="category-name" ng-bind="categoryName"></h2>
+    <h5 ng-bind="catalogName"></h5>
+  </div>
+  <div class="products items row m-0">
+    <div class="product product-style item col-6 col-sm-4 col-md-3" dir-paginate="item in products | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productsPagination" ui-sref="homepage.detail({catalogName: catalogNameParam, productName: item.productName, productId: item.id})">
+      <div class="image">
+        <img ng-src="/app/assets/images/{{ item.image }}">
+      </div>
+      <div class="info">
+        <div class="name text-center">
+          <p ng-bind="item.name"></p>
+        </div>
+        <div class="price text-center">
+          <p ng-bind="item.price"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    dir-pagination-controls
+    boudary-link="true"
+    pagination-id="productsPagination"
+    template-url="/app/resources/homepage/directive/dir-pagination.html">
+  </div>
+</div>

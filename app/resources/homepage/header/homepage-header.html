@@ -1,0 +1,48 @@
+<!DOCTYPE <html>
+<div class="header-container row m-0" id="homepage-header" ng-controller="homepageHeaderCtrl" ng-class="lightHeader ? 'background' : ''">
+  <div class="header-left col-3" ui-sref="homepage.home">
+    <img src="/app/assets/images/helm-logo.png">
+  </div>
+  <div class="header-center col-sm-6">
+    <div class="menu row m-0">
+      <div class="sub-menu col-4" ng-repeat="catalogItem in menu" ng-click="_onSubMenuClick(catalogItem.title)" ng-class="catalogActive ? 'active' : null">
+        <p ng-bind="catalogItem.title.toUpperCase()"></p>
+      </div>
+      <div class="sub-menu col-4" ui-sref="homepage.about">
+        <p>STORY</p>
+      </div>
+    </div>
+  </div>
+  <div class="header-right col-9 col-sm-3">
+    <div class="menu-bar header-right-item">
+      <label for="search">
+        <i class="fa fa-bars"></i>          
+      </label>
+    </div>
+    <div class="search-container header-right-item">
+      <div class="form-group m-0" ng-class="showSearchForm ? 'search-form-inline' : null">
+        <label ng-click="_onSearchClick()">
+          <i class="fa fa-search"></i>          
+        </label>
+        <input type="text" class="search-form form-control" id="search" ng-if="showSearchForm" ng-class="scrolling ? 'search-form-bg' : null">
+      </div>
+    </div>
+    <div class="authen-container header-right-item" ng-click="_goToAccount()">
+      <label>
+        <i class="fa fa-sign-in" ng-if="!loggedIn"></i>
+        <i class="fa fa-user" ng-if="loggedIn"></i>
+      </label>
+    </div>
+    <div class="cart-container header-right-item" ui-sref="homepage.cart">
+      <label>
+        <i class="fa fa-shopping-cart"></i>          
+      </label>
+      <span ng-bind="ordersQuantity"></span>
+    </div>
+  </div>
+  <div class="categories-container" id="categories" ng-if="catalogClicked">
+    <div class="row">
+      <p class="category col-4" ng-repeat="category in categories" ui-sref="homepage.category({catalogName: catalogName, categoryName: category.urlName, categoryId: category.id})" ui-sref-active="active" ng-bind="category.name"></p>
+    </div>
+  </div>
+</div>

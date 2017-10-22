@@ -1,0 +1,93 @@
+.authen-styles {
+	margin-top: 50px;
+
+	.text-center {
+		margin-bottom: 40px;
+	}
+
+	.btn-hover:hover {
+		cursor: pointer;
+	}
+
+	.btn {
+		background-color: #426189;
+		color: #fff;
+		margin: 10px;
+		font-size: 14px;
+		cursor:pointer;
+		&:hover {
+			background-color: #8da0b8;
+		}
+	}
+	input {
+		line-height: 0.9;
+	}
+
+	a {
+		color: #232323;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: #ddd;
+	}
+
+	@media only screen and (max-width: 790px) {
+		.btn {
+			padding: 10px 18px;
+		}
+		.register {
+			h2 {
+				font-size: 25px;
+			}
+		}
+		.forgot {
+			h4 {
+				font-size: 18px;
+			}
+			p {
+				font-size: 12px;
+			}
+		}
+	}
+
+}
+
+.login-container {
+	.login {
+		margin-bottom: 20px;
+		h2 {
+			text-align: center;
+		}
+	}
+
+	.message {
+		color: #e74c3c;
+		margin-bottom: 10px;
+	}
+}
+
+.register-container {
+	.register {
+		margin-bottom: 20px;
+		h2 {
+			text-align: center;
+		}
+	}
+}
+
+.forgot-container {
+	.forgot {
+		margin-bottom: 20px;
+		text-align: center;
+		h4 {
+			margin-bottom: 10px;
+		}
+	}
+	.buttonSubmit {
+		margin-bottom: 20px;
+	}
+	p {
+		font-size: 14px;
+	}
+}
