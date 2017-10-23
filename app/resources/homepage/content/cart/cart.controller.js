@@ -65,14 +65,14 @@ export default ($rootScope, $scope, $localStorage, $state) => {
           $scope.subtotal = $scope.subtotal;
         });
         if (count > 0) {
-          $scope.modalContent = 'Please enter valid quantity';
+          $scope.modalContent = 'Please enter valid quantity.';
           $scope.verifyPayment = false;
         } else {
           $scope.modalContent = 'Do you want to pay for these?';
           $scope.verifyPayment = true;
         }
       } else {
-        $scope.modalContent = "You have no orders";
+        $scope.modalContent = "You have no orders.";
         $scope.verifyPayment = false;
       }
       $('#paymentVerificationModal').modal();
@@ -85,7 +85,7 @@ export default ($rootScope, $scope, $localStorage, $state) => {
     $scope.orders = [];
     $localStorage.orders = [];
     $scope.subtotal = 0;
-    $scope.modalContent = 'Thank you for your paying';
+    $scope.modalContent = 'Thank you for your paying.';
     $scope.verifyPayment = false;
     $rootScope.$broadcast('ordersQuantityChanged', $scope.orders.length);
   }
