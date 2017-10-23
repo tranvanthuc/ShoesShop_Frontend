@@ -5,6 +5,9 @@ export default ($rootScope, $scope, $localStorage, $state) => {
   });
 
   $scope.orders = $localStorage.orders;
+  $scope.orders.forEach((order, index) => {
+    order.orderId = index;
+  });
 
   /* Calculate subtotal */
   $scope._calculateSubtotal = (orders, subtotal) => {
@@ -17,9 +20,11 @@ export default ($rootScope, $scope, $localStorage, $state) => {
   /* Handle quantity is changed */
   $scope.subtotal = $scope._calculateSubtotal($scope.orders, 0);
   
-  $scope._onQuantityChanged = (id, quantity, total) => {
+  $scope._onQuantityChanged = (orderId, quantity, total) => {
+    // total: old
+    // order.total: new
     $scope.orders.forEach(order => {
-      if(order.id === id) {
+      if(order.orderId === orderId) {
         order.quantity = quantity;
         order.total = quantity * order.price;
         $scope.subtotal = $scope.subtotal - total + parseFloat(order.total);
