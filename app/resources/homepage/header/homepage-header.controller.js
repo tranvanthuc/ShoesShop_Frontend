@@ -4,6 +4,7 @@ import { genderConverter, textConverter } from '../../handlerServices';
 /* @ngInject */
 export default ($rootScope, $scope, $api, $localStorage, $state) => {
   /* Authen */
+  $scope.loggedIn = $localStorage.loggedIn;
   $scope.$on('authenActivated', (event, args) => {
     $scope.loggedIn = args;
   })

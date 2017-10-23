@@ -13,7 +13,6 @@ export default ($rootScope, $scope, $api, $state, $localStorage) => {
         password: user.password
       }
     }).then(response => {
-      console.log(response);
       if(response.data.results.length === 0) {
         $scope.loggedIn = false;
         $scope.message = 'Email or password is incorrect';
@@ -22,7 +21,6 @@ export default ($rootScope, $scope, $api, $state, $localStorage) => {
         $scope.loggedIn = true;
         $scope.user = response.data.results[0];
         $localStorage.user = $scope.user;
-      console.log("You've logged in: ", $localStorage.user);
       
         $state.go('homepage.account')
       }
