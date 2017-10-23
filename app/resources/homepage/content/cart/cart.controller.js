@@ -35,7 +35,11 @@ export default ($rootScope, $scope, $localStorage, $state) => {
       const index = $scope.orders.indexOf(order);
       if(index > -1) {
         $scope.orders.splice(index, 1);
-        $scope.subtotal = $scope._calculateSubtotal($scope.orders, 0);
+        if($scope.orders.length == 0) {
+          $scope.subtotal = 0;
+        } else {
+          $scope.subtotal = $scope._calculateSubtotal($scope.orders, 0);          
+        }
       }
 
       $rootScope.$broadcast('ordersQuantityChanged', $scope.orders.length);    
@@ -53,7 +57,7 @@ export default ($rootScope, $scope, $localStorage, $state) => {
           if(order.quantity === null || order.quantity === undefined) {
             count++; // invalid payment
           }
-          $scope.subtotal = $scope.subtotal
+          $scope.subtotal = $scope.subtotal;
         });
         if (count > 0) {
           $scope.modalContent = 'Please enter valid quantity';
@@ -75,6 +79,7 @@ export default ($rootScope, $scope, $localStorage, $state) => {
   $scope._pay = () => {
     $scope.orders = [];
     $localStorage.orders = [];
+    $scope.subtotal = 0;
     $scope.modalContent = 'Thank you for your paying';
     $scope.verifyPayment = false;
     $rootScope.$broadcast('ordersQuantityChanged', $scope.orders.length);
