@@ -8,7 +8,7 @@
       <div class="sub-menu col-4" ng-repeat="catalogItem in menu" ng-click="_onSubMenuClick(catalogItem.title)" ng-class="catalogActive ? 'active' : null">
         <p ng-bind="catalogItem.title.toUpperCase()"></p>
       </div>
-      <div class="sub-menu col-4" ui-sref="homepage.about">
+      <div class="sub-menu col-4" ui-sref="homepage.about" ui-sref-active="active">
         <p>STORY</p>
       </div>
     </div>
@@ -21,10 +21,10 @@
     </div>
     <div class="search-container header-right-item">
       <div class="form-group m-0" ng-class="showSearchForm ? 'search-form-inline' : null">
+        <input type="text" class="search-form form-control" id="search" ng-if="showSearchForm" ng-class="lightHeader ? 'search-form-bg' : null" placeholder="Search...">
         <label ng-click="_onSearchClick()">
           <i class="fa fa-search"></i>          
         </label>
-        <input type="text" class="search-form form-control" id="search" ng-if="showSearchForm" ng-class="scrolling ? 'search-form-bg' : null">
       </div>
     </div>
     <div class="authen-container header-right-item" ng-click="_goToAccount()">

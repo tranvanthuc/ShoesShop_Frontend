@@ -11387,12 +11387,12 @@ a.text-dark:focus, a.text-dark:hover {
         position: absolute;
         top: 16%;
         right: 0;
-        transform: translateX(-70%);
+        transform: translateX(-78%);
+        width: 50%;
         border-color: white;
-        transition: all 3s linear; }
+        transition: all 2s linear; }
       .homepage-wrapper .header-container .header-right .search-form-inline .search-form-bg {
-        background: #ecf0f1;
-        border-color: #ecf0f1;
+        border-color: #bdc3c7;
         transition: none; }
     .homepage-wrapper .header-container .categories-container {
       background-color: rgba(255, 255, 255, 0.8);

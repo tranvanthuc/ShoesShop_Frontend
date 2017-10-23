@@ -83,11 +83,8 @@ export default ($rootScope, $scope, $api, $localStorage, $state) => {
   $scope.ordersQuantity = $localStorage.ordersQuantity;
 
   /* Toggle search form */
-  // $scope.onSearchLick = false;
-  // $scope._onSearchClick = () => {
-  //   $scope.onSearchLick = !$scope.onSearchLick;
-  // };
-  // $scope.$watch('onSearchLick', (newVal, oldVal) => {
-  //   $scope.showSearchForm = newVal;
-  // });
+  $scope.showSearchForm = false;
+  $scope._onSearchClick = () => {
+    $scope.showSearchForm = !$scope.showSearchForm;
+  };
 }
