@@ -11663,7 +11663,8 @@ a.text-dark:focus, a.text-dark:hover {
         align-items: flex-end; }
       .homepage-wrapper .content-container .product-detail-container .cart-btn {
         background-color: #34495e;
-        color: white; }
+        color: white;
+        text-align: center; }
         .homepage-wrapper .content-container .product-detail-container .cart-btn:hover {
           cursor: pointer;
           filter: opacity(0.8); }

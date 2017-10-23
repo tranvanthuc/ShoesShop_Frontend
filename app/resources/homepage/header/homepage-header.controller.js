@@ -75,12 +75,11 @@ export default ($rootScope, $scope, $api, $localStorage, $state) => {
   $rootScope.$watch('lightHeader', lightHeader => {
     $scope.lightHeader = lightHeader;
   })
-  
+
   $scope.$on('ordersQuantityChanged', (event, args) => {
     $localStorage.ordersQuantity = args;
     $scope.ordersQuantity = $localStorage.ordersQuantity;
   })
-
   $scope.ordersQuantity = $localStorage.ordersQuantity;
 
   /* Toggle search form */
