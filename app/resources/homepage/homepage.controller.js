@@ -1,5 +1,5 @@
 /* @ngInject */
-export default ($rootScope, $scope) => {
+export default ($rootScope, $scope, $window, $localStorage) => {
   $('.sidebar-container').css('left', '-300px');
 
   $('.menu-bar').on('click', () => {
@@ -14,6 +14,11 @@ export default ($rootScope, $scope) => {
 
   /* Sidebar menu */
   $('.sidebar-container .categories-container').animate({left: '102.25px'}, 400);
+
+  // $window.$on('beforeunload', event => {
+  //   $rootScope.loggedIn = $localStorage.loggedIn;
+  //   console.log($rootScope.loggedIn);
+  // })
 
   // $('.sidebar-menu-item').on('click', () => {
   //   console.log('object');

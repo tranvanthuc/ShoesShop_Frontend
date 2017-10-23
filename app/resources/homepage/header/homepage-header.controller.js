@@ -4,6 +4,7 @@ import { genderConverter, textConverter } from '../../handlerServices';
 /* @ngInject */
 export default ($rootScope, $scope, $api, $localStorage, $state) => {
   /* Authen */
+  $scope.loggedIn = $localStorage.loggedIn;
   $scope.$on('authenActivated', (event, args) => {
     $scope.loggedIn = args;
   })
@@ -59,7 +60,6 @@ export default ($rootScope, $scope, $api, $localStorage, $state) => {
     $scope.categories.map(category => category.urlName = textConverter.convertToUrlParam(category.name));  
   }
 
-
   /* Handle scrolling */
   $rootScope.$watch('currentState', currentState => {
     let stateName = currentState.split('.')[1];
@@ -75,12 +75,11 @@ export default ($rootScope, $scope, $api, $localStorage, $state) => {
   $rootScope.$watch('lightHeader', lightHeader => {
     $scope.lightHeader = lightHeader;
   })
-  
+
   $scope.$on('ordersQuantityChanged', (event, args) => {
     $localStorage.ordersQuantity = args;
     $scope.ordersQuantity = $localStorage.ordersQuantity;
   })
-
   $scope.ordersQuantity = $localStorage.ordersQuantity;
 
   /* Toggle search form */

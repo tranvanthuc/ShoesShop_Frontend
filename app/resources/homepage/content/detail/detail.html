@@ -41,7 +41,7 @@
                   <p ng-bind="modalContent"></p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-success btn-sm" ng-click="_goToCart()" ng-if="productSize !== undefined">View your cart</button>
+                  <button type="button" class="btn btn-outline-success btn-sm" ng-click="_goToCart()" ng-if="validToAdd">View your cart</button>
                   <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">OK</button>
                 </div>
               </div>

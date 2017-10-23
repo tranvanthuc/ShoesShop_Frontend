@@ -37,7 +37,7 @@
       <label>
         <i class="fa fa-shopping-cart"></i>          
       </label>
-      <span ng-bind="ordersQuantity"></span>
+      <span ng-bind="ordersQuantity" ng-if="ordersQuantity > 0"></span>
     </div>
   </div>
   <div class="categories-container" id="categories" ng-if="catalogClicked">

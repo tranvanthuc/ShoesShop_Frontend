@@ -399,12 +399,12 @@
     .cart {
       display: flex;
       align-items: flex-end;
-      text-align: center;
     }
 
     .cart-btn {
       background-color: #34495e;
       color: white;
+      text-align: center;
 
       &:hover {
         cursor: pointer;
@@ -465,8 +465,14 @@
       line-height: 2.5;
     }
 
+    .subtotal {
+      margin-top: 25px;
+      text-align: end;
+      font-size: 22px;
+    }
+
     .payment-container {
-      margin-top: 40px;
+      margin-top: 25px;
       display: flex;
       justify-content: flex-end;
     }

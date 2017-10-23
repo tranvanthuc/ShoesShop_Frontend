@@ -7,8 +7,17 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
   });
 
   $scope.catalogName = capitalize($stateParams.catalogName) + "'s";
-  $scope.quantity = 1;
 
+  /* Handle quantity format */
+  $scope.quantity = 1;
+  $scope.$watch('quantity', quantity => {
+    if(quantity < 1 || quantity === null || quantity === undefined) {
+      $scope.invalidQuantity = true;
+    } else {
+      $scope.invalidQuantity = false;
+    }
+  })
+  
   /* Get product info */
   $rootScope.loading = true;
   $api('product/all-info', {
@@ -35,26 +44,33 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
   $scope._addToCart = (product) => {
     if($scope.productSize === undefined) {
       $scope.modalContent = 'Please select a size';
+      $scope.validToAdd = false;
     } else {
-      $scope.modalContent = 'The shoe is added';
-      const item = {
-        id: product.id,
-        name: product.name,
-        image: product.image,
-        size: $scope.productSize,
-        quantity: $scope.quantity,
-        price: product.price,
-        total: product.price * $scope.quantity
-      }
-
-      if($localStorage.orders === undefined) {
-        $scope.orders = [];
-      }
+      if($scope.invalidQuantity) {
+        $scope.modalContent = 'Please enter valid quantity';
+        $scope.validToAdd = false;
+      } else {
+        $scope.validToAdd = true;
+        $scope.modalContent = 'The shoe is added';
+        const item = {
+          id: product.id,
+          name: product.name,
+          image: product.image,
+          size: $scope.productSize,
+          quantity: $scope.quantity,
+          price: product.price,
+          total: product.price * $scope.quantity
+        }
   
-      $scope.orders.push(item);
-      $localStorage.orders = $scope.orders;
-
-      $rootScope.$broadcast('ordersQuantityChanged', $localStorage.orders.length);
+        if($localStorage.orders === undefined) {
+          $scope.orders = [];
+        }
+    
+        $scope.orders.push(item);
+        $localStorage.orders = $scope.orders;
+  
+        $rootScope.$broadcast('ordersQuantityChanged', $localStorage.orders.length);
+      }
     }
 
     $('#cartVerificationModal').modal();
