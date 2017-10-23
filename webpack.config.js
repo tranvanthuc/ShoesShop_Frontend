@@ -1,5 +1,7 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+var IS_PROD = process.env.NODE_ENV === 'production';
+
 module.exports = {
     entry: [
       './app/app.module.js',
@@ -8,7 +10,7 @@ module.exports = {
         path: __dirname + '/bin',
         filename: 'app.bundle.js',
     },
-    watch: true,
+    watch: !IS_PROD,
     module: {
         loaders: [
           {
