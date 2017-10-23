@@ -59,7 +59,6 @@ export default ($rootScope, $scope, $api, $localStorage, $state) => {
     $scope.categories.map(category => category.urlName = textConverter.convertToUrlParam(category.name));  
   }
 
-
   /* Handle scrolling */
   $rootScope.$watch('currentState', currentState => {
     let stateName = currentState.split('.')[1];

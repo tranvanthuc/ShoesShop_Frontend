@@ -50,9 +50,20 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
       if($localStorage.orders === undefined) {
         $scope.orders = [];
       }
+
+      // $localStorage.orders.map(order => {
+      //   if(order.id == product.id) {
+      //     if(order.quantity !== item.quantity) {
+      //     console.log('order: ', order);
+      //     console.log('old quantity: ', order.quantity);
+      //     console.log('new quantity: ', item.quantity);
+      //     }
+      //   }
+      // })
   
       $scope.orders.push(item);
       $localStorage.orders = $scope.orders;
+      console.log($localStorage.orders);
 
       $rootScope.$broadcast('ordersQuantityChanged', $localStorage.orders.length);
     }
