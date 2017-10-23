@@ -28,7 +28,7 @@
           <span>$<span ng-bind="order.price"></span></span>
         </div>
         <div class="quantity vertical-center col-2">
-          <input type="number" min="1" class="form-control" ng-model="order.quantity" ng-change="_onQuantityChanged(order.id, order.quantity, order.total)">
+          <input type="number" min="1" class="form-control" ng-model="order.quantity" ng-change="_onQuantityChanged(order.orderId, order.quantity, order.total)">
         </div>
         <div class="total vertical-center col-2">
           <span>$<span ng-bind="order.total"></span></span>
