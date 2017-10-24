@@ -19,7 +19,7 @@
 						'has-danger': form.submitForm.firstname.$invalid && form.submitForm.firstname.$touched,
 						'has-success': form.submitForm.firstname.$valid
 					}">
-						<input name="firstname" class="form-control" placeholder="Firstname" ng-model="user.firstname" ng-maxlength="8" required>
+						<input name="firstname" class="form-control" placeholder="Firstname" ng-model="user.firstname" ng-maxlength="32" required>
 						<div ng-messages="form.submitForm.firstname.$error" ng-show="form.submitForm.firstname.$touched">
 							<div ng-message="required" class="text-danger">
 								<small>Firstname is required.</small>
@@ -36,7 +36,7 @@
 						'has-danger': form.submitForm.lastname.$invalid && form.submitForm.lastname.$touched,
 						'has-success': form.submitForm.lastname.$valid
 					}">
-						<input name="lastname" class="form-control" placeholder="Lastname" ng-model="user.lastname" ng-maxlength="8" required>
+						<input name="lastname" class="form-control" placeholder="Lastname" ng-model="user.lastname" ng-maxlength="32" required>
 						<div ng-messages="form.submitForm.lastname.$error" ng-show="form.submitForm.lastname.$touched">
 							<div ng-message="required" class="text-danger">
 								<small>Lastname is required.</small>
@@ -50,10 +50,10 @@
 
 					<!-- Email -->
 					<div class="form-group" ng-class="{
-						'has-danger': form.submitForm.email.$invalid && form.submitForm.email.$touched || isExistedEmail,
+						'has-danger': form.submitForm.email.$invalid && form.submitForm.email.$touched,
 						'has-success': form.submitForm.email.$valid
 					}">
-						<input type="email" name="email" class="form-control form-control-success form-control-danger" placeholder="Email: helm@gmail.com" ng-model="user.email" ng-pattern="/^[\w+\-.]+@[a-z\d\-.]+\.[a-z]+$/" required>
+						<input type="email" name="email" class="form-control" placeholder="Email: helm@gmail.com" ng-model="user.email" ng-pattern="/^[\w+\-.]+@[a-z\d\-.]+\.[a-z]+$/" required>
 						<div ng-messages="form.submitForm.email.$error" ng-show="form.submitForm.email.$touched">
 							<div ng-message="required" class="text-danger">
 								<small>Email is required.</small>
@@ -87,7 +87,7 @@
 
 					<!-- Submit Btn -->
 					<div class="text-center">
-						<input type="submit" class="btn" value="CREATE" ng-disabled="form.submitForm.$invalid" ng-class="form.submitForm.$invalid ? 'disable' : null" ng-click="_registerAccount(user)">
+						<input type="submit" class="btn" value="CREATE" ng-disabled="form.submitForm.$invalid" ng-class="form.submitForm.$invalid ? 'disabled' : null" ng-click="_registerAccount(user)">
 					</div>
 					<!-- End Submit Btn -->
 				</ng-form>
