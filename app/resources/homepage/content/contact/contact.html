@@ -13,34 +13,83 @@
           <p>PHONE - 512-609-8150 </p>
         </div>
       </div>
-      <div class="row">
-        <div class="form-group col-12 col-md-6">
-          <input type="text" class="form-control" placeholder="Name" ng-model="contact.name">
-        </div>
-        <div class="form-group col-12 col-md-6">
-          <input type="email" class="form-control" placeholder="Email" ng-model="contact.email">
-        </div>
-      </div>
-      <div class="form-group">
-        <textarea class="form-control" rows="15" id="txt-area" placeholder="Tell us your opinion or any questions ..." ng-model="contact.message"></textarea>
-      </div>
-      <center>
-        <div class="send-btn form-control" ng-click="_submitContactForm(contact)">SEND</div>
-        <!-- Modal -->
-        <div class="modal fade" id="contactVerifyModal" tabindex="-1" role="dialog">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-body">
-                <p>Thank you for your contact. We will response you as soon as possible.</p>
+      <ng-form name="form.submitForm">
+        <div class="row">
+          <!-- Name -->
+          <div class="form-group col-12 col-md-6" ng-class="{
+						'has-danger': form.submitForm.name.$invalid && form.submitForm.name.$touched,
+						'has-success': form.submitForm.name.$valid
+					}">
+            <input class="form-control" name="name" placeholder="Name" ng-model="contact.name" ng-maxlength="32" required>
+            <div ng-messages="form.submitForm.name.$error" ng-show="form.submitForm.name.$touched">
+              <div ng-message="required" class="text-danger">
+                <small>Name is required.</small>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">OK</button>
+              <div ng-message="maxlength" class="text-danger">
+                <small>Name is too long.</small>
               </div>
             </div>
           </div>
+          <!-- End Name -->
+
+          <!-- Email -->
+          <div class="form-group col-12 col-md-6" ng-class="{
+						'has-danger': form.submitForm.email.$invalid && form.submitForm.email.$touched,
+						'has-success': form.submitForm.email.$valid
+					}">
+            <input type="email" class="form-control" name="email" placeholder="Email" ng-model="contact.email" ng-pattern="/^[\w+\-.]+@[a-z\d\-.]+\.[a-z]+$/" required>
+            <div ng-messages="form.submitForm.email.$error" ng-show="form.submitForm.email.$touched">
+              <div ng-message="required" class="text-danger">
+                <small>Email is required.</small>
+              </div>
+              <div ng-message="pattern" class="text-danger">
+                <small>This field must be an email.</small>
+              </div>
+            </div>
+          </div>
+          <!-- End Email -->
         </div>
-      </center>
+
+        <!-- Message -->
+        <div class="form-group" ng-class="{
+          'has-danger': form.submitForm.message.$invalid && form.submitForm.message.$touched,
+          'has-success': form.submitForm.message.$valid
+        }">
+          <textarea class="form-control" name="message" rows="15" id="txt-area" placeholder="Tell us your opinion or any questions ..." ng-model="contact.message" ng-minlength="3" ng-maxlength="255" required></textarea>
+        </div>
+        <div ng-messages="form.submitForm.message.$error" ng-show="form.submitForm.message.$touched">
+          <div ng-message="required" class="text-danger">
+            <small>Message is required.</small>
+          </div>
+          <div ng-message="minlength" class="text-danger">
+            <small>Message is too short.</small>
+          </div>
+          <div ng-message="maxlength" class="text-danger">
+            <small>Message is too long.</small>
+          </div>
+        </div>
+        <!-- End Message -->
+
+        <!-- Submit btn -->
+        <center>
+          <input type="submit" class="btn send-btn" value="SEND" ng-disabled="form.submitForm.$invalid" ng-class="form.submitForm.$invalid ? 'disabled' : null" ng-click="_submitContactForm(contact)">
+        </center>
+        <!-- End submit btn -->
+      </ng-form>
     </div>
     <div class="col-1 col-md-2 "></div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="contactVerifyModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Thank you for your contact. We will respond to you as soon as possible.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
