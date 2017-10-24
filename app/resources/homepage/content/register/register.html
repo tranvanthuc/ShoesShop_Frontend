@@ -7,6 +7,9 @@
 				<h2>Create Account</h2>
 			</div>
 			<div class="register-form">
+				<div class="fail-submition" ng-if="registerFail">
+					<p class="error-text" ng-bind="errorText"></p>
+				</div>
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Firstname" ng-model="user.firstname">
 				</div>

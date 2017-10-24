@@ -14,11 +14,14 @@ export default ($rootScope, $scope, $state, $stateParams, $localStorage, $api) =
         email: user.email,
         password: user.password
       }
-    }).then(response => {
+    }).then(response => { // success
+      $scope.registerFail = false;
       $scope.user = {};
       $state.go('homepage.login');
-    }).catch(error => {
-      console.log(error);
+    }).catch(error => { // fail
+      $scope.registerFail = true;
+      $scope.errorText = 'Email is existed.'
+      console.log('fail: ', error);
     }).finally(() => {
       $rootScope.loading = false;
     })

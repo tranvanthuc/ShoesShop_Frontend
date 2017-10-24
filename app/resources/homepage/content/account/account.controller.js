@@ -8,6 +8,6 @@ export default ($rootScope, $scope, $api, $state, $localStorage) => {
     $localStorage.user = {};
     $localStorage.loggedIn = false;
     $rootScope.$broadcast('authenActivated', $localStorage.loggedIn);
-    $state.go('homepage.home');
+    $state.go('homepage.login');
   }
 }
