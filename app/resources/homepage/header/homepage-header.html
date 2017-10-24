@@ -19,9 +19,9 @@
         <i class="fa fa-bars"></i>          
       </label>
     </div>
-    <div class="search-container header-right-item">
+    <div class="search-container header-right-item" ng-if="search">
       <div class="form-group m-0" ng-class="showSearchForm ? 'search-form-inline' : null">
-        <input type="text" class="search-form form-control" id="search" ng-if="showSearchForm" ng-class="lightHeader ? 'search-form-bg' : null" placeholder="Search...">
+        <input class="search-form form-control" id="search" ng-if="showSearchForm" ng-class="lightHeader ? 'search-form-bg' : null" placeholder="Search..." ng-model="searchText" ng-change="_searchChanged(searchText)">
         <label ng-click="_onSearchClick()">
           <i class="fa fa-search"></i>          
         </label>
