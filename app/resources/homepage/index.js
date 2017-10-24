@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
 import ngStorage from 'ngstorage';
+import ngMessages from 'angular-messages';
 
 import homepageCtrl from './homepage.controller';
 import routes from './homepage.routes';
@@ -14,6 +15,7 @@ import services from './services';
 export default angular.module('app.homepage', [
     uirouter,
     'ngStorage',
+    'ngMessages',
     homepageHeader,
     homepageContent,
     homepageFooter,

@@ -5,7 +5,7 @@
     <h5 ng-bind="catalogName"></h5>
   </div>
   <div class="products items row m-0">
-    <div class="product product-style item col-6 col-sm-4 col-md-3" dir-paginate="item in products | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productsPagination" ui-sref="homepage.detail({catalogName: catalogNameParam, productName: item.productName, productId: item.id})">
+    <div class="product product-style item col-6 col-sm-4 col-md-3" dir-paginate="item in products | filter:searchText | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productsPagination" ui-sref="homepage.detail({catalogName: catalogNameParam, productName: item.productName, productId: item.id})">
       <div class="image">
         <img ng-src="/app/assets/images/{{ item.image }}">
       </div>

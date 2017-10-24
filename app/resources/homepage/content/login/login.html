@@ -7,15 +7,23 @@
 				<h2>Login</h2>
 			</div>
 			<div class="login-form">
+				<!-- Submit fail -->
+				<div class="fail-submition">
+					<small class="text-danger" ng-bind="message"></small>
+				</div>
+				<!-- End submit fail -->
+
+				<!-- Email -->
 				<div class="form-group">
 					<input type="email" class="form-control" placeholder="Email" ng-model="user.email">
 				</div>
+				<!-- End Email -->
+
+				<!-- Password -->
 				<div class="form-group">
 					<input type="password" class="form-control" placeholder="Password" ng-model="user.password">
 				</div>
-				<div class="message">
-					<p ng-bind="message"></p>
-				</div>
+				<!-- End Password -->
 			</div>
 			<div class="text-center">
 				<p class="btn-hover" ui-sref="homepage.forgot">Forgot your password?</p>

@@ -7,21 +7,90 @@
 				<h2>Create Account</h2>
 			</div>
 			<div class="register-form">
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Firstname">
-				</div>
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Lastname">
-				</div>
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Email">
-				</div>
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Password">
-				</div>
-			</div>
-			<div class="text-center">
-				<input type="submit" class="btn" value="CREATE">
+				<ng-form name="form.submitForm">
+					<!-- Submit error -->
+					<div class="fail-submition" ng-if="registerFail">
+						<small class="text-danger" ng-bind="errorText"></small>
+					</div>
+					<!-- End submit error -->
+
+					<!-- Firstname -->
+					<div class="form-group" ng-class="{
+						'has-danger': form.submitForm.firstname.$invalid && form.submitForm.firstname.$touched,
+						'has-success': form.submitForm.firstname.$valid
+					}">
+						<input name="firstname" class="form-control" placeholder="Firstname" ng-model="user.firstname" ng-maxlength="8" required>
+						<div ng-messages="form.submitForm.firstname.$error" ng-show="form.submitForm.firstname.$touched">
+							<div ng-message="required" class="text-danger">
+								<small>Firstname is required.</small>
+							</div>
+							<div ng-message="maxlength" class="text-danger">
+								<small>Firstname is too long.</small>
+							</div>
+						</div>
+					</div>
+					<!-- End Firstname -->
+
+					<!-- Lastname -->
+					<div class="form-group" ng-class="{
+						'has-danger': form.submitForm.lastname.$invalid && form.submitForm.lastname.$touched,
+						'has-success': form.submitForm.lastname.$valid
+					}">
+						<input name="lastname" class="form-control" placeholder="Lastname" ng-model="user.lastname" ng-maxlength="8" required>
+						<div ng-messages="form.submitForm.lastname.$error" ng-show="form.submitForm.lastname.$touched">
+							<div ng-message="required" class="text-danger">
+								<small>Lastname is required.</small>
+							</div>
+							<div ng-message="maxlength" class="text-danger">
+								<small>Lastname is too long.</small>
+							</div>
+						</div>
+					</div>
+					<!-- End Lastname -->
+
+					<!-- Email -->
+					<div class="form-group" ng-class="{
+						'has-danger': form.submitForm.email.$invalid && form.submitForm.email.$touched || isExistedEmail,
+						'has-success': form.submitForm.email.$valid
+					}">
+						<input type="email" name="email" class="form-control form-control-success form-control-danger" placeholder="Email: helm@gmail.com" ng-model="user.email" ng-pattern="/^[\w+\-.]+@[a-z\d\-.]+\.[a-z]+$/" required>
+						<div ng-messages="form.submitForm.email.$error" ng-show="form.submitForm.email.$touched">
+							<div ng-message="required" class="text-danger">
+								<small>Email is required.</small>
+							</div>
+							<div ng-message="pattern" class="text-danger">
+								<small>This field must be an email.</small>
+							</div>
+						</div>
+					</div>
+					<!-- End Email -->
+
+					<!-- Password -->
+					<div class="form-group" ng-class="{
+						'has-danger': form.submitForm.password.$invalid && form.submitForm.password.$touched,
+						'has-success': form.submitForm.password.$valid
+					}">
+						<input type="password" name="password" class="form-control" placeholder="Password" ng-model="user.password" ng-minlength="6" ng-maxlength="32" required>
+						<div ng-messages="form.submitForm.password.$error" ng-show="form.submitForm.password.$touched">
+							<div ng-message="required" class="text-danger">
+								<small>Password is required.</small>
+							</div>
+							<div ng-message="minlength" class="text-danger">
+								<small>Password is too short.</small>
+							</div>
+							<div ng-message="maxlength" class="text-danger">
+								<small>Password is too long.</small>
+							</div>
+						</div>
+					</div>
+					<!-- End Password -->
+
+					<!-- Submit Btn -->
+					<div class="text-center">
+						<input type="submit" class="btn" value="CREATE" ng-disabled="form.submitForm.$invalid" ng-class="form.submitForm.$invalid ? 'disable' : null" ng-click="_registerAccount(user)">
+					</div>
+					<!-- End Submit Btn -->
+				</ng-form>
 			</div>
 		</div>
 		<div class="col-1 col-sm-3 col-xl-4"></div>

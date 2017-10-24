@@ -3,6 +3,8 @@
 .homepage-wrapper {
   overflow-x: hidden;
   position: relative;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 24px;    
   
   @import './styles.scss';
   @import './headerStyles.scss';
@@ -11,4 +13,5 @@
   @import './footerStyles.scss';
   @import './contactStyles.scss';
   @import './authenStyles.scss';
+  @import './errorStyles.scss';
 }

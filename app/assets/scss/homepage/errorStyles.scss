@@ -1,0 +1,10 @@
+.text-danger {
+  color: #e74c3c;
+}
+
+.disable {
+
+  &:hover {
+    cursor: not-allowed;
+  }
+}

@@ -68,7 +68,7 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
 
         if(isExisted) { // Product is existed with the same size and quantity
           $scope.validToAdd = false;
-          $scope.modalContent = "You've ordered this. Please choose another size or quantity!";    
+          $scope.modalContent = "You've ordered this. Please choose another size or quantity. You can also update quantity in your cart.";    
         } else {
           $scope.validToAdd = true;          
           if(isUpdateQuantity) { // Update quantity in cart with the same product

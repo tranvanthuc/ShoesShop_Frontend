@@ -2,7 +2,24 @@ import { headerMenu } from '../fixture';
 import { genderConverter, textConverter } from '../../handlerServices';
 
 /* @ngInject */
-export default ($rootScope, $scope, $api, $localStorage, $state) => {
+export default ($rootScope, $scope, $api, $localStorage, $state, $timeout) => {
+  /* Show search box in category page */
+  $scope.hasSearch = stateName => {
+    return stateName.split('.')[1] === 'category' ? true : false;
+  }
+
+  $scope.search = $scope.hasSearch($state.current.name);
+
+  $rootScope.$on('$stateChangeSuccess', (e, toState, toParams, fromState, fromParams) => {
+    $scope.search = $scope.hasSearch(toState.name);
+  });
+
+  // Watch search text and send it to category controller
+  $scope._searchChanged = searchText => {
+    $rootScope.$broadcast('searchTextChanged', searchText)
+  }
+  $timeout($scope._searchChanged, 3000);
+
   /* Authen */
   $scope.loggedIn = $localStorage.loggedIn;
   $scope.$on('authenActivated', (event, args) => {
@@ -83,11 +100,8 @@ export default ($rootScope, $scope, $api, $localStorage, $state) => {
   $scope.ordersQuantity = $localStorage.ordersQuantity;
 
   /* Toggle search form */
-  // $scope.onSearchLick = false;
-  // $scope._onSearchClick = () => {
-  //   $scope.onSearchLick = !$scope.onSearchLick;
-  // };
-  // $scope.$watch('onSearchLick', (newVal, oldVal) => {
-  //   $scope.showSearchForm = newVal;
-  // });
+  $scope.showSearchForm = false;
+  $scope._onSearchClick = () => {
+    $scope.showSearchForm = !$scope.showSearchForm;
+  };
 }
