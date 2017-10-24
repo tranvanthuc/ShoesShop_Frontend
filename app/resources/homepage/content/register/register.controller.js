@@ -16,14 +16,23 @@ export default ($rootScope, $scope, $state, $stateParams, $localStorage, $api) =
       }
     }).then(response => { // success
       $scope.registerFail = false;
+      $scope.isExistedEmail = false;
       $scope.user = {};
+      $scope.setPristine();
       $state.go('homepage.login');
     }).catch(error => { // fail
       $scope.registerFail = true;
+      $scope.isExistedEmail = true;
       $scope.errorText = 'Email is existed.'
-      console.log('fail: ', error);
+      console.log(error);
     }).finally(() => {
       $rootScope.loading = false;
     })
   };
+
+  /* Reset validation */
+  $scope.setPristine = () => {
+    $scope.form.submitForm.$setPristine();
+    $scope.form.submitForm.$setUntouched();
+  }
 }
