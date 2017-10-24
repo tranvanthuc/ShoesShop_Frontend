@@ -11829,7 +11829,7 @@ a.text-dark:focus, a.text-dark:hover {
       margin-bottom: 10px; }
   .homepage-wrapper .forgot-container .buttonSubmit {
     margin-bottom: 20px; }
-  .homepage-wrapper .fail-submition .text-danger {
+  .homepage-wrapper .text-danger {
     color: #e74c3c; }
   .homepage-wrapper .disable:hover {
     cursor: not-allowed; }

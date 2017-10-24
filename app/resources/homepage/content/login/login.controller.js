@@ -13,20 +13,17 @@ export default ($rootScope, $scope, $api, $state, $localStorage) => {
         password: user.password
       }
     }).then(response => {
-      if(response.data.results.length === 0) {
-        $scope.loggedIn = false;
-        $scope.message = 'Email or password is incorrect';
-        $('#loginNotificationModal').modal();
-      } else {
-        $scope.loggedIn = true;
-        $scope.user = response.data.results[0];
-        $localStorage.user = $scope.user;
+      $scope.loggedIn = true;
+      $scope.user = response.data.results[0];
+      $localStorage.user = $scope.user;
+    
+      $state.go('homepage.account')
       
-        $state.go('homepage.account')
-      }
       $localStorage.loggedIn = $scope.loggedIn;
       $rootScope.$broadcast('authenActivated', $localStorage.loggedIn);
     }).catch(err => {
+      $scope.loggedIn = false;
+      $scope.message = 'Email or password is incorrect.';
       console.log(err);
     }).finally(() => {
       $rootScope.loading = false;
