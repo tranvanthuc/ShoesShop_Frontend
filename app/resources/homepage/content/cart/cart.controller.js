@@ -27,7 +27,7 @@ export default ($rootScope, $scope, $localStorage, $state, $api) => {
     $scope.subtotal = 0;
     $scope.orders.forEach(order => {
       if(order.orderId === orderId) {
-        if(quantity === null || quantity === undefined) {
+        if(quantity > 100 || quantity === null || quantity === undefined) {
           order.quantity = 0;
           order.total = 0;
         } else {

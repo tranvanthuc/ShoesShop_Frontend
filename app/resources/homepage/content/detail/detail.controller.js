@@ -29,7 +29,7 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
   // Handle quantity format
   $scope.quantity = 1;  
   $scope._onQuantityChanged = quantity => {
-    if(quantity === null || quantity === undefined) {
+    if(quantity > 100 || quantity === null || quantity === undefined) {
       $scope.quantity = 0;
       $scope.invalidQuantity = true;
     } else {
@@ -53,7 +53,7 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
     else {
       // Quantity is invalid
       if($scope.invalidQuantity) {
-        $scope.modalContent = 'Please enter valid quantity.';
+        $scope.modalContent = 'Please enter valid quantity (0 - 100).';
         $scope.validToAdd = false;
       }
       // Quantity is valid
