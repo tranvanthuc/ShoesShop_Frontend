@@ -18,7 +18,7 @@
         <div class="col-4 pl-0">
           <label for="size" class="mb-1">Size</label>          
           <div class="size form-group m-0">
-            <select class="form-control" id="size" ng-model="sizeSelected" ng-change="_changedValue(sizeSelected)" data-ng-options="item as item for item in product.sizes">
+            <select class="form-control" id="size" ng-model="size" ng-change="_onSizeChanged(size)" data-ng-options="item as item for item in product.sizes">
               <option value="">Select your size</option>
             </select>
           </div>
@@ -26,7 +26,7 @@
         <div class="col-4 pl-0">
           <label for="quantity" class="mb-1">Quantity</label>          
           <div class="size form-group m-0">
-            <input type="number" min="1" class="form-control" name="quantity" id="quantity" ng-model="quantity">
+            <input type="number" min="1" class="form-control" name="quantity" id="quantity" ng-model="quantity" ng-change="_onQuantityChanged(quantity)">
           </div>
         </div>
         <div class="cart col-4 p-0">

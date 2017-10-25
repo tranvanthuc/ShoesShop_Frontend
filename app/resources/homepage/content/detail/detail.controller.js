@@ -27,19 +27,20 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
   $scope.orders = $localStorage.orders;
 
   // Handle quantity format
-  $scope.quantity = 1;
-  $scope.$watch('quantity', quantity => {
-    if(quantity < 1 || quantity === null || quantity === undefined) {
+  $scope.quantity = 1;  
+  $scope._onQuantityChanged = quantity => {
+    if(quantity === null || quantity === undefined) {
+      $scope.quantity = 0;
       $scope.invalidQuantity = true;
     } else {
       $scope.invalidQuantity = false;
     }
-  })
+  }
 
   // Change size
-  $scope._changedValue = (size) => {
+  $scope._onSizeChanged = size => {
     $scope.productSize = size;
-  }
+  };
 
   // Add to cart action
   $scope._addToCart = (product) => {
