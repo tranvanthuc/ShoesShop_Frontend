@@ -69,17 +69,17 @@ export default ($rootScope, $scope, $api, $localStorage, $state, $timeout) => {
   });;
 
   /* On header menu click */
-  console.log('init: ', $rootScope.openCategoriesDialog);
-  $rootScope.$watch('openCategoriesDialog', openCategoriesDialog => {
-    $scope.openCategoriesDialog = openCategoriesDialog;
-    if(!$scope.isCatalogPage($state.current.name) && !$scope.openCategoriesDialog) {
-      $scope.$watch('menu', menu => {
-        menu.map(item => {
-          item.isActivated = false;
-        });
-      })
-    }
-  });
+  // console.log('init: ', $rootScope.openCategoriesDialog);
+  // $rootScope.$watch('openCategoriesDialog', openCategoriesDialog => {
+  //   $scope.openCategoriesDialog = openCategoriesDialog;
+  //   if(!$scope.isCatalogPage($state.current.name) && !$scope.openCategoriesDialog) {
+  //     $scope.$watch('menu', menu => {
+  //       menu.map(item => {
+  //         item.isActivated = false;
+  //       });
+  //     })
+  //   }
+  // });
 
   $scope.catalogActivated = $scope.isCatalogPage($state.current.name);      
   $scope._onSubMenuClick = catalog => {
@@ -96,7 +96,7 @@ export default ($rootScope, $scope, $api, $localStorage, $state, $timeout) => {
     });
 
     $scope.categories.map(category => category.urlName = textConverter.convertToUrlParam(category.name));  
-    console.log('clicked: ', $rootScope.openCategoriesDialog);
+    // console.log('clicked: ', $rootScope.openCategoriesDialog);
   }
 
   /* Handle scrolling */

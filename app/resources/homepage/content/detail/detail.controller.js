@@ -44,11 +44,11 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
   // Add to cart action
   $scope._addToCart = (product) => {
     if($scope.productSize === undefined) { // User is still not choose a size
-      $scope.modalContent = 'Please select a size';
+      $scope.modalContent = 'Please select a size.';
       $scope.validToAdd = false;
     } else { // User has choosed a size
       if($scope.invalidQuantity) { // Quantity is invalid
-        $scope.modalContent = 'Please enter valid quantity';
+        $scope.modalContent = 'Please enter valid quantity.';
         $scope.validToAdd = false;
       } else { // Quantity is valid
         let isExisted = false; // Initial isExisted variable to check if this product is exist or not
@@ -72,9 +72,9 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
         } else {
           $scope.validToAdd = true;          
           if(isUpdateQuantity) { // Update quantity in cart with the same product
-            $scope.modalContent = 'The shoe is updated';            
+            $scope.modalContent = 'The shoe is updated.';            
           } else { // Add new product
-            $scope.modalContent = 'The shoe is added';
+            $scope.modalContent = 'The shoe is added.';
             const item = {
               id: product.id,
               name: product.name,
