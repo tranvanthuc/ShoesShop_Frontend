@@ -31,6 +31,7 @@ angular.module('app', [
 
     $rootScope.$on('$stateChangeSuccess', (e, toState, toParams, fromState, fromParams) => {
       $rootScope.loading = false;
+      $rootScope.openCategoriesDialog = false;
       $rootScope.currentState = toState.name;
 
       switch ($rootScope.currentState.split('.')[0]) {

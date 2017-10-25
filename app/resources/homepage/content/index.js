@@ -2,6 +2,7 @@ import angular from 'angular';
 import uirouter from 'angular-ui-router';
 
 import homepageContent from './homepage-content.directive';
+import homepageCtrl from './homepage-content.controller';
 import routes from './homepage-content.routes';
 
 import home from './home';
@@ -32,5 +33,6 @@ export default angular.module('app.homepage.content', [
   account
 ])
   .directive('homepageContent', homepageContent)
+  .controller('homepageCtrl', homepageCtrl)
   .config(routes)
   .name

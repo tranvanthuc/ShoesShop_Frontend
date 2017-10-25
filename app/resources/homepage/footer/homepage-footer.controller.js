@@ -1,5 +1,5 @@
 /* @ngInject */
-export default $scope => {
+export default ($rootScope, $scope) => {
   $scope.menu = [
     {
       title: 'Company',
@@ -13,5 +13,14 @@ export default $scope => {
       title: 'Contact us',
       href: 'homepage.contact'
     }
-  ]
+  ];
+
+  // $rootScope.$watch('openCategoriesDialog', openCategoriesDialog => {
+  //   console.log('footer: ', $rootScope.openCategoriesDialog);
+    
+  // })
+
+  $scope._onFooterClick = () => {
+    $rootScope.openCategoriesDialog = false;
+  };
 }
