@@ -1,5 +1,7 @@
 /* @ngInject */
 export default ($rootScope, $scope, $api, $state, $localStorage) => {
+  $scope.user = $localStorage.user;
+  
   $rootScope.$watch('headerHeight', headerHeight => {
     $('#account-container').css('padding-top', headerHeight + 'px'); 
   });

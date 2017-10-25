@@ -15,7 +15,7 @@
       </div>
       <div class="products items row m-0">
         <div class="product product-style item col-6 col-sm-4 col-md-3" ng-repeat="item in category.products | limitTo: 8" ui-sref="homepage.detail({catalogName: catalog.name, categoryName: category.urlName, productName: item.urlName, productId: item.id})">
-          <img ng-src="/app/assets/images/{{ item.image }}">
+          <img ng-src="/app/assets/images/{{ item.image !== undefined ? item.image : 'product-default.png' }}">
           <div class="info">
             <div class="name text-center">
               <p ng-bind="item.name"></p>

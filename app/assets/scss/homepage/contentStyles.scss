@@ -117,6 +117,20 @@
     video::-webkit-media-controls {
       display: none;
     }
+
+    img {
+      display: none;
+      width: 100%;
+    }
+
+    @include media-breakpoint-down (sm) {
+      
+      video { display: none; }
+      
+      img {
+        display: block;
+      };
+    }
   }
 
   .new-products {
@@ -470,6 +484,10 @@
       align-items: center;
     }
 
+    .order-sheet {
+      max-width: 700px;
+    }
+
     .cart-row {
       padding: 20px 0;
       border-bottom: 1px solid #ecf0f1;
@@ -624,6 +642,11 @@
         cursor: pointer;
         color: #34495e;
       }
+    }
+
+    .basic-info {
+      color: #34495e;
+      font-size: 18px;
     }
 
     .action-container {

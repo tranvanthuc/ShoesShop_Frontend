@@ -2,9 +2,12 @@
 <div ng-controller="homeCtrl">
   <div class="hot-products">
     <video controls loop autoplay="autoplay" width="100%"  muted poster="https://d2zy73x1fg2nl6.cloudfront.net/images/hp/Prontovintage---desktopx1920.jpg">
-      <source src="https://d2zy73x1fg2nl6.cloudfront.net/images/hp/ProntoVintage_edit_jk%20HP-compressed.mp4" type="video/mp4">
-      <source src="https://d2zy73x1fg2nl6.cloudfront.net/images/hp/ProntoVintage_edit_jk_HP.webm" type="video/webm">
+      <!-- <source src="https://d2zy73x1fg2nl6.cloudfront.net/images/hp/ProntoVintage_edit_jk%20HP-compressed.mp4" type="video/mp4">
+      <source src="https://d2zy73x1fg2nl6.cloudfront.net/images/hp/ProntoVintage_edit_jk_HP.webm" type="video/webm"> -->
+      <source src="https://d2zy73x1fg2nl6.cloudfront.net/images/hp/ProntoKnit_Full_final_hp_hero.mp4" type="video/mp4">
+      <source src="https://d2zy73x1fg2nl6.cloudfront.net/images/hp/ProntoKnit_Full_final_hp_hero.webm" type="video/webm">
     </video>
+    <img src="/app/assets/images/hot-picture.jpg">    
   </div>
   <div class="bg-transparent-section new-products">
     <div class="title text-center">
@@ -13,7 +16,7 @@
     <div class="products items row m-0">
       <div class="product product-style item col-6 col-md-3" ng-repeat="item in newProducts" ui-sref="homepage.detail({catalogName: item.catalogName, categoryName: item.categoryName, productName: item.urlName, productId: item.id})">
         <div class="image">
-          <img ng-src="/app/assets/images/{{ item.image }}">
+          <img ng-src="/app/assets/images/{{ item.image !== undefined ? item.image : 'product-default.png' }}">
           <div class="price text-center">
             <p>${{ item.price }}</p>
           </div>
