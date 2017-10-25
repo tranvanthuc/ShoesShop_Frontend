@@ -11420,6 +11420,12 @@ a.text-dark:focus, a.text-dark:hover {
       padding: 10px 20px; }
   .homepage-wrapper .content-container {
     position: relative; }
+    .homepage-wrapper .content-container .content-cover-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: 99; }
     .homepage-wrapper .content-container .line-height, .homepage-wrapper .content-container .bg-transparent-section .name h4, .homepage-wrapper .content-container .our-story .info-container .short-description {
       line-height: 1.5; }
     .homepage-wrapper .content-container .text-center {
@@ -11773,7 +11779,7 @@ a.text-dark:focus, a.text-dark:hover {
     .homepage-wrapper .footer-container .footer-cover-bg {
       height: 100%;
       width: 100%;
-      background: tan;
+      background: transparent;
       position: absolute;
       z-index: 999; }
   .homepage-wrapper .contact-container {

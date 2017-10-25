@@ -1,4 +1,5 @@
 <!DOCTYPE <html>
-<div class="content-container" id="content-container" ng-controller="homepageCtrl" ng-click="_onContentClick()">
+<div class="content-container" id="content-container" ng-controller="homepageContentCtrl">
+  <div class="content-cover-bg" ng-if="openCategoriesDialog" ng-click="_onContentClick()"></div>    
   <div ui-view></div>
 </div>

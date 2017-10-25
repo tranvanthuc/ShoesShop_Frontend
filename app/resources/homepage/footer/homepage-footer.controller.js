@@ -15,10 +15,9 @@ export default ($rootScope, $scope) => {
     }
   ];
 
-  // $rootScope.$watch('openCategoriesDialog', openCategoriesDialog => {
-  //   console.log('footer: ', $rootScope.openCategoriesDialog);
-    
-  // })
+  $rootScope.$watch('openCategoriesDialog', openCategoriesDialog => {
+    $scope.openCategoriesDialog = openCategoriesDialog;
+  });
 
   $scope._onFooterClick = () => {
     $rootScope.openCategoriesDialog = false;

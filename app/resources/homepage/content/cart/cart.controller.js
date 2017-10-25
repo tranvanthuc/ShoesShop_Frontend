@@ -63,13 +63,13 @@ export default ($rootScope, $scope, $localStorage, $state, $api) => {
   /* Payment */
   $scope._payment = () => {
     let count = 0; // valid payment
+    console.log($scope.orders);
     if($localStorage.loggedIn) {
       if($scope.orders.length != 0) {
         $scope.orders.forEach(order => {
           if(order.quantity === 0 || order.quantity === null || order.quantity === undefined) {
             count++; // invalid payment
           }
-          // $scope.subtotal = $scope.subtotal;
         });
         if (count > 0) {
           $scope.modalContent = 'Please enter valid quantity.';
@@ -98,7 +98,7 @@ export default ($rootScope, $scope, $localStorage, $state, $api) => {
         price: order.price
       })
     });
-    
+
     $api('order/insert', {
       method: 'POST',
       data: {
