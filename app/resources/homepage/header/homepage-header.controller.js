@@ -1,17 +1,24 @@
+import angular from 'angular';
 import { headerMenu } from '../fixture';
 import { genderConverter, textConverter } from '../../handlerServices';
 
 /* @ngInject */
 export default ($rootScope, $scope, $api, $localStorage, $state, $timeout) => {
   /* Show search box in category page */
-  $scope.hasSearch = stateName => {
+  $scope.isCatalogPage = stateName => {
     return stateName.split('.')[1] === 'category' ? true : false;
   }
 
-  $scope.search = $scope.hasSearch($state.current.name);
+  $scope.search = $scope.isCatalogPage($state.current.name);
 
   $rootScope.$on('$stateChangeSuccess', (e, toState, toParams, fromState, fromParams) => {
-    $scope.search = $scope.hasSearch(toState.name);
+    $scope.search = $scope.isCatalogPage(toState.name);
+    $scope.openCategoriesDialog = false;
+    if(!$scope.search) { // Out of category page
+      $scope.menu.map(item => {
+        item.isActivated = false;
+      })
+    }
   });
 
   // Watch search text and send it to category controller
@@ -48,33 +55,48 @@ export default ($rootScope, $scope, $api, $localStorage, $state, $timeout) => {
     })
 
     $scope.menu = arr;
+    // if(!$scope.isCatalogPage($state.current.name)) {
+    //   $scope.menu.map(item => {
+    //     item.isActivated = false;
+    //   });
+    // }
 
     $rootScope.headerHeight = $('#homepage-header').height();
   }).catch(err => {
-    err
+    console.log(err);
   }).finally(() => {
     $rootScope.loading = false;
   });;
 
-  
-  $scope.catalogClicked = false;
-
   /* On header menu click */
-  $scope._onSubMenuClick = (title) => {
+  // console.log('init: ', $rootScope.openCategoriesDialog);
+  // $rootScope.$watch('openCategoriesDialog', openCategoriesDialog => {
+  //   $scope.openCategoriesDialog = openCategoriesDialog;
+  //   if(!$scope.isCatalogPage($state.current.name) && !$scope.openCategoriesDialog) {
+  //     $scope.$watch('menu', menu => {
+  //       menu.map(item => {
+  //         item.isActivated = false;
+  //       });
+  //     })
+  //   }
+  // });
+
+  $scope.catalogActivated = $scope.isCatalogPage($state.current.name);      
+  $scope._onSubMenuClick = catalog => {
+    $rootScope.openCategoriesDialog = true;
+    $scope.openCategoriesDialog = $rootScope.openCategoriesDialog;
+    $scope.categories = catalog.categories;
+    $scope.catalogName = catalog.title;            
     $scope.menu.map(item => {
-      if(item.title === title) {
-        $scope.catalogClicked = !$scope.catalogClicked;
-        if($scope.catalogClicked) {
-          $scope.catalogActive = true;
-        } else {
-          $scope.catalogActive = false;
-        }
-        $scope.catalogName = title;
-        $scope.categories = item.categories;
+      if(catalog.title == item.title && !$scope.isCatalogPage($state.current.name)) {
+        item.isActivated = true;
+      } else {
+        item.isActivated = false;
       }
-    })
+    });
 
     $scope.categories.map(category => category.urlName = textConverter.convertToUrlParam(category.name));  
+    // console.log('clicked: ', $rootScope.openCategoriesDialog);
   }
 
   /* Handle scrolling */
@@ -93,6 +115,7 @@ export default ($rootScope, $scope, $api, $localStorage, $state, $timeout) => {
     $scope.lightHeader = lightHeader;
   })
 
+  /* Catch event when orders quantity is changed */
   $scope.$on('ordersQuantityChanged', (event, args) => {
     $localStorage.ordersQuantity = args;
     $scope.ordersQuantity = $localStorage.ordersQuantity;

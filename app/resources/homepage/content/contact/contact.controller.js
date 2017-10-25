@@ -4,6 +4,17 @@ export default ($rootScope, $scope, $stateParams, $api) => {
     $('#contact-container').css('padding-top', newVal + 'px'); 
   });
 
+  $rootScope.loading = true;
+  $api('shop-info', {
+    method: 'GET',
+  }).then(response => {
+    $scope.shop = response.data.results[0];
+  }).catch(err => {
+    console.log(err);
+  }).finally(() => {
+    $rootScope.loading = false;
+  });
+
   $scope._submitContactForm = contact => {
     $rootScope.loading = true;
     $api('feedback/insert', {

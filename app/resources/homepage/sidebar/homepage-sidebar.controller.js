@@ -1,15 +1,15 @@
 /* @ngInject */
 export default ($window, $rootScope, $scope, $api) => {
   $scope.menu = ['men', 'women', 'story'];
-  // $scope.catalogClicked = false;
+  // $scope.openCategoriesDialog = false;
 
   /* On header menu click */
   // $scope._onSubMenuClick = (subMenu) => {
   //   console.log(subMenu);
   //   $scope.menu.map(item => {
   //     if(item.title === subMenu) {
-  //       $scope.catalogClicked = !$scope.catalogClicked;
-  //       if($scope.catalogClicked) {
+  //       $scope.openCategoriesDialog = !$scope.openCategoriesDialog;
+  //       if($scope.openCategoriesDialog) {
   //         $scope.catalogActive = true;
   //       } else {
   //         $scope.catalogActive = false;

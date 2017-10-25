@@ -1,5 +1,5 @@
 /* @ngInject */
-export default ($rootScope, $scope, $localStorage, $state) => {
+export default ($rootScope, $scope, $localStorage, $state, $api) => {
   $rootScope.$watch('headerHeight', headerHeight => {
     $('#cart-container').css('padding-top', headerHeight + 'px'); 
   });
@@ -68,7 +68,7 @@ export default ($rootScope, $scope, $localStorage, $state) => {
           $scope.modalContent = 'Please enter valid quantity.';
           $scope.verifyPayment = false;
         } else {
-          $scope.modalContent = 'Do you want to pay for these?';
+          $scope.modalContent = 'Do you want to pay for these shoes?';
           $scope.verifyPayment = true;
         }
       } else {
@@ -82,11 +82,33 @@ export default ($rootScope, $scope, $localStorage, $state) => {
   }
 
   $scope._pay = () => {
-    $scope.orders = [];
-    $localStorage.orders = [];
-    $scope.subtotal = 0;
-    $scope.modalContent = 'Thank you for your paying.';
-    $scope.verifyPayment = false;
-    $rootScope.$broadcast('ordersQuantityChanged', $scope.orders.length);
+    $rootScope.loading = true;    
+    let data = [];    
+    $scope.orders.map(order => {
+      data.push({
+        id: order.id,
+        quantity: order.quantity,
+        price: order.price
+      })
+    });
+    
+    $api('order/insert', {
+      method: 'POST',
+      data: {
+        user_id: $localStorage.user.id,
+        products: data
+      }
+    }).then(response => {
+      $scope.orders = [];
+      $localStorage.orders = [];
+      $scope.subtotal = 0;
+      $rootScope.loading = false;
+      $scope.modalContent = 'Thank you for your paying.';
+      $scope.verifyPayment = false;
+      $rootScope.$broadcast('ordersQuantityChanged', $scope.orders.length);
+    }).catch(error => {
+      console.log(error);
+      $rootScope.loading = false;      
+    });
   }
 }

@@ -5,7 +5,7 @@
   </div>
   <div class="header-center col-sm-6">
     <div class="menu row m-0">
-      <div class="sub-menu col-4" ng-repeat="catalogItem in menu" ng-click="_onSubMenuClick(catalogItem.title)" ng-class="catalogActive ? 'active' : null">
+      <div class="sub-menu col-4" ng-repeat="catalogItem in menu" ng-click="_onSubMenuClick(catalogItem)" ng-class="catalogItem.isActivated ? 'active' : null">
         <p ng-bind="catalogItem.title.toUpperCase()"></p>
       </div>
       <div class="sub-menu col-4" ui-sref="homepage.about" ui-sref-active="active">
@@ -40,9 +40,7 @@
       <span ng-bind="ordersQuantity" ng-if="ordersQuantity > 0"></span>
     </div>
   </div>
-  <div class="categories-container" id="categories" ng-if="catalogClicked">
-    <div class="row">
-      <p class="category col-4" ng-repeat="category in categories" ui-sref="homepage.category({catalogName: catalogName, categoryName: category.urlName, categoryId: category.id})" ui-sref-active="active" ng-bind="category.name"></p>
-    </div>
+  <div class="categories-container" id="categories-dialog" ng-if="openCategoriesDialog">
+    <p class="category" ng-repeat="category in categories" ui-sref="homepage.category({catalogName: catalogName, categoryName: category.urlName, categoryId: category.id})" ui-sref-active="active" ng-bind="category.name"></p>
   </div>
 </div>
