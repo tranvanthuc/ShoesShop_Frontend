@@ -21,30 +21,17 @@ export default ($rootScope, $scope, $api, $window) => {
     $rootScope.loading = false;
   });
   
-  /* Get all categories by catalog (men, women) */
-  $scope.catalogImages = ['catalog-men.jpg','catalog-women.jpg'];
-  $rootScope.loading = true;
-  $api('cates/catalog', {
-    method: 'GET',
-  }).then(response => {
-    let data = response.data.results;
-    let arr = [];    
-    const catalogNames = Object.getOwnPropertyNames(data);
-
-    /* Convert JSON to Array (used in ng-repeat)*/
-    Object.keys(data).map((item, index) => {
-      arr.push({
-        title: genderConverter.toCatalog(catalogNames[index]),
-        image: IMAGE_PATH + $scope.catalogImages[index],
-      })  
-    });
-
-    $scope.menu = arr;
-  }).catch((err) => {
-    console.log(err);
-  }).finally(() => {
-    $rootScope.loading = false;
-  });
+  /* Catalog */
+  $scope.menu = [
+    {
+      title: 'men',
+      image: 'catalog-men.jpg'
+    },
+    {
+      title: 'women',
+      image: 'catalog-women.jpg'
+    }
+  ];
 
   /* Handle scroll action */
   const onScrollAction = () => {
