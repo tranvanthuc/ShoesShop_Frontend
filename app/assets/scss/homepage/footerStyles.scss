@@ -13,14 +13,8 @@
     padding: 10px;
     font-size: 20px;
 
-    @include media-breakpoint-down(md) {
-      // padding-top: 25px;
-      // padding-bottom: 25px;
-    }
-
     label {
       margin: 0 20px;
-      // font-size: 2em;
 
       &:hover {
         @extend .hover;
@@ -47,8 +41,16 @@
       }
     }
 
+    .menu {
+      display: flex;
+      justify-content: space-around;
+
+      @media (max-width: 400px) {
+        flex-direction: column;
+      }
+    }
+
     .menu-item {
-      text-align: center;
 
       @media (max-width: 400px) {
         padding-top: 10px;
@@ -58,33 +60,18 @@
       &:hover {
         @extend .hover;
       }
-
-      h5 {
-
-        @include media-breakpoint-down(sm) {
-          // font-size: 16px;
-        }
-
-        @media (max-width: 400px) {
-          // font-size: 13px;
-        }
-      }
     }
 
     .copyright {
       text-align: center;
       font-size: 16px;
-
-      @media (max-width: 800px) {
-        // font-size: 12px;
-      }
     }
   }
 
   .footer-cover-bg {
     height: 100%;
     width: 100%;
-    background: transparent;
+    background: rgba(255,255,255,0.4);
     position: absolute;
     z-index: 999;
   }

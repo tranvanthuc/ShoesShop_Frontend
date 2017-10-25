@@ -6,7 +6,7 @@
       <source src="https://d2zy73x1fg2nl6.cloudfront.net/images/hp/ProntoVintage_edit_jk_HP.webm" type="video/webm">
     </video>
   </div>
-  <div class="new-products bg-transparent-section">
+  <div class="bg-transparent-section new-products">
     <div class="title text-center">
       <h2>NEW ARRIVALS</h2>
     </div>
@@ -14,14 +14,13 @@
       <div class="product product-style item col-6 col-md-3" ng-repeat="item in newProducts" ui-sref="homepage.detail({catalogName: item.catalogName, categoryName: item.categoryName, productName: item.urlName, productId: item.id})">
         <div class="image">
           <img ng-src="/app/assets/images/{{ item.image }}">
-        </div>
-        <div class="info">
-          <div class="name text-center">
-            <p ng-bind="item.name"></p>
-          </div>
           <div class="price text-center">
             <p>${{ item.price }}</p>
           </div>
+        </div>
+        <div class="name text-center">
+          <p ng-bind="item.name"></p>
+          <p ng-bind="item.catalogNameCapitaled"></p>
         </div>
       </div>
     </div>

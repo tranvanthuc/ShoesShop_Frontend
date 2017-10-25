@@ -56,7 +56,7 @@ export default ($rootScope, $scope, $api, $localStorage, $state, $timeout) => {
 
     $scope.menu = arr;
 
-    $rootScope.headerHeight = $('#homepage-header').height();
+    $rootScope.headerHeight = $('#homepage-header').innerHeight();
   }).catch(err => {
     console.log(err);
   }).finally(() => {

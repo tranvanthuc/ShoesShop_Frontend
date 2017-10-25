@@ -2,8 +2,8 @@ import { capitalize } from '../../../handlerServices/textConverter';
 
 /* @ngInject */
 export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) => {
-  $rootScope.$watch('headerHeight', (newVal) => {
-    $('#product-detail').css('padding-top', (50 + newVal) + 'px'); 
+  $rootScope.$watch('headerHeight', newVal => {
+    $('#product-detail').css('padding-top', newVal + 'px'); 
   });
 
   $scope.catalogName = capitalize($stateParams.catalogName) + "'s " + capitalize($stateParams.categoryName);
@@ -44,37 +44,55 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
 
   // Add to cart action
   $scope._addToCart = (product) => {
-    if($scope.productSize === undefined) { // User is still not choose a size
+    // User is still not choose a size
+    if($scope.productSize === undefined) {
       $scope.modalContent = 'Please select a size.';
       $scope.validToAdd = false;
-    } else { // User has choosed a size
-      if($scope.invalidQuantity) { // Quantity is invalid
+    }
+    // User has choosed a size
+    else {
+      // Quantity is invalid
+      if($scope.invalidQuantity) {
         $scope.modalContent = 'Please enter valid quantity.';
         $scope.validToAdd = false;
-      } else { // Quantity is valid
-        let isExisted = false; // Initial isExisted variable to check if this product is exist or not
-        let isUpdateQuantity = false; // Check if user updates quantity of this shoe
-        $localStorage.orders.forEach(order => { // Get all products from cart to check existed and quantity
-          if(product.id === order.id && $scope.productSize === order.size) { // If product has the same size is existed
-            if($scope.quantity === order.quantity) { // Continue check if quantity is matched, this product is existed in cart
+      }
+      // Quantity is valid
+      else {
+        // Initial isExisted variable to check if this product is exist or not
+        let isExisted = false;
+        // Check if user updates quantity of this shoe
+        let isUpdateQuantity = false; 
+        // Get all products from cart to check existed and quantity
+        $localStorage.orders.forEach(order => { 
+          // If product has the same size is existed
+          if(product.id === order.id && $scope.productSize === order.size) { 
+            // Continue check if quantity is matched, this product is existed in cart
+            if($scope.quantity === order.quantity) { 
               isExisted = true;
-            } else { // If quantity is different, update quantity in cart with the same product
+            } 
+            // If quantity is different, update quantity in cart with the same product
+            else { 
               order.quantity = $scope.quantity;
               order.total = $scope.quantity * product.price
               isUpdateQuantity = true;
             }
           }
-          return; // prevent loop to the last element
+          // prevent loop to the last element
+          return; 
         });
 
-        if(isExisted) { // Product is existed with the same size and quantity
+        // Product is existed with the same size and quantity
+        if(isExisted) { 
           $scope.validToAdd = false;
           $scope.modalContent = "You've ordered this. Please choose another size or quantity. You can also update quantity in your cart.";    
         } else {
           $scope.validToAdd = true;          
-          if(isUpdateQuantity) { // Update quantity in cart with the same product
+          // Update quantity in cart with the same product
+          if(isUpdateQuantity) { 
             $scope.modalContent = 'The shoe is updated.';            
-          } else { // Add new product
+          } 
+          // Add new product
+          else { 
             $scope.modalContent = 'The shoe is added.';
             const item = {
               id: product.id,

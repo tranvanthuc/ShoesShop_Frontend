@@ -2,7 +2,7 @@
 <div class="new-products categories-products bg-transparent-section" id="new-products" ng-controller="categoryCtrl">
   <div class="title text-center">
     <h2 class="category-name" ng-bind="categoryName"></h2>
-    <h5 ng-bind="catalogName"></h5>
+    <h5 class="catalog-name" ng-bind="catalogName"></h5>
   </div>
   <div class="products items row m-0">
     <div class="product product-style item col-6 col-sm-4 col-md-3" dir-paginate="item in products | filter:searchText | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productsPagination" ui-sref="homepage.detail({catalogName: catalogNameParam, categoryName: item.categoryName, productName: item.productName, productId: item.id})">
