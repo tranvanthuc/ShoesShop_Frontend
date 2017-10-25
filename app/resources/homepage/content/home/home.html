@@ -47,12 +47,12 @@
       <h2>THE HELM CATALOG</h2>
     </div>
     <div class="items row m-0">
-      <div class="item col-6" ng-repeat="catalogItem in menu" ui-sref="homepage.catalog({catalogName: catalogItem.title})">
+      <div class="item col-6" ng-repeat="item in menu" ui-sref="homepage.catalog({catalogName: item.title})">
         <div class="image">
-          <img ng-src="{{ catalogItem.image }}">
+          <img ng-src="/app/assets/images/{{ item.image }}">
         </div>
         <div class="name text-center">
-          <h4 ng-bind="catalogItem.title.toUpperCase()"></h4>
+          <h4 ng-bind="item.title.toUpperCase()"></h4>
         </div>
       </div>
     </div>
