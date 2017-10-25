@@ -92,9 +92,11 @@ export default ($rootScope, $scope, $localStorage, $state, $api) => {
     let data = [];    
     $scope.orders.map(order => {
       data.push({
-        id: order.id,
+        name: order.name,
+        size: order.size,
         quantity: order.quantity,
-        price: order.price
+        price: order.price,
+        total: order.total
       })
     });
 
