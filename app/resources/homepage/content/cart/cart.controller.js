@@ -63,7 +63,6 @@ export default ($rootScope, $scope, $localStorage, $state, $api) => {
   /* Payment */
   $scope._payment = () => {
     let count = 0; // valid payment
-    console.log($scope.orders);
     if($localStorage.loggedIn) {
       if($scope.orders.length != 0) {
         $scope.orders.forEach(order => {

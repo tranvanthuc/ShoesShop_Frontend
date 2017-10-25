@@ -29,7 +29,7 @@ export default ($rootScope, $scope, $stateParams, $api) => {
     $scope.products = response.data.results;
     $scope.products.forEach(item => {
       item.productName = convertToUrlParam(item.name);
-      item.price = '$' + item.price;
+      item.categoryName = $stateParams.categoryName;
     });
   }).catch(err => {
     console.log(err);

@@ -11,9 +11,11 @@ export default ($rootScope, $scope, $api, $window) => {
     method: 'GET',
   }).then(response => {
     $scope.newProducts = response.data.results;
+    console.log($scope.newProducts);
     $scope.newProducts.forEach(product => {
       product.catalogName = genderConverter.toCatalog(product.gender);
       product.urlName = textConverter.convertToUrlParam(product.name);
+      product.categoryName = textConverter.capitalize(product.category_name);
     });
   }).catch((err) => {
     console.log(err);

@@ -6,7 +6,7 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
     $('#product-detail').css('padding-top', (50 + newVal) + 'px'); 
   });
 
-  $scope.catalogName = capitalize($stateParams.catalogName) + "'s";
+  $scope.catalogName = capitalize($stateParams.catalogName) + "'s " + capitalize($stateParams.categoryName);
 
   /* Get product info */
   $rootScope.loading = true;
@@ -35,7 +35,7 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
     } else {
       $scope.invalidQuantity = false;
     }
-  }
+  };
 
   // Change size
   $scope._onSizeChanged = size => {
@@ -78,14 +78,14 @@ export default ($rootScope, $scope, $stateParams, $state, $api, $localStorage) =
             $scope.modalContent = 'The shoe is added.';
             const item = {
               id: product.id,
-              name: product.name,
+              name: $scope.catalogName + ' ' + product.name,
               image: product.image,
               size: $scope.productSize,
               quantity: $scope.quantity,
               price: product.price,
               total: product.price * $scope.quantity
             }
-            
+
             if($localStorage.orders === undefined) {
               $scope.orders = [];
             }
