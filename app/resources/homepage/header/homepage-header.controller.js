@@ -55,11 +55,6 @@ export default ($rootScope, $scope, $api, $localStorage, $state, $timeout) => {
     })
 
     $scope.menu = arr;
-    // if(!$scope.isCatalogPage($state.current.name)) {
-    //   $scope.menu.map(item => {
-    //     item.isActivated = false;
-    //   });
-    // }
 
     $rootScope.headerHeight = $('#homepage-header').height();
   }).catch(err => {
@@ -69,34 +64,19 @@ export default ($rootScope, $scope, $api, $localStorage, $state, $timeout) => {
   });;
 
   /* On header menu click */
-  // console.log('init: ', $rootScope.openCategoriesDialog);
-  // $rootScope.$watch('openCategoriesDialog', openCategoriesDialog => {
-  //   $scope.openCategoriesDialog = openCategoriesDialog;
-  //   if(!$scope.isCatalogPage($state.current.name) && !$scope.openCategoriesDialog) {
-  //     $scope.$watch('menu', menu => {
-  //       menu.map(item => {
-  //         item.isActivated = false;
-  //       });
-  //     })
-  //   }
-  // });
+  $scope.catalogActivated = $scope.isCatalogPage($state.current.name);   
+  
+  $rootScope.$watch('openCategoriesDialog', openCategoriesDialog => {
+    // console.log('header: ', openCategoriesDialog);
+    $scope.openCategoriesDialog = $rootScope.openCategoriesDialog;
+  });
 
-  $scope.catalogActivated = $scope.isCatalogPage($state.current.name);      
   $scope._onSubMenuClick = catalog => {
     $rootScope.openCategoriesDialog = true;
     $scope.openCategoriesDialog = $rootScope.openCategoriesDialog;
     $scope.categories = catalog.categories;
-    $scope.catalogName = catalog.title;            
-    $scope.menu.map(item => {
-      if(catalog.title == item.title && !$scope.isCatalogPage($state.current.name)) {
-        item.isActivated = true;
-      } else {
-        item.isActivated = false;
-      }
-    });
-
+    $scope.catalogName = catalog.title;    
     $scope.categories.map(category => category.urlName = textConverter.convertToUrlParam(category.name));  
-    // console.log('clicked: ', $rootScope.openCategoriesDialog);
   }
 
   /* Handle scrolling */
