@@ -66,7 +66,7 @@ export default ($rootScope, $scope, $localStorage, $state, $api) => {
     if($localStorage.loggedIn) {
       if($scope.orders.length != 0) {
         $scope.orders.forEach(order => {
-          if(order.quantity === null || order.quantity === undefined) {
+          if(order.quantity === 0 || order.quantity === null || order.quantity === undefined) {
             count++; // invalid payment
           }
           // $scope.subtotal = $scope.subtotal;
