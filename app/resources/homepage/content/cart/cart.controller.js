@@ -4,6 +4,7 @@ export default ($rootScope, $scope, $localStorage, $state, $api) => {
     $('#cart-container').css('padding-top', headerHeight + 'px'); 
   });
 
+  /* Get all orders from localStorage */
   $scope.orders = $localStorage.orders;
   $scope.orders.forEach((order, index) => {
     order.orderId = index;
@@ -23,12 +24,18 @@ export default ($rootScope, $scope, $localStorage, $state, $api) => {
   $scope._onQuantityChanged = (orderId, quantity, total) => {
     // total: old
     // order.total: new
+    $scope.subtotal = 0;
     $scope.orders.forEach(order => {
       if(order.orderId === orderId) {
-        order.quantity = quantity;
-        order.total = quantity * order.price;
-        $scope.subtotal = $scope.subtotal - total + parseFloat(order.total);
+        if(quantity === null || quantity === undefined) {
+          order.quantity = 0;
+          order.total = 0;
+        } else {
+          order.quantity = quantity;
+          order.total = quantity * order.price;   
+        }
       }
+      $scope.subtotal = $scope.subtotal + parseFloat(order.total);      
     });
   }
   
@@ -62,7 +69,7 @@ export default ($rootScope, $scope, $localStorage, $state, $api) => {
           if(order.quantity === null || order.quantity === undefined) {
             count++; // invalid payment
           }
-          $scope.subtotal = $scope.subtotal;
+          // $scope.subtotal = $scope.subtotal;
         });
         if (count > 0) {
           $scope.modalContent = 'Please enter valid quantity.';
