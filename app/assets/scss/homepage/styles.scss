@@ -23,3 +23,21 @@ p, label, h1, h2, h3, h4, h5, h6 {
     margin: auto;
   }
 }
+
+input:not([type]), input[type=text], input[type=email], input[type=password], textarea {
+  font-size: 20px;
+}
+
+.modal.show .modal-dialog {
+  top: 30%;
+  margin: auto;
+}
+
+.fa:hover {
+  cursor: pointer;
+  filter: opacity(0.5);
+}
+
+.defaul-image {
+  filter: opacity(0.05);
+}

@@ -13,8 +13,8 @@
     </label>
   </div>
   <div class="info">
-    <div class="menu row m-0">
-      <div class="menu-item col-4" ng-repeat="item in menu" ui-sref="{{ item.href }}">
+    <div class="menu">
+      <div class="menu-item" ng-repeat="item in menu" ui-sref="{{ item.href }}">
         <h5 ng-bind="item.title.toUpperCase()"></h5>
       </div>
     </div>

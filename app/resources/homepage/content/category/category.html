@@ -2,19 +2,19 @@
 <div class="new-products categories-products bg-transparent-section" id="new-products" ng-controller="categoryCtrl">
   <div class="title text-center">
     <h2 class="category-name" ng-bind="categoryName"></h2>
-    <h5 ng-bind="catalogName"></h5>
+    <h5 class="catalog-name" ng-bind="catalogName"></h5>
   </div>
   <div class="products items row m-0">
-    <div class="product product-style item col-6 col-sm-4 col-md-3" dir-paginate="item in products | filter:searchText | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productsPagination" ui-sref="homepage.detail({catalogName: catalogNameParam, productName: item.productName, productId: item.id})">
+    <div class="product product-style item col-6 col-sm-4 col-md-3" dir-paginate="item in products | filter:searchText | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productsPagination" ui-sref="homepage.detail({catalogName: catalogNameParam, categoryName: item.categoryName, productName: item.productName, productId: item.id})">
       <div class="image">
-        <img ng-src="/app/assets/images/{{ item.image }}">
+        <img ng-class="item.image === null ? 'defaul-image' : null" ng-src="/app/assets/images/{{ item.image !== null ? item.image : 'G-Knit-2-Cadet-Product-01_280x188.jpg' }}">
       </div>
       <div class="info">
         <div class="name text-center">
           <p ng-bind="item.name"></p>
         </div>
         <div class="price text-center">
-          <p ng-bind="item.price"></p>
+          <p>$<span ng-bind="item.price"></span></p>
         </div>
       </div>
     </div>

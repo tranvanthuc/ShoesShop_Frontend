@@ -1,15 +1,15 @@
 <!DOCTYPE html5>
 <div class="product-detail-container" id="product-detail" ng-controller="detailCtrl">
-  <div class="row m-0">
+  <div class="row m-0 pt-3">
     <div class="image-container col-12 col-md-6">
-      <img ng-src="/app/assets/images/{{ product.image }}">
+      <img ng-class="product.image === null ? 'defaul-image' : null" ng-src="/app/assets/images/{{ product.image !== null ? product.image : 'G-Knit-2-Cadet-Product-01_280x188.jpg' }}">
     </div>
     <div class="info-container col-12 col-md-6">
       <div class="catalog">
         <p>Legacy Collection - <span ng-bind="catalogName"></span></p>
       </div>
       <div class="name">
-        <h1 ng-bind="product.name"></h1>
+        <h1 ng-bind="product.name"> - <span></span></h1>
       </div>
       <div class="price">
         <h5>${{ product.price }}</h5>
@@ -26,7 +26,7 @@
         <div class="col-4 pl-0">
           <label for="quantity" class="mb-1">Quantity</label>          
           <div class="size form-group m-0">
-            <input type="number" min="1" class="form-control" name="quantity" id="quantity" ng-model="quantity" ng-change="_onQuantityChanged(quantity)">
+            <input type="number" min="1" max="100" class="form-control" name="quantity" id="quantity" ng-model="quantity" ng-change="_onQuantityChanged(quantity)">
           </div>
         </div>
         <div class="cart col-4 p-0">

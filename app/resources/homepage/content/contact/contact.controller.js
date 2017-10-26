@@ -30,11 +30,18 @@ export default ($rootScope, $scope, $stateParams, $api) => {
         name: '',
         email: '',
         message: ''
-      }
+      };
+      $scope.setPristine();
     }).catch(err => {
       console.log(err);
     }).finally(() => {
       $rootScope.loading = false;
     });
+  };
+
+  /* Reset validation */
+  $scope.setPristine = () => {
+    $scope.form.submitForm.$setPristine();
+    $scope.form.submitForm.$setUntouched();
   }
 }

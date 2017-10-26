@@ -27,7 +27,7 @@ export default ($rootScope, $scope, $localStorage, $state, $api) => {
     $scope.subtotal = 0;
     $scope.orders.forEach(order => {
       if(order.orderId === orderId) {
-        if(quantity === null || quantity === undefined) {
+        if(quantity > 100 || quantity === null || quantity === undefined) {
           order.quantity = 0;
           order.total = 0;
         } else {
@@ -63,7 +63,6 @@ export default ($rootScope, $scope, $localStorage, $state, $api) => {
   /* Payment */
   $scope._payment = () => {
     let count = 0; // valid payment
-    console.log($scope.orders);
     if($localStorage.loggedIn) {
       if($scope.orders.length != 0) {
         $scope.orders.forEach(order => {
@@ -93,9 +92,11 @@ export default ($rootScope, $scope, $localStorage, $state, $api) => {
     let data = [];    
     $scope.orders.map(order => {
       data.push({
-        id: order.id,
+        name: order.name,
+        size: order.size,
         quantity: order.quantity,
-        price: order.price
+        price: order.price,
+        total: order.total
       })
     });
 

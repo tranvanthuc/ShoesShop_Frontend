@@ -4,7 +4,7 @@ import { genderConverter, textConverter } from '../../../handlerServices';
 export default ($rootScope, $scope, $stateParams, $api) => {
   const IMAGE_PATH = '/app/assets/images/';
 
-  $rootScope.$watch('headerHeight', (newVal, oldVal) => {
+  $rootScope.$watch('headerHeight', newVal => {
     $('#catalog-container').css('padding-top', newVal + 'px'); 
   });
 

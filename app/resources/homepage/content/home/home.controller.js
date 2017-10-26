@@ -13,6 +13,9 @@ export default ($rootScope, $scope, $api, $window) => {
     $scope.newProducts = response.data.results;
     $scope.newProducts.forEach(product => {
       product.catalogName = genderConverter.toCatalog(product.gender);
+      product.categoryName = textConverter.convertToUrlParam(product.category_name);
+      product.catalogNameCapitaled = textConverter.capitalize(product.catalogName);
+      product.name = product.category_name + ' ' + product.name;
       product.urlName = textConverter.convertToUrlParam(product.name);
     });
   }).catch((err) => {
