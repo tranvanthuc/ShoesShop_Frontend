@@ -11662,7 +11662,7 @@ a.text-dark:focus, a.text-dark:hover {
         display: flex;
         flex-direction: column;
         justify-content: center; }
-        @media (max-width: 767px) {
+        @media (max-width: 991px) {
           .homepage-wrapper .content-container .product-detail-container .info-container {
             padding: 0 50px;
             margin-top: 20px; } }
