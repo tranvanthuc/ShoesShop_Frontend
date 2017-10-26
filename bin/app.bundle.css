@@ -11284,10 +11284,7 @@ a.text-dark:focus, a.text-dark:hover {
   overflow-x: hidden;
   position: relative;
   font-family: 'Patrick Hand', cursive;
-  font-size: 24px;
-  /* Get this party started */
-  /* Track */
-  /* Handle */ }
+  font-size: 24px; }
   .homepage-wrapper p, .homepage-wrapper label, .homepage-wrapper h1, .homepage-wrapper h2, .homepage-wrapper h3, .homepage-wrapper h4, .homepage-wrapper h5, .homepage-wrapper h6 {
     margin: 0; }
   .homepage-wrapper .cover-bg {
@@ -11312,20 +11309,10 @@ a.text-dark:focus, a.text-dark:hover {
     top: 30%;
     margin: auto; }
   .homepage-wrapper .fa:hover {
-    cursor: pointer; }
-  .homepage-wrapper ::-webkit-scrollbar {
-    width: 7px; }
-  .homepage-wrapper ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    -webkit-border-radius: 10px;
-    border-radius: 10px; }
-  .homepage-wrapper ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: #ecf0f1;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }
-  .homepage-wrapper ::-webkit-scrollbar-thumb:window-inactive {
-    background: #ecf0f1; }
+    cursor: pointer;
+    filter: opacity(0.5); }
+  .homepage-wrapper .defaul-image {
+    filter: opacity(0.05); }
   .homepage-wrapper .background {
     background-color: white;
     color: black !important;
@@ -11349,8 +11336,8 @@ a.text-dark:focus, a.text-dark:hover {
         padding: 10px; } }
     .homepage-wrapper .header-container .active {
       filter: opacity(0.5); }
-    .homepage-wrapper .header-container .button-hover, .homepage-wrapper .header-container .header-left:hover, .homepage-wrapper .header-container .header-center .menu p:hover, .homepage-wrapper .header-container .header-right .header-right-item:hover, .homepage-wrapper .header-container .categories-container .category:hover {
-      cursor: pointer !important;
+    .homepage-wrapper .header-container .button-hover, .homepage-wrapper .header-container .header-left:hover, .homepage-wrapper .header-container .header-center .menu p:hover, .homepage-wrapper .header-container .categories-container .category:hover {
+      cursor: pointer;
       filter: opacity(0.5); }
     .homepage-wrapper .header-container .header-left img {
       filter: invert(1); }
@@ -11402,21 +11389,26 @@ a.text-dark:focus, a.text-dark:hover {
         @media (max-width: 400px) {
           .homepage-wrapper .header-container .header-right .cart-container span {
             top: -6%; } }
-      .homepage-wrapper .header-container .header-right .search-form-inline:hover {
+      .homepage-wrapper .header-container .header-right .search-container:hover {
         filter: none; }
-      .homepage-wrapper .header-container .header-right .search-form-inline label {
-        position: relative; }
-      .homepage-wrapper .header-container .header-right .search-form-inline input {
-        position: absolute;
-        top: 16%;
-        right: 0;
-        transform: translateX(-78%);
-        width: 50%;
-        border-color: white;
-        transition: all 2s linear; }
-      .homepage-wrapper .header-container .header-right .search-form-inline .search-form-bg {
-        border-color: #bdc3c7;
-        transition: none; }
+      .homepage-wrapper .header-container .header-right .search-form-inline {
+        display: flex;
+        flex-direction: row-reverse; }
+        .homepage-wrapper .header-container .header-right .search-form-inline span {
+          border: 1px solid #bdc3c7;
+          border-radius: 4px;
+          border-left: none;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          padding-right: 8px; }
+        .homepage-wrapper .header-container .header-right .search-form-inline input {
+          border-right: none;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          width: 200px !important; }
+        .homepage-wrapper .header-container .header-right .search-form-inline .search-form-bg {
+          border-color: #bdc3c7;
+          transition: none; }
     .homepage-wrapper .header-container .categories-container {
       background-color: rgba(255, 255, 255, 0.95);
       color: black;
@@ -11720,8 +11712,6 @@ a.text-dark:focus, a.text-dark:hover {
       .homepage-wrapper .content-container .cart-container .vertical-center {
         display: flex;
         align-items: center; }
-      .homepage-wrapper .content-container .cart-container .order-sheet {
-        max-width: 700px; }
       .homepage-wrapper .content-container .cart-container .cart-row {
         padding: 20px 0;
         border-bottom: 1px solid #ecf0f1; }

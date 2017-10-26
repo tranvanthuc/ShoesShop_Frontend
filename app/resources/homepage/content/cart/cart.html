@@ -15,7 +15,7 @@
         <div class="info-container col-6">
           <div class="row m-0">
             <div class="image vertical-center col-2 pl-0">
-              <img class="w-100" ng-src="/app/assets/images/{{ order.image }}">
+              <img class="w-100" ng-class="order.image === null ? 'defaul-image' : null" ng-src="/app/assets/images/{{ order.image !== null ? order.image : 'G-Knit-2-Cadet-Product-01_280x188.jpg' }}">
             </div>
             <div class="info col-10">
               <h5 ng-bind="order.name"></h5>
@@ -38,12 +38,13 @@
     <div class="subtotal">
       <p>Subtotal: $<span ng-bind="subtotal"></span></p>
     </div>
+    <div class="payment-container">
+        <div class="payment-btn form-control" ng-click="_payment()">
+          <span>PAYMENT</span>
+        </div>
+      </div>
   </div>
-  <div class="payment-container">
-    <div class="payment-btn form-control" ng-click="_payment()">
-      <span>PAYMENT</span>
-    </div>
-  </div>
+  
   <!-- Modal -->
   <div class="modal fade" id="deleteOrderModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">

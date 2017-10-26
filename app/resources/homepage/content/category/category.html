@@ -7,7 +7,7 @@
   <div class="products items row m-0">
     <div class="product product-style item col-6 col-sm-4 col-md-3" dir-paginate="item in products | filter:searchText | itemsPerPage: pageSize" current-page="currentPage" pagination-id="productsPagination" ui-sref="homepage.detail({catalogName: catalogNameParam, categoryName: item.categoryName, productName: item.productName, productId: item.id})">
       <div class="image">
-        <img ng-src="/app/assets/images/{{ item.image !== undefined ? item.image : 'product-default.png' }}">
+        <img ng-class="item.image === null ? 'defaul-image' : null" ng-src="/app/assets/images/{{ item.image !== null ? item.image : 'G-Knit-2-Cadet-Product-01_280x188.jpg' }}">
       </div>
       <div class="info">
         <div class="name text-center">

@@ -15,17 +15,20 @@
   </div>
   <div class="header-right col-9 col-sm-3">
     <div class="menu-bar header-right-item">
-      <label for="search">
+      <label>
         <i class="fa fa-bars"></i>          
       </label>
     </div>
     <div class="search-container header-right-item" ng-if="search">
-      <div class="form-group m-0" ng-class="showSearchForm ? 'search-form-inline' : null">
+      <label ng-class="showSearchForm ? 'search-form-inline' : null">
+        <span ng-click="_onSearchClick()" ng-if="!showSearchForm">
+          <i class="fa fa-search"></i>
+        </span>
+        <span ng-click="_onSearchClosed()" ng-if="showSearchForm">
+          <i class="fa fa-times"></i>
+        </span>          
         <input type="search" class="search-form form-control" id="search" ng-if="showSearchForm" ng-class="lightHeader ? 'search-form-bg' : null" placeholder="Search..." ng-model="searchText" ng-change="_searchChanged(searchText)">
-        <label ng-click="_onSearchClick()">
-          <i class="fa fa-search"></i>          
-        </label>
-      </div>
+      </label>
     </div>
     <div class="authen-container header-right-item" ng-click="_goToAccount()">
       <label>

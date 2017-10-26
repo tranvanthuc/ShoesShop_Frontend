@@ -103,8 +103,11 @@ export default ($rootScope, $scope, $api, $localStorage, $state, $timeout) => {
   $scope.ordersQuantity = $localStorage.ordersQuantity;
 
   /* Toggle search form */
-  $scope.showSearchForm = false;
+  // $scope.showSearchForm = false;
   $scope._onSearchClick = () => {
-    $scope.showSearchForm = !$scope.showSearchForm;
+    $scope.showSearchForm = true;
   };
+  $scope._onSearchClosed = () => {
+    $scope.showSearchForm = false;
+  }
 }
