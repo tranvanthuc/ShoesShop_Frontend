@@ -109,5 +109,7 @@ export default ($rootScope, $scope, $api, $localStorage, $state, $timeout) => {
   };
   $scope._onSearchClosed = () => {
     $scope.showSearchForm = false;
+    let searchText = '';
+    $rootScope.$broadcast('searchTextChanged', searchText);
   }
 }
